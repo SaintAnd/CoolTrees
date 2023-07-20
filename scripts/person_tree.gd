@@ -16,6 +16,6 @@ func _process(delta):
 	if Input.is_action_pressed("Right"):
 		velocity.x += speed
 	move_and_slide(velocity)
-	position.x = clamp(position.x, 0,500)
-	position.y = clamp(position.y, 0,500)
+	position.x = clamp(position.x, 0,1000)
+	position.y = clamp(position.y, 0,1000)
 	
