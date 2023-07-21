@@ -163,9 +163,14 @@ format = 1
 tile_data = PoolIntArray( -458733, 2, 0, -458732, 1, 0, -458731, 0, 0, -393195, 0, 0, -393194, 1, 0, -393193, 2, 0, -327659, 0, 0, -262124, 1, 0, -262123, 0, 0, -196587, 0, 0, -196586, 2, 0, -131051, 0, 0 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 330, 418 )
+position = Vector2( 443, 425 )
 script = ExtResource( 4 )
 
 [node name="cam_container" type="Node2D" parent="."]
 
 [node name="Camera" parent="cam_container" instance=ExtResource( 6 )]
+position = Vector2( 454, 437 )
+limit_left = -870
+limit_top = -500
+limit_right = 1500
+limit_bottom = 1500

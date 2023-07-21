@@ -5,6 +5,8 @@ var is_panning = true;
 onready var editor = get_node("/root/Node2D/cam_container")
 onready var editor_cam = editor.get_node("Camera")
 
+
+
 export var cam_spd = 10
 var current_item
 
@@ -21,13 +23,13 @@ func _process(delta):
 	pass
 	
 func move_editor():
-	if Input.is_action_pressed("w"):
+	if Input.is_action_pressed(""):
 		editor.global_position.y -= cam_spd
-	if Input.is_action_pressed("a"):
+	if Input.is_action_pressed(""):
 		editor.global_position.x -= cam_spd
-	if Input.is_action_pressed("s"):
+	if Input.is_action_pressed(""):
 		editor.global_position.y += cam_spd
-	if Input.is_action_pressed("d"):
+	if Input.is_action_pressed(""):
 		editor.global_position.x += cam_spd
 	pass
 	
