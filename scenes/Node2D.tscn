@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://pic/tiles/tree.png" type="Texture" id=1]
 [ext_resource path="res://scenes/person_tree.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Cobble.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Nature.gd" type="Script" id=7]
+[ext_resource path="res://scripts/Node2D.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "ground.png 0"
@@ -111,6 +112,7 @@
 3/z_index = 0
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="Nature" type="Node2D" parent="."]
 script = ExtResource( 7 )
@@ -162,10 +164,13 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -458733, 2, 0, -458732, 1, 0, -458731, 0, 0, -393195, 0, 0, -393194, 1, 0, -393193, 2, 0, -327659, 0, 0, -262124, 1, 0, -262123, 0, 0, -196587, 0, 0, -196586, 2, 0, -131051, 0, 0 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 330, 418 )
 script = ExtResource( 4 )
+
+[node name="Items" type="Node2D" parent="."]
 
 [node name="cam_container" type="Node2D" parent="."]
 
 [node name="Camera" parent="cam_container" instance=ExtResource( 6 )]
+current = false

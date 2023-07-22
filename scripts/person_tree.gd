@@ -1,8 +1,15 @@
 extends KinematicBody2D
 
 var speed = 200
+var items = 0
+
 func _ready():
 	pass # Replace with function body.
+	
+func pick(item):
+	items += 1
+	print ("Items: %s" % str(items))
+	
 
 
 func _process(delta):
