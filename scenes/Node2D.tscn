@@ -5,7 +5,7 @@
 [ext_resource path="res://pic/tiles/ground.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Cobble.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Nature.gd" type="Script" id=7]
+[ext_resource path="res://scripts/Nature.gd" type="Script" id=7]
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
