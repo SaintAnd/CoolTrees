@@ -8,7 +8,7 @@ func _ready():
 	
 func pick(item):
 	items += 1
-	print ("Items: %s" % str(items))
+	get_parent().update_label(items)
 	
 
 

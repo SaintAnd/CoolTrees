@@ -3,6 +3,9 @@ onready var item = preload("res://scenes/item.tscn")
 
 func get_player():
 	return $Player
+	
+func update_label(value):
+	get_parent().update_label(value)
 
 func _ready():
 	var items = ["green", "yellow", "yellow-green"]
