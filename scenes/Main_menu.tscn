@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://pic/menu/Tree.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/Main_menu.gd" type="Script" id=2]
 [ext_resource path="res://scripts/Quit.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Start.gd" type="Script" id=4]
 [ext_resource path="res://scripts/Settings.gd" type="Script" id=5]
+[ext_resource path="res://game_menu_music_1version.wav" type="AudioStream" id=6]
 
 [node name="Main_menu" type="Control"]
 anchor_right = 1.0
@@ -68,6 +69,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Quit"
 script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Settings" to="VBoxContainer2/Settings" method="_on_Settings_pressed"]
