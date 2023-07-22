@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 +++ other jjj.txt
+=======
++++main jjj.txt
+>>>>>>> 7f50a268a45334633fcfe9692af67147969d0be6
