@@ -2,19 +2,16 @@ extends Node2D
 
 var can_place = true
 var is_panning = true;
-onready var editor = get_node("/root/Node2D/cam_container")
+onready var editor = get_node("../../Node2D/cam_container")
 onready var editor_cam = editor.get_node("Camera")
-
-
 
 export var cam_spd = 10
 var current_item
 
 func _ready():
 	editor_cam.current = true
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	pass 
+	
 func _process(delta):
 	
 	move_editor()

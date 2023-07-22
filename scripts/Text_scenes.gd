@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var text = get_node("/root/Node2D/Text_scenes")
+onready var text = get_node("../../Node2D/Text_scenes")
 onready var editor_text = text.get_node("Text_PressEnter")
 
 
