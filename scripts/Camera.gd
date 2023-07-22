@@ -3,6 +3,7 @@ extends Camera2D
 
 
 
+
 onready var start = 0
 # Lower cap for the `_zoom_level`.
 export var min_zoom := 0.5
@@ -66,6 +67,7 @@ func _unhandled_input(event):
 			tween.EASE_OUT
 		)
 		tween.start()
+	
 	
 	
 	
