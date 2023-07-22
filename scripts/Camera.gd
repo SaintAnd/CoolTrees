@@ -3,8 +3,6 @@ extends Camera2D
 
 
 
-
-
 onready var start = 0
 # Lower cap for the `_zoom_level`.
 export var min_zoom := 0.5
@@ -20,6 +18,8 @@ var _zoom_level := 1.0 setget _set_zoom_level
 
 # We store a reference to the scene's tween node.
 onready var tween: Tween = $Tween
+
+
 
 func _set_zoom_level(value: float) -> void:
 	# We limit the value between `min_zoom` and `max_zoom`
@@ -50,6 +50,8 @@ func _unhandled_input(event):
 		
 		start = 1
 		zoom_duration = 1.25
+		
+		
 
 		# Then, we ask the tween node to animate the camera's `zoom` property from its current value
 		# to the target zoom level.

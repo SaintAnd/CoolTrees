@@ -22,7 +22,6 @@ _global_script_class_icons={
 
 config/name="cool_tree"
 run/main_scene="res://scenes/Node2D.tscn"
-config/icon="res://icon.png"
 
 [gui]
 
