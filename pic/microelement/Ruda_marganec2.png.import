@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ruda_marganec2.png-f6384587e36127216688cc1ce0a0c5d5.stex"
+path="res://.import/Ruda_marganec2.png-a7545ea1762d9f0b7913ce57bc644440.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/sprites/microelement/Ruda_marganec2.png"
-dest_files=[ "res://.import/Ruda_marganec2.png-f6384587e36127216688cc1ce0a0c5d5.stex" ]
+source_file="res://pic/microelement/Ruda_marganec2.png"
+dest_files=[ "res://.import/Ruda_marganec2.png-a7545ea1762d9f0b7913ce57bc644440.stex" ]
 
 [params]
 
