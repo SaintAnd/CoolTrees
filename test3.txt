@@ -1,3 +1,1 @@
-Start
-app
-yes
+Start app yes of
