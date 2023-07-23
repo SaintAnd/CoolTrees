@@ -1,0 +1,70 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.176471, 0.0823529, 0.443137, 1 )
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 192.0
+
+[node name="Button2" type="Button" parent="ColorRect"]
+margin_left = 832.0
+margin_top = 64.0
+margin_right = 960.0
+margin_bottom = 192.0
+
+[node name="Button3" type="Button" parent="ColorRect"]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 576.0
+margin_bottom = 192.0
+
+[node name="Button4" type="Button" parent="ColorRect"]
+margin_left = 640.0
+margin_top = 64.0
+margin_right = 768.0
+margin_bottom = 192.0
+
+[node name="Button5" type="Button" parent="ColorRect"]
+margin_left = 256.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 192.0
+
+[node name="Button6" type="Button" parent="ColorRect"]
+margin_left = 832.0
+margin_top = 320.0
+margin_right = 960.0
+margin_bottom = 448.0
+
+[node name="Button7" type="Button" parent="ColorRect"]
+margin_left = 640.0
+margin_top = 320.0
+margin_right = 768.0
+margin_bottom = 448.0
+
+[node name="Button8" type="Button" parent="ColorRect"]
+margin_left = 448.0
+margin_top = 320.0
+margin_right = 576.0
+margin_bottom = 448.0
+
+[node name="Button9" type="Button" parent="ColorRect"]
+margin_left = 256.0
+margin_top = 320.0
+margin_right = 384.0
+margin_bottom = 448.0
+
+[node name="Button10" type="Button" parent="ColorRect"]
+margin_left = 64.0
+margin_top = 320.0
+margin_right = 192.0
+margin_bottom = 448.0
