@@ -36,4 +36,6 @@ func _unhandled_input(event):
 			editor.global_position -= event.relative * editor_cam.zoom
 	pass
 
-	
+func move_to_player(pos):
+	# сделать передвижение камеры на активного персонажа
+	pass
