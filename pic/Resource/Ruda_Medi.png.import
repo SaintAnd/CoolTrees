@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ruda_Medi.png-098f5bb9b25adaf3ca37ce12a064a7da.stex"
+path="res://.import/Ruda_Medi.png-ef8ea6397245cc892f69ca88ed7c2dd1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/microelement/Ruda_Medi.png"
-dest_files=[ "res://.import/Ruda_Medi.png-098f5bb9b25adaf3ca37ce12a064a7da.stex" ]
+source_file="res://pic/Resource/Ruda_Medi.png"
+dest_files=[ "res://.import/Ruda_Medi.png-ef8ea6397245cc892f69ca88ed7c2dd1.stex" ]
 
 [params]
 
