@@ -9,10 +9,12 @@
 [node name="Root" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Seed" parent="." instance=ExtResource( 4 )]
+position = Vector2( 458, 731 )
+
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [node name="Seed" parent="." instance=ExtResource( 4 )]
 position = Vector2( 458, 731 )
