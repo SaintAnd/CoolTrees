@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ruda_Cink.png-44d673516b7e03caff62e4e03475a872.stex"
+path="res://.import/Ruda_Cink.png-3f832c1e5febe1f04a6494dfcdc40419.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/microelement/Ruda_Cink.png"
-dest_files=[ "res://.import/Ruda_Cink.png-44d673516b7e03caff62e4e03475a872.stex" ]
+source_file="res://pic/Resource/Ruda_Cink.png"
+dest_files=[ "res://.import/Ruda_Cink.png-3f832c1e5febe1f04a6494dfcdc40419.stex" ]
 
 [params]
 

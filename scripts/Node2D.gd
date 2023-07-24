@@ -8,12 +8,12 @@ func update_label(value):
 	get_parent().update_label(value)
 
 func _ready():
-	var items = ["green", "yellow", "yellow-green"]
-	for i in range (16):
+	var items = ["Ruda_Cink", "Ruda_Kalciy", "Ruda_Medi", "Ruda_metal", "Ruda_marganec1"]
+	for i in range (11):
 		randomize()
-		var a = int(rand_range(0,3))
+		var a = int(rand_range(0,5))
 		var new_item = item.instance()
 		$Items.add_child(new_item)
 		new_item.set_item(items[a])
-		new_item.position = Vector2(int(rand_range(0,16*64)), int(rand_range(0,16*28)))
+		new_item.position = Vector2(int(rand_range(0,16*59)), int(rand_range(16*30,16*44)))
 	pass 
