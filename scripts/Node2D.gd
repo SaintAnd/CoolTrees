@@ -1,5 +1,7 @@
 extends Node2D
+
 onready var item = preload("res://scenes/item.tscn")
+var active_player = "Player"
 
 func get_player():
 	return $Player
