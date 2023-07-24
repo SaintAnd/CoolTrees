@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var start = true
 var can_place = true
 var is_panning = true;
 onready var editor = get_node("../../Node2D/cam_container")
@@ -11,8 +12,11 @@ var current_item
 func _ready():
 	editor_cam.current = true
 	pass 
+
+
 	
 func _process(delta):
+
 	
 	move_editor()
 	is_panning = Input.is_action_pressed("move_cam")
