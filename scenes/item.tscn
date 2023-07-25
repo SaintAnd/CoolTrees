@@ -9,3 +9,5 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 centered = false
+
+[node name="Timer" type="Timer" parent="Sprite"]
