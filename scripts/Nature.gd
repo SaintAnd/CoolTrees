@@ -12,7 +12,7 @@ func _ready():
 	editor_cam.current = true
 	pass 
 	
-func _process(delta):
+func _process(_delta):
 	
 	move_editor()
 	is_panning = Input.is_action_pressed("move_cam")
@@ -34,8 +34,4 @@ func _unhandled_input(event):
 	if(event is InputEventMouseMotion):
 		if(is_panning):
 			editor.global_position -= event.relative * editor_cam.zoom
-	pass
-
-func move_to_player(pos):
-	# сделать передвижение камеры на активного персонажа
 	pass

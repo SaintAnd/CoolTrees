@@ -18,8 +18,8 @@ func pick(item):
 		inventory[it] = item.get_amount()
 	ui.update_inventory(inventory)
 
-func _process(delta):
-	if owner.active_player == name: # проверка для корректного переключения между рабочими
+func _process(_delta):
+	if owner.active_player == name and owner.is_active_p: # проверка для корректного переключения между рабочими
 		var velocity = Vector2()
 		if Input.is_action_pressed("Up"):
 			velocity.y -= speed

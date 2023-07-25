@@ -1,7 +1,8 @@
 extends Node2D
 
 onready var item = preload("res://scenes/item.tscn")
-var active_player = "Player"
+var active_player = "Worker1" # активный работник
+var is_active_p = true # активен ли контроллер
 
 func get_player():
 	return $Player
@@ -11,7 +12,7 @@ func update_label(value):
 
 func _ready():
 	var items = ["green", "yellow", "yellow-green"]
-	for i in range (16):
+	for _i in range (16):
 		randomize()
 		var a = int(rand_range(0,3))
 		var new_item = item.instance()
