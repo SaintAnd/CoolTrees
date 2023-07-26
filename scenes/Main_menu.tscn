@@ -1,13 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://pic/menu/Tree.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/Main_menu.gd" type="Script" id=2]
-[ext_resource path="res://scripts/Quit.gd" type="Script" id=3]
-[ext_resource path="res://scripts/Start.gd" type="Script" id=4]
-[ext_resource path="res://scripts/Settings.gd" type="Script" id=5]
 [ext_resource path="res://sounds_and_music/game_menu_music_1version.wav" type="AudioStream" id=6]
 
 [node name="Main_menu" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -21,7 +19,7 @@ margin_right = 95.0
 margin_bottom = 20.0
 texture = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Menu" type="VBoxContainer" parent="."]
 margin_top = 16.0
 margin_right = 126.0
 margin_bottom = 80.0
@@ -30,50 +28,223 @@ rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="Menu"]
 margin_right = 126.0
-margin_bottom = 64.0
+margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Start"
-script = ExtResource( 4 )
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_top = 120.0
-margin_right = 128.0
-margin_bottom = 184.0
-rect_min_size = Vector2( 128, 64 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Settings" type="Button" parent="VBoxContainer2"]
-margin_right = 128.0
-margin_bottom = 64.0
+[node name="Settings2" type="Button" parent="Menu"]
+margin_top = 24.0
+margin_right = 126.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Settings"
-script = ExtResource( 5 )
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
-margin_top = 224.0
-margin_right = 128.0
-margin_bottom = 288.0
-rect_min_size = Vector2( 128, 64 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Quit" type="Button" parent="VBoxContainer3"]
-margin_right = 128.0
-margin_bottom = 64.0
+[node name="Quit" type="Button" parent="Menu"]
+margin_top = 48.0
+margin_right = 126.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Quit"
-script = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_Start_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Settings" to="VBoxContainer2/Settings" method="_on_Settings_pressed"]
-[connection signal="pressed" from="VBoxContainer3/Quit" to="VBoxContainer3/Quit" method="_on_Quit_pressed"]
+[node name="Settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -97.5
+margin_right = 88.5
+margin_bottom = 97.5
+
+[node name="Video" type="Button" parent="Settings/VBoxContainer"]
+margin_right = 177.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Video"
+
+[node name="Audio" type="Button" parent="Settings/VBoxContainer"]
+margin_top = 99.0
+margin_right = 177.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Audio"
+
+[node name="BackFromSettings" type="Button" parent="Settings"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -86.0
+margin_top = -46.0
+margin_right = 86.0
+text = "Back"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.5
+margin_top = -40.0
+margin_right = 48.5
+margin_bottom = 40.0
+
+[node name="Labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 80.0
+
+[node name="FullScreen" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 5.0
+margin_right = 69.0
+margin_bottom = 19.0
+size_flags_vertical = 6
+text = "FullScreen"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 33.0
+margin_right = 69.0
+margin_bottom = 47.0
+size_flags_vertical = 6
+text = "Borderless"
+
+[node name="VSync" type="Label" parent="Video/HBoxContainer/Labels"]
+margin_top = 61.0
+margin_right = 69.0
+margin_bottom = 75.0
+size_flags_vertical = 6
+text = "VSync"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+margin_left = 73.0
+margin_right = 97.0
+margin_bottom = 80.0
+
+[node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_top = 28.0
+margin_right = 24.0
+margin_bottom = 52.0
+
+[node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+margin_top = 56.0
+margin_right = 24.0
+margin_bottom = 80.0
+
+[node name="BackFromVideo" type="Button" parent="Video"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -86.0
+margin_top = -46.0
+margin_right = 86.0
+text = "Back"
+
+[node name="Audio" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -28.0
+margin_right = 102.0
+margin_bottom = 28.0
+
+[node name="Labels" type="VBoxContainer" parent="Audio/HBoxContainer"]
+margin_right = 58.0
+margin_bottom = 56.0
+
+[node name="Master" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 1.0
+margin_right = 58.0
+margin_bottom = 15.0
+size_flags_vertical = 6
+text = "Master"
+
+[node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 21.0
+margin_right = 58.0
+margin_bottom = 35.0
+size_flags_vertical = 6
+text = "Music"
+
+[node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Labels"]
+margin_top = 41.0
+margin_right = 58.0
+margin_bottom = 55.0
+size_flags_vertical = 6
+text = "Sound FX"
+
+[node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
+margin_left = 62.0
+margin_right = 204.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_right = 142.0
+margin_bottom = 16.0
+
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_top = 20.0
+margin_right = 142.0
+margin_bottom = 36.0
+
+[node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+margin_top = 40.0
+margin_right = 142.0
+margin_bottom = 56.0
+
+[node name="BackFromAudio" type="Button" parent="Audio"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -86.0
+margin_top = -46.0
+margin_right = 86.0
+text = "Back"
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/Settings2" to="." method="_on_Settings2_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/Video" to="." method="_on_Video_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/Audio" to="." method="_on_Audio_pressed"]
+[connection signal="pressed" from="Settings/BackFromSettings" to="." method="_on_BackFromSettings_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_FullScreen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/Borderless" to="." method="_on_Borderless_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_VSync_toggled"]
+[connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_BackFromVideo_pressed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_Master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_Music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/SoundFX" to="." method="_on_SoundFX_value_changed"]
+[connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_BackFromAudio_pressed"]

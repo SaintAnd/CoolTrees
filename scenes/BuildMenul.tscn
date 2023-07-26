@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Buttonclose.gd" type="Script" id=1]
+
+[node name="BuildMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.5
+margin_top = -160.5
+margin_right = 267.5
+margin_bottom = 160.5
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.5
+margin_top = -160.5
+margin_right = 267.5
+margin_bottom = 160.5
+color = Color( 0.176471, 0.0823529, 0.443137, 1 )
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 27.5
+margin_top = 20.5
+margin_right = 91.5
+margin_bottom = 84.5
+
+[node name="Button2" type="Button" parent="ColorRect"]
+margin_left = 443.5
+margin_top = 20.5
+margin_right = 507.5
+margin_bottom = 84.5
+
+[node name="Button3" type="Button" parent="ColorRect"]
+margin_left = 235.5
+margin_top = 20.5
+margin_right = 300.5
+margin_bottom = 85.5
+
+[node name="Button4" type="Button" parent="ColorRect"]
+margin_left = 339.5
+margin_top = 20.5
+margin_right = 404.5
+margin_bottom = 85.5
+
+[node name="Button5" type="Button" parent="ColorRect"]
+margin_left = 131.5
+margin_top = 20.5
+margin_right = 195.5
+margin_bottom = 84.5
+
+[node name="Button6" type="Button" parent="ColorRect"]
+margin_left = 443.5
+margin_top = 124.5
+margin_right = 507.5
+margin_bottom = 188.5
+
+[node name="Button7" type="Button" parent="ColorRect"]
+margin_left = 339.5
+margin_top = 124.5
+margin_right = 403.5
+margin_bottom = 188.5
+
+[node name="Button8" type="Button" parent="ColorRect"]
+margin_left = 235.5
+margin_top = 124.5
+margin_right = 299.5
+margin_bottom = 188.5
+
+[node name="Button9" type="Button" parent="ColorRect"]
+margin_left = 131.5
+margin_top = 124.5
+margin_right = 195.5
+margin_bottom = 188.5
+
+[node name="Button10" type="Button" parent="ColorRect"]
+margin_left = 27.5
+margin_top = 124.5
+margin_right = 91.5
+margin_bottom = 188.5
+
+[node name="Button11" type="Button" parent="ColorRect"]
+margin_left = 443.5
+margin_top = 228.5
+margin_right = 507.5
+margin_bottom = 292.5
+
+[node name="Button12" type="Button" parent="ColorRect"]
+margin_left = 339.5
+margin_top = 228.5
+margin_right = 403.5
+margin_bottom = 292.5
+
+[node name="Button13" type="Button" parent="ColorRect"]
+margin_left = 235.5
+margin_top = 228.5
+margin_right = 299.5
+margin_bottom = 292.5
+
+[node name="Button14" type="Button" parent="ColorRect"]
+margin_left = 131.5
+margin_top = 228.5
+margin_right = 195.5
+margin_bottom = 292.5
+
+[node name="Button15" type="Button" parent="ColorRect"]
+margin_left = 27.5
+margin_top = 228.5
+margin_right = 91.5
+margin_bottom = 292.5
+
+[node name="Button16" type="Button" parent="ColorRect"]
+margin_left = 490.0
+margin_top = -3.0
+margin_right = 536.0
+margin_bottom = 17.0
+text = "close"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="ColorRect/Button16" to="ColorRect/Button16" method="_on_Button16_pressed"]

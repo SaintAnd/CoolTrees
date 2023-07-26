@@ -187,9 +187,11 @@ position = Vector2( 4, -81 )
 
 [node name="Worker1" parent="Workers" instance=ExtResource( 9 )]
 position = Vector2( 394, 277 )
+z_as_relative = false
 
 [node name="Worker2" parent="Workers" instance=ExtResource( 9 )]
 position = Vector2( 427, 277 )
+z_as_relative = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 443, 425 )
