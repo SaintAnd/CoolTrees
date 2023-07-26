@@ -1,6 +1,4 @@
 extends MenuButton
-onready var settings = 
-
 
 func _ready():
 	get_popup().add_item("Build")
