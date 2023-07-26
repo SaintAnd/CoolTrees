@@ -10,7 +10,7 @@ func _ready():
 	anim.play("worker_idle") # проигрываем анимацию сразу после начала игры
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	var velocity = Vector2() # определяем велосити
 	if owner.active_player == name and owner.is_active_p: # проверка на активность данного рабочего
 		if Input.is_action_pressed("Left"): 
