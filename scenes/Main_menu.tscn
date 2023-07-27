@@ -54,6 +54,7 @@ text = "Quit"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+bus = "SoundFX"
 
 [node name="Settings" type="Control" parent="."]
 visible = false
@@ -213,16 +214,22 @@ size_flags_horizontal = 3
 [node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
 margin_right = 142.0
 margin_bottom = 16.0
+min_value = -45.0
+max_value = 0.0
 
 [node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
 margin_top = 20.0
 margin_right = 142.0
 margin_bottom = 36.0
+min_value = -45.0
+max_value = 0.0
 
 [node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
 margin_top = 40.0
 margin_right = 142.0
 margin_bottom = 56.0
+min_value = -45.0
+max_value = 0.0
 
 [node name="BackFromAudio" type="Button" parent="Audio"]
 anchor_left = 0.5

@@ -24,6 +24,7 @@ position = Vector2( 458, 731 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+bus = "Music"
 
 [node name="MenuButton" type="MenuButton" parent="."]
 margin_top = 2.0
