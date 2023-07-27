@@ -1,17 +1,7 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
-
-[sub_resource type="AudioEffectPanner" id=1]
-resource_name = "Panner"
-
-[sub_resource type="AudioEffectEQ" id=2]
-resource_name = "EQ"
+[gd_resource type="AudioBusLayout" format=2]
 
 [resource]
 bus/0/volume_db = -0.528235
-bus/0/effect/0/effect = SubResource( 1 )
-bus/0/effect/0/enabled = true
-bus/0/effect/1/effect = SubResource( 2 )
-bus/0/effect/1/enabled = true
 bus/1/name = "Music"
 bus/1/solo = false
 bus/1/mute = false

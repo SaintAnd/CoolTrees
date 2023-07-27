@@ -221,14 +221,14 @@ max_value = 0.0
 margin_top = 20.0
 margin_right = 142.0
 margin_bottom = 36.0
-min_value = -45.0
+min_value = -40.0
 max_value = 0.0
 
 [node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
 margin_top = 40.0
 margin_right = 142.0
 margin_bottom = 56.0
-min_value = -45.0
+min_value = -40.0
 max_value = 0.0
 
 [node name="BackFromAudio" type="Button" parent="Audio"]
