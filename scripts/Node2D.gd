@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var item = preload("res://scenes/item.tscn")
+#onready var item = preload("res://scenes/item.tscn")
 var active_player = "Worker1" # ???????? ????????
 var is_active_p = true # ??????? ?? ??????????
 
@@ -15,8 +15,8 @@ func _ready():
 	for _i in range (11):
 		randomize()
 		var a = int(rand_range(0,5))
-		var new_item = item.instance()
-		$Items.add_child(new_item)
-		new_item.set_item(items[a])
-		new_item.position = Vector2(int(rand_range(0,16*59)), int(rand_range(16*30,16*44)))
+		#var new_item = item.instance()
+		#$Items.add_child(new_item)
+		#new_item.set_item(items[a])
+		#new_item.position = Vector2(int(rand_range(0,16*59)), int(rand_range(16*30,16*44)))
 	pass 

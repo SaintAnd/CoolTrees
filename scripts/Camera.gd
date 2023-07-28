@@ -2,7 +2,7 @@ class_name ZoomingCamera2D
 extends Camera2D
 
 # Задаём переменной путь до ренгена желудя.
-onready var imageRentgenn = get_node("/root/Root/Seed/Verx/Rentgenn")
+onready var imageRentgenn = get_node("/root/Root/Environment/Seed/Verx/Rentgenn")
 
 
 
