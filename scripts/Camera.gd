@@ -1,6 +1,10 @@
 class_name ZoomingCamera2D
 extends Camera2D
 
+# Задаём переменной путь до ренгена желудя.
+onready var imageRentgenn = get_node("/root/Root/Seed/Verx/Rentgenn")
+
+
 
 
 #Отвечает за блокировку камеры и блокировку приближения на Enter
@@ -25,7 +29,9 @@ onready var tween: Tween = $Tween
 func _set_zoom_level(value: float) -> void:
 	# Задаём лимит значений между `min_zoom` и `max_zoom`
 	_zoom_level = clamp(value, min_zoom, max_zoom)
-	# Делаем плавную анимацию.
+
+	
+	# Делаем плавную анимацию.	
 	tween.interpolate_property(
 		self,
 		"zoom",
@@ -36,43 +42,61 @@ func _set_zoom_level(value: float) -> void:
 		tween.EASE_OUT
 	)
 	tween.start()
+	
+	
 
 func _unhandled_input(event):
 	# Задаём условие для запрета приближения камеры до нажатия на ENTER
 	if start == true:
-	
+		# Приближение камеры
 		if event.is_action_pressed("zoom_in"):
 			# Внутри данного класса нам нужно либо написать `self._zoom_level = ...` или точно
 			# вызвать функцию установки, чтобы использовать ее.
 			_set_zoom_level(_zoom_level - zoom_factor)
+		# Отдаление камеры
 		if event.is_action_pressed("zoom_out"):
 			_set_zoom_level(_zoom_level + zoom_factor)
+		
 		# Задаём значение переменной Start, чтобы после нажатия на ENTER зум вновь заработал
 	if start == false and event.is_action_pressed("Enter"):
 		
-		start = true
-		zoom_duration = 1.25
+		
+		_set_zoom_level(_zoom_level - zoom_factor)
+		
+		
+		start = true # Задаём значение true, чтобы условия приближения на колесико начинали работать
+		zoom_duration = 1.25 # Плавность приближения
 		
 		
 
-		
+		# Анимация
 		tween.interpolate_property(
 			self,
 			"zoom",
 			zoom,
-			Vector2(0.5, 0.5),
+			Vector2(0.8, 0.8),
 			zoom_duration,
 			tween.TRANS_SINE,
 			tween.EASE_OUT
 		)
 		tween.start()
-			
 	
-	
-	
-	
-			
+	# Сетку не видно, когда приближение на 1-е	
+	if _zoom_level > 1:
+		imageRentgenn.show_behind_parent = true
+	# Сетку видно, когда приближение меньше 1-ы
+	elif _zoom_level < 1:
+		imageRentgenn.show_behind_parent = false
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
