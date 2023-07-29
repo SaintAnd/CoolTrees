@@ -56,7 +56,7 @@
 2/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 64, 55 )
+extents = Vector2( 64, 55.5 )
 
 [node name="Environment" type="Node2D"]
 script = ExtResource( 4 )
@@ -96,15 +96,15 @@ position = Vector2( 0, 576 )
 z_as_relative = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Seed/Workers_Manager/Mouse_Click"]
-position = Vector2( -1, -330 )
+position = Vector2( 0, -328 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Seed/Workers_Manager/Mouse_Click"]
-position = Vector2( -1, -203 )
+position = Vector2( 0, -200.5 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Seed/Workers_Manager/Mouse_Click"]
-position = Vector2( -1, -75 )
+position = Vector2( 0, -72.5 )
 shape = SubResource( 6 )
 
 [node name="Workers" type="Node2D" parent="Seed/Workers_Manager"]
