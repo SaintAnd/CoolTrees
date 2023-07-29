@@ -8,6 +8,7 @@
 [node name="Seed" type="Node2D"]
 
 [node name="Verx" type="Sprite" parent="."]
+light_mask = 2
 texture = ExtResource( 1 )
 
 [node name="Rentgenn" type="Sprite" parent="Verx"]
@@ -16,14 +17,32 @@ texture = ExtResource( 2 )
 [node name="Mesh" type="Sprite" parent="Verx/Rentgenn"]
 texture = ExtResource( 3 )
 
-[node name="Room3" type="Sprite" parent="Verx/Rentgenn"]
+[node name="Room1" type="StaticBody2D" parent="Verx/Rentgenn"]
 position = Vector2( 0, -160 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Verx/Rentgenn/Room1"]
+build_mode = 1
+polygon = PoolVector2Array( 63, -55, -63, -55, -63, 54, 63, 54 )
+
+[node name="Sprite" type="Sprite" parent="Verx/Rentgenn/Room1"]
 texture = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="Verx/Rentgenn"]
-position = Vector2( 0, -33 )
+[node name="Room2" type="StaticBody2D" parent="Verx/Rentgenn"]
+position = Vector2( 0, -32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Verx/Rentgenn/Room2"]
+build_mode = 1
+polygon = PoolVector2Array( 63, -55, -63, -55, -63, 54, 63, 54 )
+
+[node name="Sprite" type="Sprite" parent="Verx/Rentgenn/Room2"]
 texture = ExtResource( 4 )
 
-[node name="Sprite2" type="Sprite" parent="Verx/Rentgenn"]
-position = Vector2( 0, 95 )
+[node name="Room3" type="StaticBody2D" parent="Verx/Rentgenn"]
+position = Vector2( 0, 96 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Verx/Rentgenn/Room3"]
+build_mode = 1
+polygon = PoolVector2Array( 63, -55, -63, -55, -63, 54, 63, 54 )
+
+[node name="Sprite" type="Sprite" parent="Verx/Rentgenn/Room3"]
 texture = ExtResource( 4 )
