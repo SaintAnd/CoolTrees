@@ -1,16 +1,20 @@
 extends Node2D
 
-var active_player = "Worker1" # активный работник
-var is_active_p = true # активен ли контроллер
+var active_worker = "Worker1" # активный работник
+var is_active_w = true # активен ли контроллер
 var click_pos = Vector2() # позиция кликa
 var is_move_end = true # переменная которая будет отмечать закончено ли передвижение
+var room_y = 0
 
 onready var mouse_click = $Mouse_Click # получаем объект который отвечает за принятие кликов
-onready var worker = get_node("Workers/" + active_player) # получаем работника
-onready var tween = get_node("Workers/" + active_player + "/Sprite/Tween") # получаем объект твин для дальнейшей анимации
+onready var worker = get_node("Workers/" + active_worker) # получаем работника
+onready var tween = get_node("Workers/" + active_worker + "/Sprite/Tween") # получаем объект твин для дальнейшей анимации
 onready var do_duration = 150 # динамическая(?) длительность чтобы не было резкой анимации
+onready var rooms = get_node("../Rentgenn/Rooms") # родительский объект комнат
+#onready var actual_room = rooms.get_child(worker.get_index()) # актуальная комната
 
 
+	
 func left_or_right(pos, end): # проверяем какая нужна анимация
 	if pos > end: # если игрок находится правее конечной точки
 		worker.state_change("move_left") 
@@ -20,9 +24,9 @@ func left_or_right(pos, end): # проверяем какая нужна ани�
 	
 func move_worker():
 	is_move_end = false # отмечаем что передвижение еще не закончено
-	worker = get_node("Workers/" + active_player) # обновляем переменную
+	worker = get_node("Workers/" + active_worker) # обновляем переменную
 	mouse_click.input_pickable = false # выключаем кнопку на время передвижения
-	is_active_p = false # вырубаем контроллер игрока
+	is_active_w = false # вырубаем контроллер игрока
 	
 	
 	# двигаем рабочего к середине дерева
@@ -34,7 +38,7 @@ func move_worker():
 	
 	# поднимаем его вверх/вниз
 	tween.interpolate_property(worker, "position",
-		worker.position, Vector2(worker.position.x, click_pos.y), abs(worker.position.y - click_pos.y) / do_duration)
+		worker.position, Vector2(worker.position.x, room_y), abs(worker.position.y - click_pos.y) / do_duration)
 	tween.start()
 	worker.state_change("worker_climb") 
 	yield(tween, "tween_completed")
@@ -50,12 +54,13 @@ func move_worker():
 	
 	
 	mouse_click.input_pickable = true # включаем обратно чтобы игрок мог дальше гулять
-	is_active_p = true # собственно говоря включаем контроллер
+	is_active_w = true # собственно говоря включаем контроллер
 	is_move_end = true # обратно меняем ведь передвижение закончилось
 
 
-func _on_Mouse_Click_input_event(_viewport, event, _shape_idx):  # был ли щелчок и был ли он совершен в пределах комнаты
+func _on_Mouse_Click_input_event(_viewport, event, shape_idx):  # был ли щелчок и был ли он совершен в пределах комнаты
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
 		click_pos = get_local_mouse_position() # получаем позицию щелчка
-		print(click_pos)
+		room_y = rooms.get_child(shape_idx).position.y # получаем комнату на которую кликнул игрок, получаем ее позицию по у
 		move_worker() # активируем движение
+

@@ -13,7 +13,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	var velocity = Vector2() # определяем велосити
-	if manager.active_player == name and manager.is_active_p: # проверка на активность данного рабочего
+	if manager.active_worker == name and manager.is_active_w: # проверка на активность данного рабочего
 		if Input.is_action_pressed("Left"): 
 			velocity.x -= speed
 		if Input.is_action_pressed("Right"):
@@ -30,7 +30,7 @@ func _physics_process(_delta):
 	
 	move_and_slide(velocity) # двигаем через велосити
 	
-	if manager.active_player != name and manager.is_move_end: # если данный рабочий не активен и передвижение окончено
+	if manager.active_worker != name and manager.is_move_end: # если данный рабочий не активен и передвижение окончено
 		state_change("worker_idle") # проигрываем анимацию
 		
 	
@@ -41,4 +41,4 @@ func state_change(new_state): # проигрываем анимацию
 	
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
-	manager.active_player = name
+	manager.active_worker = name # меняем активного рабочего
