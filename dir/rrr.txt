@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-+++main   
-=======
-main
->>>>>>> parent of e94ec4e (Merge branch 'main' of https://github.com/SaintAnd/CoolTrees)
