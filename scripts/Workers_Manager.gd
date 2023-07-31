@@ -38,7 +38,7 @@ func move_worker():
 	
 	# поднимаем его вверх/вниз
 	tween.interpolate_property(worker, "position",
-		worker.position, Vector2(worker.position.x, room_y), abs(worker.position.y - click_pos.y) / do_duration)
+		worker.position, Vector2(0, room_y), abs(worker.position.y - room_y) / do_duration)
 	tween.start()
 	worker.state_change("worker_climb") 
 	yield(tween, "tween_completed")
