@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://pic/sprites/grass/Forward.png" type="Texture" id=1]
+[ext_resource path="res://pic/sprites/grass/ground.png" type="Texture" id=2]
+[ext_resource path="res://pic/sprites/grass/rearward.png" type="Texture" id=3]
+
+[node name="Grass" type="Node2D"]
+
+[node name="Rearward" type="Sprite" parent="."]
+position = Vector2( 0, -127 )
+texture = ExtResource( 3 )
+
+[node name="Ground" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Forward" type="Sprite" parent="."]
+position = Vector2( 0, -77 )
+texture = ExtResource( 1 )

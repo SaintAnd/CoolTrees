@@ -3,7 +3,7 @@ extends Node2D
 onready var start = false
 var can_place = true
 var is_panning = true;
-onready var editor = get_node("../../Node2D/cam_container")
+onready var editor = get_node("../../Environment/cam_container")
 onready var editor_cam = editor.get_node("Camera")
 
 export var cam_spd = 10
