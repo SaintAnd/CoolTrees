@@ -42,3 +42,4 @@ func state_change(new_state): # проигрываем анимацию
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
 	manager.active_worker = name # меняем активного рабочего
+	manager.room_define()

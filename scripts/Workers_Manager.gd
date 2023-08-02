@@ -10,10 +10,17 @@ onready var mouse_click = $Mouse_Click # получаем объект кото�
 onready var worker = get_node("Workers/" + active_worker) # получаем работника
 onready var tween = get_node("Workers/" + active_worker + "/Sprite/Tween") # получаем объект твин для дальнейшей анимации
 onready var do_duration = 150 # динамическая(?) длительность чтобы не было резкой анимации
-onready var rooms = get_node("../Rentgenn/Rooms") # родительский объект комнат
-#onready var actual_room = rooms.get_child(worker.get_index()) # актуальная комната
+onready var rooms = get_node("../Rentgenn/Rooms").get_children() # массив комнат
+onready var actual_room = rooms[worker.get_index()] # актуальная комната
 
 
+func room_define():
+	worker = get_node("Workers/" + active_worker) # обновляем переменную
+	var dis = abs(rooms[0].position.y - rooms[1].position.y) / 2 # сохраняем примерное расстояние от цента комнаты до ее края
+	for i in rooms: # цикл перебирающий все комнаты
+		if abs(worker.position.y - i.position.y) <= dis: # проверка находится ли игрок в i комнате
+			actual_room = i # обновляем актуальную комнату
+			break # завершаем цикл
 	
 func left_or_right(pos, end): # проверяем какая нужна анимация
 	if pos > end: # если игрок находится правее конечной точки
@@ -24,7 +31,6 @@ func left_or_right(pos, end): # проверяем какая нужна ани�
 	
 func move_worker():
 	is_move_end = false # отмечаем что передвижение еще не закончено
-	worker = get_node("Workers/" + active_worker) # обновляем переменную
 	mouse_click.input_pickable = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 	
@@ -60,7 +66,12 @@ func move_worker():
 
 func _on_Mouse_Click_input_event(_viewport, event, shape_idx):  # был ли щелчок и был ли он совершен в пределах комнаты
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
-		click_pos = get_local_mouse_position() # получаем позицию щелчка
-		room_y = rooms.get_child(shape_idx).position.y # получаем комнату на которую кликнул игрок, получаем ее позицию по у
-		move_worker() # активируем движение
+		worker = get_node("Workers/" + active_worker) # обновляем переменную
+		if rooms[shape_idx] != actual_room: # если кликнул не на ту комнату в которой находится
+			click_pos = get_local_mouse_position() # получаем позицию щелчка
+			actual_room = rooms[shape_idx] # обновляем активную комнату
+			room_y = actual_room.position.y # получаем комнату на которую кликнул игрок, получаем ее позицию по у
+			move_worker() # активируем движение
+
+
 
