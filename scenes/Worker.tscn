@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://pic/sprites/Cheliki/sprites_cheliki.png" type="Texture" id=1]
+[ext_resource path="res://pic/sprites/Cheliki/mikro_cheliki.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Worker.gd" type="Script" id=2]
+[ext_resource path="res://pic/sprites/Cheliki/light.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -54,7 +55,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "worker_climb"
-length = 0.225
+length = 0.23
 loop = true
 step = 0.03
 tracks/0/type = "value"
@@ -106,6 +107,15 @@ margin_bottom = 16.0
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 4
+
+[node name="Glow" type="Light2D" parent="Sprite"]
+texture = ExtResource( 3 )
+texture_scale = 0.1
+color = Color( 0.952941, 0.654902, 0.286275, 0 )
+energy = 0.9
+shadow_enabled = true
+
+[node name="Tween" type="Tween" parent="Sprite/Glow"]
 
 [node name="Anim" type="AnimationPlayer" parent="Sprite"]
 playback_process_mode = 0

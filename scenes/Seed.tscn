@@ -11,7 +11,7 @@
 extents = Vector2( 64, 2.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 49, 55.5 )
+extents = Vector2( 64, 55.5 )
 
 [node name="Seed" type="Node2D"]
 

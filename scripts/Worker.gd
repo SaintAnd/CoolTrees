@@ -2,15 +2,26 @@ extends KinematicBody2D
 
 var speed = 200 # скорость игрока
 var gravity = 150 # сила гравитации
-
 var state = "worker_idle" 
+
 onready var anim = $Sprite/Anim # определение аниматора
+onready var glow = $Sprite/Glow 
+onready var tween = $Sprite/Glow/Tween
 onready var manager = get_parent().get_parent()
 
 func _ready():
 	anim.play("worker_idle") # проигрываем анимацию сразу после начала игры
-	
-	
+
+
+func glowing(alpha):
+	if alpha == 1: 
+		yield(get_tree().create_timer(3), "timeout")
+		tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 1), 0.4)
+		tween.start()
+	else:
+		tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 0), 0.05)
+		tween.start()
+		
 func _physics_process(_delta):
 	var velocity = Vector2() # определяем велосити
 	if manager.active_worker == name and manager.is_active_w: # проверка на активность данного рабочего
@@ -21,25 +32,32 @@ func _physics_process(_delta):
 			
 		if velocity.x < 0: # меняем состояния
 			state_change("move_left")
+			glowing(0)
 		elif velocity.x > 0:
 			state_change("move_right")
+			glowing(0)
 		else:
 			state_change("worker_idle")
+			glowing(1)
+	else:
+		glowing(0)
 	
 	velocity.y += gravity # создаем гравитацию
 	
 	move_and_slide(velocity) # двигаем через велосити
 	
-	if manager.active_worker != name and manager.is_move_end: # если данный рабочий не активен и передвижение окончено
-		state_change("worker_idle") # проигрываем анимацию
+	if manager.is_active_w: # если передвижение окончено
+		if manager.active_worker != name: # и данный рабочий не активен
+			state_change("worker_idle") # проигрываем анимацию
 		
 	
 func state_change(new_state): # проигрываем анимацию
 	if state != new_state: # если анимация новая
-		state = new_state
-		anim.play(state) 
+		state = new_state # обновляем текущую анимацию
+		anim.play(state) # включаем анимацию
 	
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
 	manager.active_worker = name # меняем активного рабочего
-	manager.room_define()
+	manager.room_define() # определяем активную комнату
+	glowing(1)

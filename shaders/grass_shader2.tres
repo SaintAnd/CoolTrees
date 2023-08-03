@@ -11,5 +11,5 @@ void vertex() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/speed = 2.0
+shader_param/speed = 1.8
 shader_param/dis = 20.0
