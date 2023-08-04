@@ -2,7 +2,7 @@
 
 [ext_resource path="res://pic/sprites/Cheliki/mikro_cheliki.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Worker.gd" type="Script" id=2]
-[ext_resource path="res://pic/sprites/Cheliki/light.png" type="Texture" id=3]
+[ext_resource path="res://pic/sprites/other/light.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001

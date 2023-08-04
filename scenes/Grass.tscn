@@ -49,17 +49,20 @@ position = Vector2( 0, -126 )
 texture = ExtResource( 14 )
 
 [node name="Forward_Grass" type="Sprite" parent="Seasons/Spring"]
+light_mask = 2
 material = ExtResource( 17 )
 position = Vector2( 0, -123 )
+z_index = 1
 texture = ExtResource( 6 )
 
 [node name="Forward_Snow" type="Sprite" parent="Seasons/Spring"]
 position = Vector2( 0, -128 )
+z_index = 1
 texture = ExtResource( 9 )
 
 [node name="Summer" type="Node2D" parent="Seasons"]
 visible = false
-position = Vector2( 0, -16 )
+position = Vector2( 0, -25 )
 
 [node name="Backward" type="Sprite" parent="Seasons/Summer"]
 material = ExtResource( 18 )
@@ -77,13 +80,15 @@ position = Vector2( 0, -129 )
 texture = ExtResource( 1 )
 
 [node name="Forward" type="Sprite" parent="Seasons/Summer"]
+light_mask = 2
 material = ExtResource( 16 )
 position = Vector2( 0, -77 )
+z_index = 1
 texture = ExtResource( 3 )
 
 [node name="Autumn" type="Node2D" parent="Seasons"]
 visible = false
-position = Vector2( 0, -16 )
+position = Vector2( 0, -25 )
 
 [node name="Backward" type="Sprite" parent="Seasons/Autumn"]
 material = ExtResource( 18 )
@@ -101,14 +106,16 @@ position = Vector2( 0, -129 )
 texture = ExtResource( 7 )
 
 [node name="Forward" type="Sprite" parent="Seasons/Autumn"]
+light_mask = 2
 material = ExtResource( 16 )
 position = Vector2( 0, -77 )
+z_index = 1
 texture = ExtResource( 11 )
 
 [node name="Winter" type="Node2D" parent="Seasons"]
 visible = false
 material = ExtResource( 16 )
-position = Vector2( 0, -28 )
+position = Vector2( 0, -42 )
 
 [node name="Forward" type="Sprite" parent="Seasons/Winter"]
 position = Vector2( 0, -77 )
