@@ -2,7 +2,7 @@ class_name ZoomingCamera2D
 extends Camera2D
 
 # Задаём переменной путь до ренгена желудя.
-onready var imageRentgenn = get_node("/root/Root/Environment/Seed/Verx/Rentgenn")
+onready var imageVerx = get_node("/root/Root/Environment/Seed/Verx")
 
 
 
@@ -83,10 +83,10 @@ func _unhandled_input(event):
 	
 	# Сетку не видно, когда приближение на 1-е	
 	if _zoom_level > 1:
-		imageRentgenn.show_behind_parent = true
+		imageVerx.visible = true
 	# Сетку видно, когда приближение меньше 1-ы
 	elif _zoom_level < 1:
-		imageRentgenn.show_behind_parent = false
+		imageVerx.visible = false
 
 
 

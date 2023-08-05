@@ -17,6 +17,8 @@ func _on_item_pressed(id):
 		get_node('/root/Root/BuildMenu').visible = true
 	elif item_name == 'Refresh':
 		get_tree().change_scene('res://scenes/Root.tscn')
+	elif item_name == 'Settings':
+		get_node('/root/Root/Settings').visible = true
 	elif item_name == 'Quit':
 		get_tree().quit()
 
