@@ -4,7 +4,6 @@ extends CanvasLayer
 onready var choice = $Stuka # подключаем кнопку
 onready var themes = get_node("../Seasons").get_children() # массив тем травы
 onready var previous = themes[0] # сохраняем "предыдущее" время года для смены
-onready var d_or_n = get_node("../../../While_Day_hight_not_ready")
 
 func _ready():
 	choice.connect("item_selected", self, "on_item_selected") # подключаем сигнал при смене выбора

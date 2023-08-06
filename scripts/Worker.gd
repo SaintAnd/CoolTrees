@@ -15,11 +15,10 @@ func _ready():
 
 func glowing(alpha):
 	if alpha == 1: 
-		yield(get_tree().create_timer(3), "timeout")
 		tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 1), 0.4)
 		tween.start()
 	else:
-		tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 0), 0.05)
+		tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 0), 0.08)
 		tween.start()
 		
 func _physics_process(_delta):
