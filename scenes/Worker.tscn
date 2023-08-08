@@ -90,9 +90,9 @@ tracks/0/keys = {
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 9.0
-height = 11.0
+height = 14.0
 
-[node name="Worker" type="KinematicBody2D"]
+[node name="Worker" type="KinematicBody2D" groups=["Selectable"]]
 script = ExtResource( 2 )
 
 [node name="ChangePlayer" type="Button" parent="."]
@@ -117,6 +117,9 @@ shadow_enabled = true
 
 [node name="Tween" type="Tween" parent="Sprite/Glow"]
 
+[node name="Glow_check" type="Timer" parent="Sprite/Glow"]
+wait_time = 0.1
+
 [node name="Anim" type="AnimationPlayer" parent="Sprite"]
 playback_process_mode = 0
 playback_speed = 0.8
@@ -129,7 +132,7 @@ anims/worker_idle = SubResource( 4 )
 [node name="Tween" type="Tween" parent="Sprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
 shape = SubResource( 5 )
 
 [connection signal="pressed" from="ChangePlayer" to="." method="_on_ChangePlayer_pressed"]
+[connection signal="timeout" from="Sprite/Glow/Glow_check" to="." method="glowing"]
