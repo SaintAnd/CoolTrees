@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/tree_root.gd" type="Script" id=1]
-[ext_resource path="res://pic/sprites/Resource/Ruda_Cink.png" type="Texture" id=2]
 [ext_resource path="res://pic/tiles/ground.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
@@ -112,15 +111,27 @@ tile_data = PoolIntArray( -95, 0, 0, -94, 0, 0, -93, 0, 0, -92, 0, 0, -91, 0, 0,
 
 [node name="path" type="Path2D" parent="."]
 curve = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "путь по которому проходит корень, имеет не больше 2 точек
+"
+}
 
 [node name="pathf" type="PathFollow2D" parent="path"]
+lookahead = 0.001
 
-[node name="tip" type="Sprite" parent="path/pathf"]
-visible = false
-texture = ExtResource( 2 )
+[node name="Mouse_Click" type="Area2D" parent="path/pathf"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="path/pathf/Mouse_Click"]
+polygon = PoolVector2Array( 0, 0, -304, 96, -440, 416, 448, 416, 304, 96 )
+
+[node name="Point" type="Node2D" parent="path/pathf"]
 
 [node name="roots" type="Path2D" parent="."]
 curve = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "путь по которому проходит пульсар, имеет много точек
+"
+}
 
 [node name="pulsar" type="PathFollow2D" parent="roots"]
 
@@ -139,4 +150,6 @@ sharp_limit = 16.0
 round_precision = 32
 antialiased = true
 
+[connection signal="mouse_entered" from="path/pathf/Mouse_Click" to="." method="_on_Mouse_Click_mouse_entered"]
+[connection signal="mouse_exited" from="path/pathf/Mouse_Click" to="." method="_on_Mouse_Click_mouse_exited"]
 [connection signal="body_shape_entered" from="roots/pulsar/Puls" to="." method="_on_Puls_body_shape_entered"]
