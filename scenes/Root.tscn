@@ -12,7 +12,6 @@
 script = ExtResource( 2 )
 
 [node name="tree_root" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 680 )
 
 [node name="Environment" parent="." instance=ExtResource( 1 )]
 

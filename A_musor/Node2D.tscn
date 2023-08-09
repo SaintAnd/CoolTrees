@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pic/sprites/Resource/Ruda_Cink.png" type="Texture" id=1]
+[ext_resource path="res://pic/sprites/Seed_structures/Verx.png" type="Texture" id=2]
+[ext_resource path="res://pic/sprites/Seed_structures/Rooms/room3.png" type="Texture" id=3]
+[ext_resource path="res://A_musor/Node2D.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Room3" type="Sprite" parent="."]
+position = Vector2( 1005, 298 )
+scale = Vector2( -0.065546, 7.0682 )
+texture = ExtResource( 3 )
+
+[node name="Verx" type="Sprite" parent="."]
+position = Vector2( 478, 308 )
+rotation = 1.57079
+scale = Vector2( 0.00114564, 2.00786 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 89, 308 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 30, 0 )
+scale = Vector2( 4.84454, 2.36454 )
+texture = ExtResource( 1 )

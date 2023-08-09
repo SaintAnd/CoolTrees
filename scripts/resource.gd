@@ -6,4 +6,4 @@ var full : int
 var pos = Vector2()
 
 func _init():
-	full = 1000
+	full = 100

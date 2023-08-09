@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="cool_tree"
-run/main_scene="res://scenes/Root.tscn"
+run/main_scene="res://scenes/Main_menu.tscn"
 
 [audio]
 
