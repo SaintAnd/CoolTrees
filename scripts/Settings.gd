@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-onready var com_menu = $Common_menu # меню настроек
-onready var video = $Video_menu # меню видео
-onready var audio = $Audio_menu # меню аудио
+#onready var com_menu = $Common_menu # меню настроек
+#onready var video = $Video_menu # меню видео
+#onready var audio = $Audio_menu # меню аудио
 
 	
 func show_and_hide(first, second):
