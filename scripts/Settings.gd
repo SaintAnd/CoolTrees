@@ -9,14 +9,12 @@ func show_and_hide(first, second):
 	first.hide()
 	second.show()
 	
-func _on_Video_pressed(): # если нажата кнопка видео
-	show_and_hide(com_menu, video) # открываем меню видео
-
-
-func _on_Audio_pressed(): # если нажата кнопка аудио
-	show_and_hide(com_menu, audio) # открываем меню аудио
-
 
 func _on_BackFromSettings_pressed(): # если нажата кнопка назад
+	$ButtonClickSound.play()
 	self.hide() # прячем меню настроек
 
+
+func _on_TabSettings_tab_changed(tab):
+	$ButtonClickSound.play()
+	pass # Replace with function body.

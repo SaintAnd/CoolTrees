@@ -1,6 +1,6 @@
 extends Control
 
-onready var settings  = get_node("../Common_menu") # сохраняем меню настроек
+#onready var settings  = get_node("../Common_menu") # сохраняем меню настроек
 const MUSIC_BUS = "Music"
 const FX_BUS = "SoundFX"
 
@@ -30,7 +30,3 @@ func _on_Music_value_changed(value):
 func _on_SoundFX_value_changed(value):
 	var BusInt = AudioServer.get_bus_index(FX_BUS)
 	AudioServer.set_bus_volume_db(BusInt, value)
-
-
-func _on_BackFromAudio_pressed():
-	show_and_hide(settings, self)
