@@ -4,8 +4,11 @@
 [ext_resource path="res://scripts/person_tree.gd" type="Script" id=2]
 
 [node name="Mouse" type="Node2D"]
+visible = false
 script = ExtResource( 2 )
 
 [node name="Cursor" type="Sprite" parent="."]
+light_mask = 0
 scale = Vector2( 0.09, 0.09 )
+z_index = 10
 texture = ExtResource( 1 )
