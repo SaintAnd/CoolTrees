@@ -1,8 +1,4 @@
 extends Control
-
-onready var settings  = get_node("../Common_menu") # сохраняем меню настроек
-
-
 # дальше не ебу что написано, я просто перемещала куски кода 
 
 func show_and_hide(first, second):
@@ -20,7 +16,3 @@ func _on_Borderless_toggled(button_pressed):
 
 func _on_VSync_toggled(button_pressed):
 	OS.vsync_enabled = button_pressed
-
-
-func _on_BackFromVideo_pressed():
-	show_and_hide(settings, self)
