@@ -403,7 +403,7 @@
   <property name="meta.media.progressive">1</property>
   <property name="kdenlive:clip_type">2</property>
  </producer>
- <producer id="producer8" in="00:00:00.000" out="00:20:17.800">
+ <producer id="producer8" in="00:00:00.000" out="00:20:18.120">
   <property name="length">2147483647</property>
   <property name="eof">continue</property>
   <property name="resource">black</property>
@@ -819,6 +819,9 @@
   <entry producer="chain1" in="00:00:00.000" out="00:00:01.160">
    <property name="kdenlive:id">20</property>
   </entry>
+  <entry producer="chain1" in="00:00:00.000" out="00:00:00.280">
+   <property name="kdenlive:id">20</property>
+  </entry>
   <entry producer="producer13" in="00:00:00.000" out="00:00:01.720">
    <property name="kdenlive:id">23</property>
   </entry>
@@ -827,7 +830,7 @@
   </entry>
  </playlist>
  <playlist id="playlist5"/>
- <tractor id="tractor2" in="00:00:00.000" out="00:00:17.760">
+ <tractor id="tractor2" in="00:00:00.000" out="00:00:18.080">
   <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">28</property>
@@ -944,9 +947,9 @@
   <track hide="audio" producer="playlist10"/>
   <track hide="audio" producer="playlist11"/>
  </tractor>
- <tractor id="tractor6" in="00:00:00.000" out="00:20:17.800">
-  <property name="kdenlive:duration">00:00:17:20</property>
-  <property name="kdenlive:maxduration">445</property>
+ <tractor id="tractor6" in="00:00:00.000" out="00:20:18.120">
+  <property name="kdenlive:duration">00:00:18:03</property>
+  <property name="kdenlive:maxduration">453</property>
   <property name="kdenlive:clipname">Sequence 1</property>
   <property name="kdenlive:description"/>
   <property name="kdenlive:uuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
@@ -961,13 +964,13 @@
   <property name="kdenlive:sequenceproperties.documentuuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
   <property name="kdenlive:sequenceproperties.hasAudio">1</property>
   <property name="kdenlive:sequenceproperties.hasVideo">1</property>
-  <property name="kdenlive:sequenceproperties.position">454</property>
-  <property name="kdenlive:sequenceproperties.scrollPos">999</property>
+  <property name="kdenlive:sequenceproperties.position">452</property>
+  <property name="kdenlive:sequenceproperties.scrollPos">2284</property>
   <property name="kdenlive:sequenceproperties.tracksCount">6</property>
   <property name="kdenlive:sequenceproperties.videoTarget">-1</property>
   <property name="kdenlive:sequenceproperties.zonein">0</property>
   <property name="kdenlive:sequenceproperties.zoneout">75</property>
-  <property name="kdenlive:sequenceproperties.zoom">4</property>
+  <property name="kdenlive:sequenceproperties.zoom">3</property>
   <property name="kdenlive:sequenceproperties.groups">[
 ]
 </property>
@@ -1431,8 +1434,8 @@
   <entry producer="chain6" in="00:00:00.000" out="00:00:01.160"/>
   <entry producer="chain7" in="00:00:00.000" out="00:00:09.200"/>
  </playlist>
- <tractor id="tractor7" in="00:00:00.000" out="00:00:17.800">
+ <tractor id="tractor7" in="00:00:00.000" out="00:00:18.120">
   <property name="kdenlive:projectTractor">1</property>
-  <track producer="tractor6" in="00:00:00.000" out="00:00:17.800"/>
+  <track producer="tractor6" in="00:00:00.000" out="00:00:18.120"/>
  </tractor>
 </mlt>
