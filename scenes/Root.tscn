@@ -19,18 +19,19 @@ autoplay = true
 bus = "Music"
 
 [node name="MenuButton" type="MenuButton" parent="."]
-margin_top = 2.0
-margin_right = 173.0
-margin_bottom = 157.0
+margin_left = 198.0
+margin_top = -10.0
+margin_right = 371.0
+margin_bottom = 145.0
 text = "Menu"
 script = ExtResource( 6 )
 
 [node name="BuildMenu" parent="." instance=ExtResource( 7 )]
 visible = false
-margin_left = 225.0
-margin_top = 17.0
-margin_right = 760.0
-margin_bottom = 338.0
+margin_left = 384.0
+margin_top = -65.0
+margin_right = 919.0
+margin_bottom = 256.0
 size_flags_vertical = 3
 
 [node name="Settings" parent="." instance=ExtResource( 3 )]
