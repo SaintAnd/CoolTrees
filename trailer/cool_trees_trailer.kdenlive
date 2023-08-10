@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mlt LC_NUMERIC="en_US.UTF-8" producer="main_bin" version="7.17.0" root="C:/Users/Administrator/Documents/coolpulls/trailer/CoolTrees/trailer">
  <profile frame_rate_num="25" sample_aspect_num="1" display_aspect_den="9" colorspace="709" progressive="1" description="HD 1080p 25 fps" display_aspect_num="16" frame_rate_den="1" width="1920" height="1080" sample_aspect_den="1"/>
- <producer id="producer0" in="00:00:00.000" out="00:21:00.120">
+ <producer id="producer0" in="00:00:00.000" out="00:20:31.880">
   <property name="length">2147483647</property>
   <property name="eof">continue</property>
   <property name="resource">black</property>
@@ -42,14 +42,14 @@
  </chain>
  <playlist id="playlist0">
   <property name="kdenlive:audio_track">1</property>
-  <entry producer="chain0" in="00:00:00.000" out="00:01:00.080">
+  <entry producer="chain0" in="00:00:00.000" out="00:00:31.840">
    <property name="kdenlive:id">39</property>
   </entry>
  </playlist>
  <playlist id="playlist1">
   <property name="kdenlive:audio_track">1</property>
  </playlist>
- <tractor id="tractor0" in="00:00:00.000" out="00:01:00.080">
+ <tractor id="tractor0" in="00:00:00.000" out="00:00:31.840">
   <property name="kdenlive:audio_track">1</property>
   <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:timeline_active">1</property>
@@ -814,9 +814,10 @@
   <property name="set.test_image">0</property>
  </chain>
  <playlist id="playlist6">
-  <entry producer="producer8" in="00:00:00.000" out="00:00:04.960">
+  <entry producer="producer8" in="00:00:00.000" out="00:00:02.440">
    <property name="kdenlive:id">43</property>
   </entry>
+  <blank length="00:00:02.520"/>
   <entry producer="chain8" in="00:00:00.000" out="00:00:11.560">
    <property name="kdenlive:id">17</property>
    <filter id="filter7">
@@ -885,6 +886,36 @@
   <property name="meta.media.width">1920</property>
   <property name="meta.media.height">1080</property>
  </producer>
+ <producer id="producer10" in="00:00:00.000" out="00:00:04.960">
+  <property name="length">125</property>
+  <property name="eof">pause</property>
+  <property name="resource"/>
+  <property name="meta.media.progressive">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="seekable">1</property>
+  <property name="mlt_service">kdenlivetitle</property>
+  <property name="kdenlive:duration">00:00:05:00</property>
+  <property name="kdenlive:clipname">Cool Trees</property>
+  <property name="xmldata">&lt;kdenlivetitle duration="125" LC_NUMERIC="C" width="1920" height="1080" out="124">
+ &lt;item type="QGraphicsTextItem" z-index="0">
+  &lt;position x="600" y="457">
+   &lt;transform>1,0,0,0,1,0,0,0,1&lt;/transform>
+  &lt;/position>
+  &lt;content line-spacing="0" shadow="0;#64000000;3;3;3" font-underline="0" box-height="165" font-outline-color="0,0,0,255" font="GulimChe" letter-spacing="0" font-pixel-size="144" font-italic="0" typewriter="0;2;1;0;0" alignment="1" font-weight="75" font-outline="0" box-width="720" font-color="45,40,63,255">Cool Trees&lt;/content>
+ &lt;/item>
+ &lt;startviewport rect="0,0,1920,1080"/>
+ &lt;endviewport rect="0,0,1920,1080"/>
+ &lt;background color="0,0,0,0"/>
+&lt;/kdenlivetitle>
+</property>
+  <property name="kdenlive:folderid">41</property>
+  <property name="kdenlive:id">46</property>
+  <property name="kdenlive:clip_type">2</property>
+  <property name="kdenlive:file_hash">76a16f8a55e559b8ae292d0aef7a5fee</property>
+  <property name="force_reload">0</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+ </producer>
  <chain id="chain9" out="00:00:03.640">
   <property name="length">92</property>
   <property name="eof">pause</property>
@@ -937,8 +968,11 @@
   <property name="set.test_image">0</property>
  </chain>
  <playlist id="playlist8">
-  <entry producer="producer9" in="00:00:00.000" out="00:00:04.960">
+  <entry producer="producer9" in="00:00:00.000" out="00:00:02.440">
    <property name="kdenlive:id">45</property>
+  </entry>
+  <entry producer="producer10" in="00:00:00.000" out="00:00:02.480">
+   <property name="kdenlive:id">46</property>
   </entry>
   <blank length="00:00:15.160"/>
   <entry producer="chain9" in="00:00:00.000" out="00:00:01.920">
@@ -976,9 +1010,9 @@
   <track hide="audio" producer="playlist10"/>
   <track hide="audio" producer="playlist11"/>
  </tractor>
- <tractor id="tractor6" in="00:00:00.000" out="00:21:00.120">
-  <property name="kdenlive:duration">00:01:00:03</property>
-  <property name="kdenlive:maxduration">1503</property>
+ <tractor id="tractor6" in="00:00:00.000" out="00:20:31.880">
+  <property name="kdenlive:duration">00:00:31:22</property>
+  <property name="kdenlive:maxduration">797</property>
   <property name="kdenlive:clipname">Sequence 1</property>
   <property name="kdenlive:description"/>
   <property name="kdenlive:uuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
@@ -993,13 +1027,13 @@
   <property name="kdenlive:sequenceproperties.documentuuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
   <property name="kdenlive:sequenceproperties.hasAudio">1</property>
   <property name="kdenlive:sequenceproperties.hasVideo">1</property>
-  <property name="kdenlive:sequenceproperties.position">63</property>
+  <property name="kdenlive:sequenceproperties.position">0</property>
   <property name="kdenlive:sequenceproperties.scrollPos">0</property>
   <property name="kdenlive:sequenceproperties.tracksCount">6</property>
   <property name="kdenlive:sequenceproperties.videoTarget">-1</property>
-  <property name="kdenlive:sequenceproperties.zonein">0</property>
-  <property name="kdenlive:sequenceproperties.zoneout">75</property>
-  <property name="kdenlive:sequenceproperties.zoom">9</property>
+  <property name="kdenlive:sequenceproperties.zonein">10</property>
+  <property name="kdenlive:sequenceproperties.zoneout">114</property>
+  <property name="kdenlive:sequenceproperties.zoom">4</property>
   <property name="kdenlive:sequenceproperties.groups">[
     {
         "children": [
@@ -1173,7 +1207,7 @@
   <property name="kdenlive:file_hash">6b8e2fe9d9f4f2d1fc470f041456538e</property>
   <property name="kdenlive:audio_max0">226</property>
  </chain>
- <producer id="producer10" in="00:00:00.000" out="00:00:00.920">
+ <producer id="producer11" in="00:00:00.000" out="00:00:00.920">
   <property name="length">24</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/village/fernando-henrique-vila-livre-11.gif</property>
@@ -1216,7 +1250,7 @@
   <property name="meta.media.progressive">1</property>
   <property name="kdenlive:clip_type">2</property>
  </producer>
- <producer id="producer11" in="00:00:00.000" out="00:00:00.920">
+ <producer id="producer12" in="00:00:00.000" out="00:00:00.920">
   <property name="length">24</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/village/fernando-henrique-vila-livre-windmill.gif</property>
@@ -1260,7 +1294,7 @@
   <property name="kdenlive:clip_type">2</property>
   <property name="warp_pitch">1</property>
  </producer>
- <producer id="producer12" in="00:00:00.000" out="00:00:00.360">
+ <producer id="producer13" in="00:00:00.000" out="00:00:00.360">
   <property name="length">10</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/village/MRZ5ts9d.gif</property>
@@ -1657,7 +1691,7 @@
   <property name="kdenlive:file_size">1633630</property>
   <property name="kdenlive:file_hash">46e0444915639f3bb3521faf715f402e</property>
  </chain>
- <producer id="producer13" in="00:00:00.000" out="00:00:01.160">
+ <producer id="producer14" in="00:00:00.000" out="00:00:01.160">
   <property name="length">30</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/tree_groved.gif</property>
@@ -1700,7 +1734,7 @@
   <property name="meta.media.progressive">1</property>
   <property name="kdenlive:clip_type">2</property>
  </producer>
- <producer id="producer14" in="00:00:00.000" out="00:00:02.160">
+ <producer id="producer15" in="00:00:00.000" out="00:00:02.160">
   <property name="length">55</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/flowers-gif.gif</property>
@@ -1743,7 +1777,7 @@
   <property name="meta.media.progressive">1</property>
   <property name="kdenlive:clip_type">2</property>
  </producer>
- <producer id="producer15" in="00:00:00.000" out="00:00:02.360">
+ <producer id="producer16" in="00:00:00.000" out="00:00:02.360">
   <property name="length">60</property>
   <property name="eof">pause</property>
   <property name="resource">pic/gif/tree_begin/tree_begin.gif</property>
@@ -2022,9 +2056,9 @@
   <entry producer="tractor6" in="00:00:00.000" out="00:00:44.120"/>
   <entry producer="chain10" in="00:00:00.000" out="00:02:09.440"/>
   <entry producer="chain11" in="00:00:00.000" out="00:01:00.080"/>
-  <entry producer="producer10" in="00:00:00.000" out="00:00:00.920"/>
   <entry producer="producer11" in="00:00:00.000" out="00:00:00.920"/>
-  <entry producer="producer12" in="00:00:00.000" out="00:00:00.360"/>
+  <entry producer="producer12" in="00:00:00.000" out="00:00:00.920"/>
+  <entry producer="producer13" in="00:00:00.000" out="00:00:00.360"/>
   <entry producer="chain12" in="00:00:00.000" out="00:00:20.360"/>
   <entry producer="chain13" in="00:00:00.000" out="00:00:31.560"/>
   <entry producer="chain14" in="00:00:00.000" out="00:00:01.160"/>
@@ -2034,18 +2068,19 @@
   <entry producer="producer5" in="00:00:00.000" out="00:00:04.960"/>
   <entry producer="chain18" in="00:00:00.000" out="00:00:19.160"/>
   <entry producer="chain19" in="00:00:00.000" out="00:00:03.640"/>
-  <entry producer="producer13" in="00:00:00.000" out="00:00:01.160"/>
-  <entry producer="producer14" in="00:00:00.000" out="00:00:02.160"/>
-  <entry producer="producer15" in="00:00:00.000" out="00:00:02.360"/>
+  <entry producer="producer14" in="00:00:00.000" out="00:00:01.160"/>
+  <entry producer="producer15" in="00:00:00.000" out="00:00:02.160"/>
+  <entry producer="producer16" in="00:00:00.000" out="00:00:02.360"/>
   <entry producer="chain20" in="00:00:00.000" out="00:00:35.960"/>
   <entry producer="chain21" in="00:00:00.000" out="00:00:09.200"/>
   <entry producer="producer8" in="00:00:00.000" out="00:00:04.960"/>
   <entry producer="chain22" in="00:00:00.000" out="00:09:59.960"/>
   <entry producer="producer1" in="00:00:00.000" out="00:00:04.960"/>
   <entry producer="producer9" in="00:00:00.000" out="00:00:04.960"/>
+  <entry producer="producer10" in="00:00:00.000" out="00:00:04.960"/>
  </playlist>
- <tractor id="tractor7" in="00:00:00.000" out="00:01:00.120">
+ <tractor id="tractor7" in="00:00:00.000" out="00:00:31.880">
   <property name="kdenlive:projectTractor">1</property>
-  <track producer="tractor6" in="00:00:00.000" out="00:01:00.120"/>
+  <track producer="tractor6" in="00:00:00.000" out="00:00:31.880"/>
  </tractor>
 </mlt>
