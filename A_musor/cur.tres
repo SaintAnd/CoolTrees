@@ -1,0 +1,7 @@
+[gd_resource type="Curve" load_steps=2 format=2]
+
+[ext_resource path="res://A_musor/script.gd" type="Script" id=1]
+
+[resource]
+_data = [ Vector2( 0, 0 ), 0.0, 1.5, 0, 0, Vector2( 0.5, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.0, 0.0, 0, 0 ]
+script = ExtResource( 1 )

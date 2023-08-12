@@ -1,21 +1,5 @@
-extends KinematicBody2D
-
-var speed = 200
-func _ready():
-	pass # Replace with function body.
+extends Node2D
 
 
-func _process(delta):
-	var velocity = Vector2()
-	if Input.is_action_pressed("Up"):
-		velocity.y -= speed
-	if Input.is_action_pressed("Down"):
-		velocity.y += speed
-	if Input.is_action_pressed("Left"):
-		velocity.x -= speed
-	if Input.is_action_pressed("Right"):
-		velocity.x += speed
-	move_and_slide(velocity)
-	position.x = clamp(position.x, 0,1000)
-	position.y = clamp(position.y, 0,1000)
-	
+func _process(_delta):
+	self.position = get_global_mouse_position()

@@ -1,27 +1,37 @@
 class_name ZoomingCamera2D
 extends Camera2D
 
+# Задаём переменной путь до ренгена желудя.
+onready var imageVerx = get_node("/root/Root/Environment/Seed/Verx")
 
-# Lower cap for the `_zoom_level`.
+
+
+
+#Отвечает за блокировку камеры и блокировку приближения на Enter
+onready var start = false
+# Минимальное значение для зума `_zoom_level`.
 export var min_zoom := 0.5
-# Upper cap for the `_zoom_level`.
+# Максимальное значение для зума `_zoom_level`.
 export var max_zoom := 2.0
-# Controls how much we increase or decrease the `_zoom_level` on every turn of the scroll wheel.
+# Контролирует, насколько мы увеличиваем или уменьшаем `_zoom_level` при каждом прокручивание колесика мыши.
 export var zoom_factor := 0.1
-# Duration of the zoom's tween animation.
+# Продолжительность анимации движения зума.
 export var zoom_duration := 0.2
 
-# The camera's target zoom level.
+# Целевой уровень масштабирования камеры.
 var _zoom_level := 1.0 setget _set_zoom_level
 
-# We store a reference to the scene's tween node.
+# Присваиваем переменной tween узел анимации $Tween
 onready var tween: Tween = $Tween
 
+
+
 func _set_zoom_level(value: float) -> void:
-	# We limit the value between `min_zoom` and `max_zoom`
+	# Задаём лимит значений между `min_zoom` и `max_zoom`
 	_zoom_level = clamp(value, min_zoom, max_zoom)
-	# Then, we ask the tween node to animate the camera's `zoom` property from its current value
-	# to the target zoom level.
+
+	
+	# Делаем плавную анимацию.	
 	tween.interpolate_property(
 		self,
 		"zoom",
@@ -29,20 +39,64 @@ func _set_zoom_level(value: float) -> void:
 		Vector2(_zoom_level, _zoom_level),
 		zoom_duration,
 		tween.TRANS_SINE,
-		# Easing out means we start fast and slow down as we reach the target value.
 		tween.EASE_OUT
 	)
 	tween.start()
+	
+	
 
 func _unhandled_input(event):
-	if event.is_action_pressed("zoom_in"):
-		# Inside a given class, we need to either write `self._zoom_level = ...` or explicitly
-		# call the setter function to use it.
+	# Задаём условие для запрета приближения камеры до нажатия на ENTER
+	if start == true:
+		# Приближение камеры
+		if event.is_action_pressed("zoom_in"):
+			# Внутри данного класса нам нужно либо написать `self._zoom_level = ...` или точно
+			# вызвать функцию установки, чтобы использовать ее.
+			_set_zoom_level(_zoom_level - zoom_factor)
+		# Отдаление камеры
+		if event.is_action_pressed("zoom_out"):
+			_set_zoom_level(_zoom_level + zoom_factor)
+		
+		# Задаём значение переменной Start, чтобы после нажатия на ENTER зум вновь заработал
+	if start == false and event.is_action_pressed("Enter"):
+		
+		
 		_set_zoom_level(_zoom_level - zoom_factor)
-	if event.is_action_pressed("zoom_out"):
-		_set_zoom_level(_zoom_level + zoom_factor)
+		
+		
+		start = true # Задаём значение true, чтобы условия приближения на колесико начинали работать
+		zoom_duration = 1.25 # Плавность приближения
+		
 		
 
+		# Анимация
+		tween.interpolate_property(
+			self,
+			"zoom",
+			zoom,
+			Vector2(0.8, 0.8),
+			zoom_duration,
+			tween.TRANS_SINE,
+			tween.EASE_OUT
+		)
+		tween.start()
 	
+	# Сетку не видно, когда приближение на 1-е	
+	if _zoom_level > 1:
+		imageVerx.visible = true
+	# Сетку видно, когда приближение меньше 1-ы
+	elif _zoom_level < 1:
+		imageVerx.visible = false
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
