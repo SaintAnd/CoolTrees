@@ -33,6 +33,7 @@ limit_bottom = 1500
 position = Vector2( -4, -10 )
 
 [node name="Text_scenes" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( -462, -292 )
 z_index = 5
 
