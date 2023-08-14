@@ -1385,7 +1385,7 @@
  <tractor id="tractor3" in="00:00:00.000" out="00:00:47.160">
   <property name="kdenlive:audio_track">1</property>
   <property name="kdenlive:trackheight">67</property>
-  <property name="kdenlive:timeline_active">1</property>
+  <property name="kdenlive:timeline_active">0</property>
   <property name="kdenlive:collapsed">28</property>
   <property name="kdenlive:thumbs_format"/>
   <property name="kdenlive:audio_rec"/>
@@ -1641,7 +1641,7 @@
  <chain id="chain7" out="00:00:16.680">
   <property name="length">418</property>
   <property name="eof">pause</property>
-  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4</property>
+  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4.mp4</property>
   <property name="mlt_service">avformat-novalidate</property>
   <property name="seekable">1</property>
   <property name="audio_index">1</property>
@@ -1649,15 +1649,15 @@
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:clip_type">0</property>
   <property name="kdenlive:folderid">54</property>
-  <property name="kdenlive:id">61</property>
+  <property name="kdenlive:id">62</property>
   <property name="mute_on_pause">0</property>
-  <property name="kdenlive:file_size">4765034</property>
-  <property name="kdenlive:file_hash">0d1cbaebcacab344c569019b52b9aa82</property>
-  <property name="kdenlive:audio_max1">250</property>
+  <property name="kdenlive:file_size">4603900</property>
+  <property name="kdenlive:file_hash">df170f80d6f90f7ad923356219859fa6</property>
+  <property name="kdenlive:audio_max1">249</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
-  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
   <property name="meta.media.0.codec.width">1754</property>
   <property name="meta.media.0.codec.height">914</property>
   <property name="meta.media.0.codec.rotate">0</property>
@@ -1666,22 +1666,22 @@
   <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">2159178</property>
+  <property name="meta.media.0.codec.bit_rate">2080631</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.media.1.stream.type">audio</property>
   <property name="meta.media.1.codec.sample_fmt">fltp</property>
   <property name="meta.media.1.codec.sample_rate">44100</property>
   <property name="meta.media.1.codec.channels">2</property>
-  <property name="meta.media.1.codec.name">mp3float</property>
-  <property name="meta.media.1.codec.long_name">MP3 (MPEG audio layer 3)</property>
-  <property name="meta.media.1.codec.bit_rate">127999</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">128564</property>
   <property name="meta.attr.1.stream.handler_name.markup">SoundHandler</property>
   <property name="meta.attr.1.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
   <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
-  <property name="meta.attr.encoder.markup">Lavf55.19.104</property>
+  <property name="meta.attr.encoder.markup">Lavf58.76.100</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
   <property name="meta.media.frame_rate_num">30</property>
@@ -1779,13 +1779,13 @@
     <property name="kdenlive:collapsed">0</property>
    </filter>
   </entry>
-  <blank length="00:00:13.480"/>
-  <entry producer="chain7" in="00:00:02.320" out="00:00:05.040">
-   <property name="kdenlive:id">61</property>
+  <blank length="00:00:14.160"/>
+  <entry producer="chain7" in="00:00:02.200" out="00:00:04.800">
+   <property name="kdenlive:id">62</property>
   </entry>
  </playlist>
  <playlist id="playlist9"/>
- <tractor id="tractor4" in="00:00:00.000" out="00:00:54.040">
+ <tractor id="tractor4" in="00:00:00.000" out="00:00:54.600">
   <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:timeline_active">0</property>
   <property name="kdenlive:collapsed">28</property>
@@ -1946,7 +1946,7 @@
  <chain id="chain26" out="00:00:16.680">
   <property name="length">418</property>
   <property name="eof">pause</property>
-  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4</property>
+  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4.mp4</property>
   <property name="mlt_service">avformat-novalidate</property>
   <property name="seekable">1</property>
   <property name="audio_index">1</property>
@@ -1954,15 +1954,15 @@
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:clip_type">0</property>
   <property name="kdenlive:folderid">54</property>
-  <property name="kdenlive:id">61</property>
+  <property name="kdenlive:id">62</property>
   <property name="mute_on_pause">0</property>
-  <property name="kdenlive:file_size">4765034</property>
-  <property name="kdenlive:file_hash">0d1cbaebcacab344c569019b52b9aa82</property>
-  <property name="kdenlive:audio_max1">250</property>
+  <property name="kdenlive:file_size">4603900</property>
+  <property name="kdenlive:file_hash">df170f80d6f90f7ad923356219859fa6</property>
+  <property name="kdenlive:audio_max1">249</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
-  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
   <property name="meta.media.0.codec.width">1754</property>
   <property name="meta.media.0.codec.height">914</property>
   <property name="meta.media.0.codec.rotate">0</property>
@@ -1971,22 +1971,22 @@
   <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">2159178</property>
+  <property name="meta.media.0.codec.bit_rate">2080631</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.media.1.stream.type">audio</property>
   <property name="meta.media.1.codec.sample_fmt">fltp</property>
   <property name="meta.media.1.codec.sample_rate">44100</property>
   <property name="meta.media.1.codec.channels">2</property>
-  <property name="meta.media.1.codec.name">mp3float</property>
-  <property name="meta.media.1.codec.long_name">MP3 (MPEG audio layer 3)</property>
-  <property name="meta.media.1.codec.bit_rate">127999</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">128564</property>
   <property name="meta.attr.1.stream.handler_name.markup">SoundHandler</property>
   <property name="meta.attr.1.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
   <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
-  <property name="meta.attr.encoder.markup">Lavf55.19.104</property>
+  <property name="meta.attr.encoder.markup">Lavf58.76.100</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
   <property name="meta.media.frame_rate_num">30</property>
@@ -2047,13 +2047,13 @@
   <entry producer="chain9" in="00:00:00.000" out="00:00:01.160">
    <property name="kdenlive:id">20</property>
   </entry>
-  <blank length="00:00:19.560"/>
-  <entry producer="chain26" in="00:00:06.040" out="00:00:10.640">
-   <property name="kdenlive:id">61</property>
+  <blank length="00:00:19.840"/>
+  <entry producer="chain26" in="00:00:05.840" out="00:00:08.360">
+   <property name="kdenlive:id">62</property>
   </entry>
  </playlist>
  <playlist id="playlist11"/>
- <tractor id="tractor5" in="00:00:00.000" out="00:00:57.560">
+ <tractor id="tractor5" in="00:00:00.000" out="00:00:55.760">
   <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">28</property>
@@ -2227,7 +2227,7 @@
  <chain id="chain31" out="00:00:16.680">
   <property name="length">418</property>
   <property name="eof">pause</property>
-  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4</property>
+  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4.mp4</property>
   <property name="mlt_service">avformat-novalidate</property>
   <property name="seekable">1</property>
   <property name="audio_index">1</property>
@@ -2235,15 +2235,15 @@
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:clip_type">0</property>
   <property name="kdenlive:folderid">54</property>
-  <property name="kdenlive:id">61</property>
+  <property name="kdenlive:id">62</property>
   <property name="mute_on_pause">0</property>
-  <property name="kdenlive:file_size">4765034</property>
-  <property name="kdenlive:file_hash">0d1cbaebcacab344c569019b52b9aa82</property>
-  <property name="kdenlive:audio_max1">250</property>
+  <property name="kdenlive:file_size">4603900</property>
+  <property name="kdenlive:file_hash">df170f80d6f90f7ad923356219859fa6</property>
+  <property name="kdenlive:audio_max1">249</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
-  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
   <property name="meta.media.0.codec.width">1754</property>
   <property name="meta.media.0.codec.height">914</property>
   <property name="meta.media.0.codec.rotate">0</property>
@@ -2252,22 +2252,22 @@
   <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">2159178</property>
+  <property name="meta.media.0.codec.bit_rate">2080631</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.media.1.stream.type">audio</property>
   <property name="meta.media.1.codec.sample_fmt">fltp</property>
   <property name="meta.media.1.codec.sample_rate">44100</property>
   <property name="meta.media.1.codec.channels">2</property>
-  <property name="meta.media.1.codec.name">mp3float</property>
-  <property name="meta.media.1.codec.long_name">MP3 (MPEG audio layer 3)</property>
-  <property name="meta.media.1.codec.bit_rate">127999</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">128564</property>
   <property name="meta.attr.1.stream.handler_name.markup">SoundHandler</property>
   <property name="meta.attr.1.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
   <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
-  <property name="meta.attr.encoder.markup">Lavf55.19.104</property>
+  <property name="meta.attr.encoder.markup">Lavf58.76.100</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
   <property name="meta.media.frame_rate_num">30</property>
@@ -2374,13 +2374,13 @@
     <property name="alpha">00:00:00.000=1;00:00:00.040=0</property>
    </filter>
   </entry>
-  <blank length="00:00:23.040"/>
-  <entry producer="chain31" in="00:00:12.320" out="00:00:16.680">
-   <property name="kdenlive:id">61</property>
+  <blank length="00:00:21.680"/>
+  <entry producer="chain31" in="00:00:12.080" out="00:00:14.480">
+   <property name="kdenlive:id">62</property>
   </entry>
  </playlist>
  <playlist id="playlist13"/>
- <tractor id="tractor6" in="00:00:00.000" out="00:01:00.800">
+ <tractor id="tractor6" in="00:00:00.000" out="00:00:57.480">
   <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">28</property>
@@ -2520,8 +2520,8 @@
   <track hide="audio" producer="playlist15"/>
  </tractor>
  <tractor id="tractor8" in="00:00:00.000" out="00:22:02.040">
-  <property name="kdenlive:duration">00:01:00:21</property>
-  <property name="kdenlive:maxduration">1521</property>
+  <property name="kdenlive:duration">00:00:57:13</property>
+  <property name="kdenlive:maxduration">1438</property>
   <property name="kdenlive:clipname">Sequence 1</property>
   <property name="kdenlive:description"/>
   <property name="kdenlive:uuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
@@ -2530,14 +2530,14 @@
   <property name="kdenlive:clip_type">0</property>
   <property name="kdenlive:file_hash">48d490b746495d6cd7a90da08d69b7f9</property>
   <property name="kdenlive:folderid">15</property>
-  <property name="kdenlive:sequenceproperties.activeTrack">4</property>
+  <property name="kdenlive:sequenceproperties.activeTrack">6</property>
   <property name="kdenlive:sequenceproperties.audioTarget">-1</property>
   <property name="kdenlive:sequenceproperties.disablepreview">0</property>
   <property name="kdenlive:sequenceproperties.documentuuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
   <property name="kdenlive:sequenceproperties.hasAudio">1</property>
   <property name="kdenlive:sequenceproperties.hasVideo">1</property>
-  <property name="kdenlive:sequenceproperties.position">1289</property>
-  <property name="kdenlive:sequenceproperties.scrollPos">3230</property>
+  <property name="kdenlive:sequenceproperties.position">1437</property>
+  <property name="kdenlive:sequenceproperties.scrollPos">3521</property>
   <property name="kdenlive:sequenceproperties.tracksCount">8</property>
   <property name="kdenlive:sequenceproperties.videoTarget">-1</property>
   <property name="kdenlive:sequenceproperties.zonein">0</property>
@@ -2613,10 +2613,10 @@
    <property name="accepts_blanks">1</property>
    <property name="sum">1</property>
   </transition>
-  <transition id="transition4" in="00:00:56.440" out="00:00:57.560">
+  <transition id="transition4" in="00:00:55.080" out="00:00:55.760">
    <property name="a_track">6</property>
    <property name="b_track">7</property>
-   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:01.120=0% 0% 100% 100% 100%</property>
+   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:00.680=0% 0% 100% 100% 100%</property>
    <property name="factory">loader</property>
    <property name="aligned">0</property>
    <property name="progressive">1</property>
@@ -2669,10 +2669,10 @@
    <property name="luma_invert">0</property>
    <property name="fill">1</property>
   </transition>
-  <transition id="transition8" in="00:00:31.000" out="00:00:31.360">
+  <transition id="transition8" in="00:00:53.240" out="00:00:54.600">
    <property name="a_track">5</property>
    <property name="b_track">6</property>
-   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:00.360=0% 0% 100% 100% 100%</property>
+   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:01.360=0% 0% 100% 100% 100%</property>
    <property name="factory">loader</property>
    <property name="aligned">0</property>
    <property name="progressive">1</property>
@@ -2683,10 +2683,10 @@
    <property name="luma_invert">0</property>
    <property name="fill">1</property>
   </transition>
-  <transition id="transition9" in="00:00:52.960" out="00:00:54.040">
+  <transition id="transition9" in="00:00:31.000" out="00:00:31.360">
    <property name="a_track">5</property>
    <property name="b_track">6</property>
-   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:01.080=0% 0% 100% 100% 100%</property>
+   <property name="geometry">00:00:00.000=0% 0% 100% 100% 0%;00:00:00.360=0% 0% 100% 100% 100%</property>
    <property name="factory">loader</property>
    <property name="aligned">0</property>
    <property name="progressive">1</property>
@@ -3106,12 +3106,12 @@
  <chain id="chain42" out="00:00:16.680">
   <property name="length">418</property>
   <property name="eof">pause</property>
-  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4</property>
+  <property name="resource">video/14.00gameplay_cool_trees_Seasons-0001.mp4.mp4</property>
   <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
-  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
   <property name="meta.media.0.codec.width">1754</property>
   <property name="meta.media.0.codec.height">914</property>
   <property name="meta.media.0.codec.rotate">0</property>
@@ -3120,22 +3120,22 @@
   <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">2159178</property>
+  <property name="meta.media.0.codec.bit_rate">2080631</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.media.1.stream.type">audio</property>
   <property name="meta.media.1.codec.sample_fmt">fltp</property>
   <property name="meta.media.1.codec.sample_rate">44100</property>
   <property name="meta.media.1.codec.channels">2</property>
-  <property name="meta.media.1.codec.name">mp3float</property>
-  <property name="meta.media.1.codec.long_name">MP3 (MPEG audio layer 3)</property>
-  <property name="meta.media.1.codec.bit_rate">127999</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">128564</property>
   <property name="meta.attr.1.stream.handler_name.markup">SoundHandler</property>
   <property name="meta.attr.1.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
   <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
-  <property name="meta.attr.encoder.markup">Lavf55.19.104</property>
+  <property name="meta.attr.encoder.markup">Lavf58.76.100</property>
   <property name="seekable">1</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
@@ -3154,11 +3154,11 @@
   <property name="meta.media.progressive">1</property>
   <property name="kdenlive:clip_type">0</property>
   <property name="kdenlive:folderid">54</property>
-  <property name="kdenlive:id">61</property>
+  <property name="kdenlive:id">62</property>
   <property name="mute_on_pause">0</property>
-  <property name="kdenlive:file_size">4765034</property>
-  <property name="kdenlive:file_hash">0d1cbaebcacab344c569019b52b9aa82</property>
-  <property name="kdenlive:audio_max1">250</property>
+  <property name="kdenlive:file_size">4603900</property>
+  <property name="kdenlive:file_hash">df170f80d6f90f7ad923356219859fa6</property>
+  <property name="kdenlive:audio_max1">249</property>
  </chain>
  <playlist id="main_bin">
   <property name="kdenlive:folder.-1.15">Sequences</property>
@@ -3314,8 +3314,8 @@
   <entry producer="chain41" in="00:00:00.000" out="00:00:10.080"/>
   <entry producer="chain42" in="00:00:00.000" out="00:00:16.680"/>
  </playlist>
- <tractor id="tractor9" in="00:00:00.000" out="00:01:00.840">
+ <tractor id="tractor9" in="00:00:00.000" out="00:00:57.520">
   <property name="kdenlive:projectTractor">1</property>
-  <track producer="tractor8" in="00:00:00.000" out="00:01:00.840"/>
+  <track producer="tractor8" in="00:00:00.000" out="00:00:57.520"/>
  </tractor>
 </mlt>
