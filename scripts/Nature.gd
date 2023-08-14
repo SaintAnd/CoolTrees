@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var start = false
+onready var start = true # Включил переменную на true чтобы не нажимать Enter
 var can_place = true
 var is_panning = true;
 onready var editor = get_node("../../Environment/cam_container")

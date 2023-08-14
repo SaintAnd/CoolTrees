@@ -7,19 +7,23 @@
 [ext_resource path="res://sounds_and_music/game_music.wav" type="AudioStream" id=5]
 [ext_resource path="res://scripts/MenuButton.gd" type="Script" id=6]
 [ext_resource path="res://scenes/BuildMenul.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pic/sprites/background/forest_background.png" type="Texture" id=8]
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="HUD" parent="." instance=ExtResource( 8 )]
-position = Vector2( -491, -98 )
-z_index = 10
+[node name="ForestBackground" type="Sprite" parent="."]
+position = Vector2( -703, -398 )
+scale = Vector2( 2.04246, 2.04246 )
+texture = ExtResource( 8 )
+
+[node name="ForestBackground" type="Sprite" parent="ForestBackground"]
+position = Vector2( 800.017, 1.95844 )
+texture = ExtResource( 8 )
 
 [node name="tree_root" parent="." instance=ExtResource( 4 )]
 
 [node name="Environment" parent="." instance=ExtResource( 1 )]
-position = Vector2( 22, -6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -28,11 +32,10 @@ autoplay = true
 bus = "Music"
 
 [node name="MenuButton" type="MenuButton" parent="."]
-visible = false
 margin_left = 198.0
 margin_top = -10.0
 margin_right = 371.0
-margin_bottom = 37.0
+margin_bottom = 145.0
 text = "Menu"
 script = ExtResource( 6 )
 
