@@ -8,7 +8,7 @@ onready var imageVerx = get_node("/root/Root/Environment/Seed/Verx")
 
 
 #Отвечает за блокировку камеры и блокировку приближения на Enter
-onready var start = false
+onready var start = true # Включил переменную на true чтобы не нажимать Enter
 # Минимальное значение для зума `_zoom_level`.
 export var min_zoom := 0.5
 # Максимальное значение для зума `_zoom_level`.
@@ -58,9 +58,9 @@ func _unhandled_input(event):
 			_set_zoom_level(_zoom_level + zoom_factor)
 		
 		# Задаём значение переменной Start, чтобы после нажатия на ENTER зум вновь заработал
-	if start == false and event.is_action_pressed("Enter"):
-		
-		
+	#if start == false and event.is_action_pressed("Enter"):
+func _ready():
+	if start == true:
 		_set_zoom_level(_zoom_level - zoom_factor)
 		
 		

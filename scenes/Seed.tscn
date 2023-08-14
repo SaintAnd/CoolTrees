@@ -42,6 +42,16 @@ build_mode = 1
 polygon = PoolVector2Array( 63, -55, -63, -55, -63, 56, 63, 56 )
 
 [node name="Room" type="Sprite" parent="Rentgenn/Rooms/Room1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rentgenn/Rooms/Room1"]
+position = Vector2( 0, 56.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rentgenn/Rooms/Room1"]
+build_mode = 1
+polygon = PoolVector2Array( 63, -55, -63, -55, -63, 56, 63, 56 )
+
+[node name="Sprite" type="Sprite" parent="Rentgenn/Rooms/Room1"]
 texture = ExtResource( 4 )
 
 [node name="Room2" type="StaticBody2D" parent="Rentgenn/Rooms"]

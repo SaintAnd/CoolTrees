@@ -17,4 +17,9 @@ func _ready():
 		#$Items.add_child(new_item)
 		#new_item.set_item(items[a])
 		#new_item.position = Vector2(int(rand_range(0,16*59)), int(rand_range(16*30,16*44)))
+	
 	pass 
+
+
+
+	

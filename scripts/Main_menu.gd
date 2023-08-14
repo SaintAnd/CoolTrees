@@ -20,13 +20,16 @@ func toggle():
 	
 	
 func _on_Start_pressed():
-	toggle()
+	$Click.play()
 	get_tree().change_scene('res://scenes/Root.tscn')
+	
 
 
 func _on_Settings2_pressed():
+	$Click.play()
 	settings.show()
 
 	
 func _on_Quit_pressed():
+	$Click.play()
 	get_tree().quit()
