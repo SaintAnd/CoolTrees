@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Res",
+"language": "GDScript",
+"path": "res://scripts/resource.gd"
+}, {
 "base": "Camera2D",
 "class": "ZoomingCamera2D",
 "language": "GDScript",
 "path": "res://scripts/Camera.gd"
 } ]
 _global_script_class_icons={
+"Res": "",
 "ZoomingCamera2D": ""
 }
 
@@ -36,10 +42,12 @@ window/stretch/aspect="keep"
 [global]
 
 audio=false
+"шрифт"=false
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom_font="res://Font.tres"
 
 [input]
 

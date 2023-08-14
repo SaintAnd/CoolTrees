@@ -37,147 +37,144 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Graphics" type="Panel" parent="TabSettings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 26.0
-margin_right = -4.0
-margin_bottom = -8.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="Video_menu" type="Control" parent="TabSettings/Graphics"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 3 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabSettings/Graphics/Video_menu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -48.5
-margin_top = -40.0
-margin_right = 48.5
-margin_bottom = 40.0
-
-[node name="Labels" type="VBoxContainer" parent="TabSettings/Graphics/Video_menu/HBoxContainer"]
-margin_right = 69.0
-margin_bottom = 92.0
-
-[node name="FullScreen" type="Label" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Labels"]
-margin_top = 7.0
-margin_right = 69.0
-margin_bottom = 21.0
-size_flags_vertical = 6
-text = "FullScreen"
-
-[node name="Borderless" type="Label" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Labels"]
-margin_top = 39.0
-margin_right = 69.0
-margin_bottom = 53.0
-size_flags_vertical = 6
-text = "Borderless"
-
-[node name="VSync" type="Label" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Labels"]
-margin_top = 71.0
-margin_right = 69.0
-margin_bottom = 85.0
-size_flags_vertical = 6
-text = "VSync"
-
-[node name="Checks" type="VBoxContainer" parent="TabSettings/Graphics/Video_menu/HBoxContainer"]
-margin_left = 73.0
-margin_right = 97.0
-margin_bottom = 92.0
-
-[node name="FullScreen" type="CheckBox" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Checks"]
-margin_right = 24.0
-margin_bottom = 28.0
-
-[node name="Borderless" type="CheckBox" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Checks"]
-margin_top = 32.0
-margin_right = 24.0
-margin_bottom = 60.0
-
-[node name="VSync" type="CheckBox" parent="TabSettings/Graphics/Video_menu/HBoxContainer/Checks"]
-margin_top = 64.0
-margin_right = 24.0
-margin_bottom = 92.0
-
-[node name="Audio" type="Panel" parent="TabSettings"]
+[node name="Графика" type="Panel" parent="TabSettings"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 22.0
+margin_top = 31.0
+margin_right = -4.0
+margin_bottom = -8.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Video_menu" type="Control" parent="TabSettings/Графика"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabSettings/Графика/Video_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 144.0
+margin_top = 141.0
+margin_right = -53.0
+margin_bottom = -119.0
+
+[node name="Labels" type="VBoxContainer" parent="TabSettings/Графика/Video_menu/HBoxContainer"]
+margin_right = 225.0
+margin_bottom = 101.0
+
+[node name="FullScreen" type="Label" parent="TabSettings/Графика/Video_menu/HBoxContainer/Labels"]
+margin_top = 6.0
+margin_right = 225.0
+margin_bottom = 25.0
+size_flags_vertical = 6
+text = "Полноэкранный режим"
+
+[node name="Borderless" type="Label" parent="TabSettings/Графика/Video_menu/HBoxContainer/Labels"]
+margin_top = 41.0
+margin_right = 225.0
+margin_bottom = 60.0
+size_flags_vertical = 6
+text = "Окно без рамок"
+
+[node name="VSync" type="Label" parent="TabSettings/Графика/Video_menu/HBoxContainer/Labels"]
+margin_top = 76.0
+margin_right = 225.0
+margin_bottom = 95.0
+size_flags_vertical = 6
+text = "Вертикальная синхронизация"
+
+[node name="Checks" type="VBoxContainer" parent="TabSettings/Графика/Video_menu/HBoxContainer"]
+margin_left = 229.0
+margin_right = 253.0
+margin_bottom = 101.0
+
+[node name="FullScreen" type="CheckBox" parent="TabSettings/Графика/Video_menu/HBoxContainer/Checks"]
+margin_right = 24.0
+margin_bottom = 31.0
+
+[node name="Borderless" type="CheckBox" parent="TabSettings/Графика/Video_menu/HBoxContainer/Checks"]
+margin_top = 35.0
+margin_right = 24.0
+margin_bottom = 66.0
+
+[node name="VSync" type="CheckBox" parent="TabSettings/Графика/Video_menu/HBoxContainer/Checks"]
+margin_top = 70.0
+margin_right = 24.0
+margin_bottom = 101.0
+
+[node name="Аудио" type="Panel" parent="TabSettings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 31.0
 margin_right = -4.0
 margin_bottom = -8.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="Audio_menu" type="Control" parent="TabSettings/Audio"]
+[node name="Audio_menu" type="Control" parent="TabSettings/Аудио"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabSettings/Audio/Audio_menu"]
-anchor_left = 0.5
-anchor_top = 0.5
+[node name="HBoxContainer" type="HBoxContainer" parent="TabSettings/Аудио/Audio_menu"]
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -102.0
-margin_top = -28.0
+margin_left = 156.0
+margin_top = 152.5
 margin_right = 102.0
 margin_bottom = 28.0
 
-[node name="Labels" type="VBoxContainer" parent="TabSettings/Audio/Audio_menu/HBoxContainer"]
-margin_right = 58.0
-margin_bottom = 56.0
+[node name="Labels" type="VBoxContainer" parent="TabSettings/Аудио/Audio_menu/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 65.0
 
-[node name="Master" type="Label" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Labels"]
-margin_top = 1.0
-margin_right = 58.0
-margin_bottom = 15.0
+[node name="Master" type="Label" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Labels"]
+margin_right = 60.0
+margin_bottom = 19.0
 size_flags_vertical = 6
-text = "Master"
+text = "Общее"
 
-[node name="Music" type="Label" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Labels"]
-margin_top = 21.0
-margin_right = 58.0
-margin_bottom = 35.0
+[node name="Music" type="Label" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Labels"]
+margin_top = 23.0
+margin_right = 60.0
+margin_bottom = 42.0
 size_flags_vertical = 6
-text = "Music"
+text = "Музыка"
 
-[node name="Sound FX" type="Label" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Labels"]
-margin_top = 41.0
-margin_right = 58.0
-margin_bottom = 55.0
+[node name="Sound FX" type="Label" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Labels"]
+margin_top = 46.0
+margin_right = 60.0
+margin_bottom = 65.0
 size_flags_vertical = 6
-text = "Sound FX"
+text = "Звуки"
 
-[node name="Slider" type="VBoxContainer" parent="TabSettings/Audio/Audio_menu/HBoxContainer"]
-margin_left = 62.0
+[node name="Slider" type="VBoxContainer" parent="TabSettings/Аудио/Audio_menu/HBoxContainer"]
+margin_left = 64.0
 margin_right = 204.0
-margin_bottom = 56.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Master" type="HSlider" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Slider"]
-margin_right = 142.0
-margin_bottom = 16.0
+[node name="Master" type="HSlider" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider"]
+margin_top = 4.0
+margin_right = 140.0
+margin_bottom = 20.0
 min_value = -45.0
 max_value = 0.0
 
-[node name="Music" type="HSlider" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Slider"]
-margin_top = 20.0
-margin_right = 142.0
-margin_bottom = 36.0
+[node name="Music" type="HSlider" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider"]
+margin_top = 24.0
+margin_right = 140.0
+margin_bottom = 40.0
 min_value = -40.0
 max_value = 0.0
 
-[node name="SoundFX" type="HSlider" parent="TabSettings/Audio/Audio_menu/HBoxContainer/Slider"]
-margin_top = 40.0
-margin_right = 142.0
-margin_bottom = 56.0
+[node name="SoundFX" type="HSlider" parent="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider"]
+margin_top = 44.0
+margin_right = 140.0
+margin_bottom = 60.0
 min_value = -40.0
 max_value = 0.0
 
@@ -185,21 +182,21 @@ max_value = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 691.0
-margin_top = 88.0
+margin_top = 91.0
 margin_right = -250.0
-margin_bottom = -486.0
+margin_bottom = -478.0
 theme = ExtResource( 5 )
-text = "Back"
+text = "Выйти"
 
 [node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "SoundFX"
 
 [connection signal="tab_changed" from="TabSettings" to="." method="_on_TabSettings_tab_changed"]
-[connection signal="toggled" from="TabSettings/Graphics/Video_menu/HBoxContainer/Checks/FullScreen" to="TabSettings/Graphics/Video_menu" method="_on_FullScreen_toggled"]
-[connection signal="toggled" from="TabSettings/Graphics/Video_menu/HBoxContainer/Checks/Borderless" to="TabSettings/Graphics/Video_menu" method="_on_Borderless_toggled"]
-[connection signal="toggled" from="TabSettings/Graphics/Video_menu/HBoxContainer/Checks/VSync" to="TabSettings/Graphics/Video_menu" method="_on_VSync_toggled"]
-[connection signal="value_changed" from="TabSettings/Audio/Audio_menu/HBoxContainer/Slider/Master" to="TabSettings/Audio/Audio_menu" method="_on_Master_value_changed"]
-[connection signal="value_changed" from="TabSettings/Audio/Audio_menu/HBoxContainer/Slider/Music" to="TabSettings/Audio/Audio_menu" method="_on_Music_value_changed"]
-[connection signal="value_changed" from="TabSettings/Audio/Audio_menu/HBoxContainer/Slider/SoundFX" to="TabSettings/Audio/Audio_menu" method="_on_SoundFX_value_changed"]
+[connection signal="toggled" from="TabSettings/Графика/Video_menu/HBoxContainer/Checks/FullScreen" to="TabSettings/Графика/Video_menu" method="_on_FullScreen_toggled"]
+[connection signal="toggled" from="TabSettings/Графика/Video_menu/HBoxContainer/Checks/Borderless" to="TabSettings/Графика/Video_menu" method="_on_Borderless_toggled"]
+[connection signal="toggled" from="TabSettings/Графика/Video_menu/HBoxContainer/Checks/VSync" to="TabSettings/Графика/Video_menu" method="_on_VSync_toggled"]
+[connection signal="value_changed" from="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider/Master" to="TabSettings/Аудио/Audio_menu" method="_on_Master_value_changed"]
+[connection signal="value_changed" from="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider/Music" to="TabSettings/Аудио/Audio_menu" method="_on_Music_value_changed"]
+[connection signal="value_changed" from="TabSettings/Аудио/Audio_menu/HBoxContainer/Slider/SoundFX" to="TabSettings/Аудио/Audio_menu" method="_on_SoundFX_value_changed"]
 [connection signal="pressed" from="ButtonExitSettings" to="." method="_on_BackFromSettings_pressed"]

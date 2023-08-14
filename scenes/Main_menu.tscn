@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://pic/UI/Tree.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/Main_menu.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://pic/UI/theme.theme" type="Theme" id=4]
 [ext_resource path="res://sounds_and_music/Click.wav" type="AudioStream" id=5]
 [ext_resource path="res://sounds_and_music/game_menu_music_1version.wav" type="AudioStream" id=6]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=7]
 
 [node name="Main_menu" type="Control"]
 pause_mode = 2
@@ -37,7 +38,8 @@ margin_right = 224.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Start"
+custom_fonts/font = ExtResource( 7 )
+text = "Играть"
 
 [node name="Settings" type="Button" parent="Menu"]
 margin_top = 68.0
@@ -45,7 +47,7 @@ margin_right = 224.0
 margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Settings"
+text = "Настройки"
 
 [node name="Quit" type="Button" parent="Menu"]
 margin_top = 136.0
@@ -53,7 +55,7 @@ margin_right = 224.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Quit"
+text = "Выйти"
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
