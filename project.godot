@@ -28,6 +28,9 @@ _global_script_class_icons={
 
 config/name="cool_tree"
 run/main_scene="res://scenes/Main_menu.tscn"
+boot_splash/show_image=false
+config/icon="res://pic/sprites/little_tree/icon.png"
+config/windows_native_icon="res://pic/sprites/little_tree/icon.ico"
 
 [audio]
 
