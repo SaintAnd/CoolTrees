@@ -11,10 +11,10 @@ func _ready():
 	
 	
 func add_items():
-	choice.add_item("Spring") # добавляем элементы собственно
-	choice.add_item("Summer")
-	choice.add_item("Autumn")
-	choice.add_item("Winter")
+	choice.add_item("Весна") # добавляем элементы собственно
+	choice.add_item("Лето")
+	choice.add_item("Осень")
+	choice.add_item("Зима")
 
 func on_item_selected(id): # 
 	themes[id].show() # показываем выбранное время года
