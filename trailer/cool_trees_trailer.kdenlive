@@ -2495,13 +2495,13 @@
   <property name="kdenlive:sequenceproperties.documentuuid">{40bf9778-2ccc-4b25-bfaf-c995d3027876}</property>
   <property name="kdenlive:sequenceproperties.hasAudio">1</property>
   <property name="kdenlive:sequenceproperties.hasVideo">1</property>
-  <property name="kdenlive:sequenceproperties.position">740</property>
-  <property name="kdenlive:sequenceproperties.scrollPos">4767</property>
+  <property name="kdenlive:sequenceproperties.position">816</property>
+  <property name="kdenlive:sequenceproperties.scrollPos">164</property>
   <property name="kdenlive:sequenceproperties.tracksCount">7</property>
   <property name="kdenlive:sequenceproperties.videoTarget">-1</property>
   <property name="kdenlive:sequenceproperties.zonein">0</property>
   <property name="kdenlive:sequenceproperties.zoneout">104</property>
-  <property name="kdenlive:sequenceproperties.zoom">3</property>
+  <property name="kdenlive:sequenceproperties.zoom">6</property>
   <property name="kdenlive:sequenceproperties.groups">[
     {
         "children": [
