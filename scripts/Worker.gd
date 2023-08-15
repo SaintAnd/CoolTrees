@@ -4,12 +4,13 @@ var speed = 200 # скорость игрока
 var gravity = 150 # сила гравитации
 var state = "worker_idle" 
 var selected = false
-var room = StaticBody2D
 
 onready var anim = $Sprite/Anim # определение аниматора
 onready var glow = $Sprite/Glow 
 onready var tween = $Sprite/Glow/Tween
 onready var manager = get_parent().get_parent()
+onready var elevator = 0.0
+onready var elevator_anim = AnimationPlayer
 
 func _ready():
 	anim.play("worker_idle") # проигрываем анимацию сразу после начала игры
@@ -21,6 +22,11 @@ func select():
 func deselect():
 	selected = false
 	modulate = Color.white
+
+func room_define(body):
+	if body.is_in_group("Room"):
+		elevator = body.get_child(3).global_position.y
+		elevator_anim = body.get_child(3).get_child(0)
 
 
 func glowing(alpha):
@@ -68,5 +74,4 @@ func state_change(new_state): # проигрываем анимацию
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
 	manager.active_worker = name # меняем активного рабочего
-	manager.room_define(self) # определяем активную комнату
 	glowing(1)

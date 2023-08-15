@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowy_grass.png-4afcf7223f22e049b5a07bec9c86dcad.stex"
+path="res://.import/elevator.png-ad8002977d33d8eebd38c5a4499ae5a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/sprites/grass/snowy_grass.png"
-dest_files=[ "res://.import/snowy_grass.png-4afcf7223f22e049b5a07bec9c86dcad.stex" ]
+source_file="res://pic/sprites/Rooms_parts/elevator.png"
+dest_files=[ "res://.import/elevator.png-ad8002977d33d8eebd38c5a4499ae5a1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
