@@ -14,7 +14,7 @@ var red_ore_probability = 0.99
 var ore_density = 0.0
 var blue_ore_cluster_density = 0.002
 var blue_ore_cluster_size_range = Vector2(5, 10)
-var blue_ore_cluster_spacing = 15
+var blue_ore_cluster_spacing = 15 # Означает шаг между значениями в цикле 
 
 var rng: RandomNumberGenerator
 
@@ -29,15 +29,15 @@ func generate_world(width, height):
 			var random_value = rng.randf()
 
 			if y >= 0 and y < 51:
-				if random_value < land_threshold:
+				if random_value < land_threshold:  # --- Дополнительная проверка не имеет смысла как переменная land_threshold
 					set_cell(x, y, land_tile_index)
 
-	for x in range(-width / 2, width / 2):
-		for y in range(51, height / 2):
+	for x in range(-width / 2, width / 2): # Проходимся по всей ширине
+		for y in range(51, height / 2): # Начиная с глубины 51 выполняем код до конца
 			var random_value = rng.randf()
 
-			if y <= 101:
-				if random_value < stone_threshold:
+			if y <= 101: # Выполняем код до 101 блока
+				if random_value < stone_threshold: # --- Дополнительная проверка не имеет смысла как переменная stone_threshold
 					set_cell(x, y, stone_tile_index)
 
 	for x in range(-width / 2, width / 2):
@@ -48,7 +48,7 @@ func generate_world(width, height):
 				if random_value < blue_ore_probability:
 					set_cell(x, y, blue_ore_tile_index)
 
-	for x in range(-width / 2, width / 2, blue_ore_cluster_spacing):
+	for x in range(-width / 2, width / 2, blue_ore_cluster_spacing): # Проходимся по всей ширине с шагом blue_ore_cluster_spacing
 		for y in range(0, height / 2, blue_ore_cluster_spacing):
 			var random_value = rng.randf()
 
