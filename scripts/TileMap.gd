@@ -22,6 +22,7 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	generate_world(map_width, map_height)
+	generate_ground()
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):
@@ -83,7 +84,9 @@ func generate_world(width, height):
 
 			if y >= 51 and random_value < red_ore_probability:
 				set_cell(x, y, red_ore_tile_index)
-
+				
+func generate_ground():
+	pass
 # Модель генерации тайлов 0.0.1
 # +++++++
 # Функция запускает генератор
@@ -93,7 +96,7 @@ func generate_world(width, height):
 # 3 Форма генерации (количество блоков относительно друг друга)
 # 3.1 Запустить игру "Жизнь" Как пример
 # Общий вид таков:
-#	ready: generate_world(
+#	ready: generate_ground(
 #			diapason_gen(width,height),
 #			resurse_gen(resurse),
 #			form_gen([wave,life,recursive,fractal])
