@@ -24,7 +24,7 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	generate_world(map_width, map_height)
-	generate_ground(map_width, map_mid_height, chance_mid_draw, red_ore_tile_index)
+	#generate_ground(map_width, map_mid_height, chance_mid_draw, red_ore_tile_index)
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):
@@ -89,11 +89,12 @@ func generate_world(width, height):
 				
 func generate_ground(width,height,chance,tile_index):
 # --- Начинаем генерацию промежутков двух слоёв
-	for x in range(-width / 2, width / 2): # Проходимся по всей ширине
-		for y in range(height, height*2): # Проходимся по высоте
+	for y in range(height, height*2): # Проходимся по высоте
+		for x in range(-width / 2, width / 2): # Проходимся по всей ширине
 			var random_value = rng.randf()
 			if random_value < chance: # Задаём уровень случайности
 				set_cell(x, y, tile_index) # Замещаем ячейку на нужную
+				chance += 0.001
 
 # Модель генерации тайлов 0.0.1
 # +++++++
