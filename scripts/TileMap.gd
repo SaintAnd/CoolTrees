@@ -47,7 +47,7 @@ func generate_world(width, height):
 
 				if random_value < blue_ore_probability:
 					set_cell(x, y, blue_ore_tile_index)
-
+# +++ Начинаем генерацию ресурсов поверх карты
 	for x in range(-width / 2, width / 2, blue_ore_cluster_spacing): # Проходимся по всей ширине с шагом blue_ore_cluster_spacing
 		for y in range(0, height / 2, blue_ore_cluster_spacing):
 			var random_value = rng.randf()
@@ -65,7 +65,7 @@ func generate_world(width, height):
 						if cluster_x >= -width / 2 and cluster_x <= width / 2 and cluster_y >= 0 and cluster_y < 51:
 							if rng.randf() < blue_ore_probability:
 								set_cell(cluster_x, cluster_y, blue_ore_tile_index)
-
+# --- Начинаем генерацию ресурсов поверх карты
 	for x in range(-width / 2, width / 2):
 		for y in range(0, height / 2):
 			if y < 51:
