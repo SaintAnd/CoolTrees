@@ -7,6 +7,8 @@ var blue_ore_tile_index = 3
 
 var map_width = 200
 var map_height = 200
+var map_mid_height = map_height/6 # Начало глубины среднего слоя
+var chance_mid_draw = 0.1 # Вероятность заливки среднего слоя
 var land_threshold = 1
 var stone_threshold = 1
 var blue_ore_probability = 0.002
@@ -22,7 +24,7 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	generate_world(map_width, map_height)
-	generate_ground()
+	generate_ground(map_width, map_mid_height, chance_mid_draw, red_ore_tile_index)
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):
@@ -85,8 +87,14 @@ func generate_world(width, height):
 			if y >= 51 and random_value < red_ore_probability:
 				set_cell(x, y, red_ore_tile_index)
 				
-func generate_ground():
-	pass
+func generate_ground(width,height,chance,tile_index):
+# --- Начинаем генерацию промежутков двух слоёв
+	for x in range(-width / 2, width / 2): # Проходимся по всей ширине
+		for y in range(height, height*2): # Проходимся по высоте
+			var random_value = rng.randf()
+			if random_value < chance: # Задаём уровень случайности
+				set_cell(x, y, tile_index) # Замещаем ячейку на нужную
+
 # Модель генерации тайлов 0.0.1
 # +++++++
 # Функция запускает генератор
