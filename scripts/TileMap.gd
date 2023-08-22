@@ -28,6 +28,11 @@ func _ready():
 	generate_ground(map_width, map_start_mid_height, map_end_mid_height, chance_mid_draw, red_ore_tile_index)
 	
 func _process(delta):
+	set_cell(5,1,1)
+	set_cell(6,2,1)
+	set_cell(4,3,1)
+	set_cell(5,3,1)
+	set_cell(6,3,1)
 	automataTemplate(map_width, map_height, map_start_mid_height, map_end_mid_height)
 
 func generate_world(width, height):
@@ -101,7 +106,48 @@ func generate_ground(width, start_height, end_height, chance, tile_index):
 				chance += 0.001
 
 func automataTemplate(width,height,position_x,position_y):
-	pass
+	var grid_life = []
+	var grid_death = []
+	var ON = 1
+	var OFF = 0
+	var N = width*height
+	
+	for x in range (width):
+		for y in range (height):
+			var neighbors = 0
+			if get_cell(x,(y-1)%N) == ON:				neighbors += 1
+			if get_cell(x,(y+1)%N) == ON:				neighbors += 1
+			if get_cell((x-1)%N,y) == ON:				neighbors += 1
+			if get_cell((x+1)%N,y) == ON:				neighbors += 1
+			if get_cell((x-1)%N,(y-1)%N) == ON:				neighbors += 1
+			if get_cell((x-1)%N,(y+1)%N) == ON:				neighbors += 1
+			if get_cell((x+1)%N,(y-1)%N) == ON:				neighbors += 1
+			if get_cell((x+1)%N,(y+1)%N) == ON:				neighbors += 1
+			
+			if get_cell(x, y) == ON:
+				if (neighbors < 2) or (neighbors > 3):
+					grid_death.append(Vector2(x,y))
+#					set_cell(x, y, OFF)
+			else:
+				if neighbors == 3:
+					grid_life.append(Vector2(x,y))
+#					set_cell(x, y, ON)
+#	var grid_OFF=grid.duplicate()
+	for t in grid_death:
+		print ("start_DEL:" + str(t))
+		t = grid_death.pop_back()
+		set_cellv(t,OFF)
+		print ("end_DEL:" + str(t))
+	print (grid_death)
+	
+	var grid_life_life=grid_life.duplicate()
+	for t in grid_life:
+		print ("start_ON:" + str(t))
+		t = grid_life_life.pop_back()
+		set_cellv(t,ON)
+		print ("end_ON:" + str(t))
+	print (str(grid_life))
+	
 # Модель генерации тайлов 0.0.1
 # +++++++
 # Функция запускает генератор
