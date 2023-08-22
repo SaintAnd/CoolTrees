@@ -33,6 +33,7 @@ func _ready():
 	set_cell(6,3,1)
 	
 func _process(delta):
+	# Задаём клеточному автомату размер и место
 	automataTemplate(map_width, map_height, map_start_mid_height, map_end_mid_height)
 
 func generate_world(width, height):
@@ -106,15 +107,22 @@ func generate_ground(width, start_height, end_height, chance, tile_index):
 				chance += 0.001
 
 func automataTemplate(width,height,position_x,position_y):
+# Обнуляем клеточному автомату сетки жизни и смерти
 	var grid_life = []
 	var grid_death = []
+# Вводим константы включеных и отключеных клеток
 	var ON = 1
 	var OFF = 0
+# Задаём размер сетки для деления по модулю
 	var N = width*height
-	
+# Проходим по полю ширины и высоты
 	for x in range (width):
 		for y in range (height):
+			# Сбрасываем счётчик соседей на нуль
 			var neighbors = 0
+			# Проверяме соседей с 8-ми сторон живи ли они
+			# Если да, то добавляем в счётчик
+			# Делаем фигуру "тор" с помощью деления по модулю
 			if get_cell(x,(y-1)%N) == ON:				neighbors += 1
 			if get_cell(x,(y+1)%N) == ON:				neighbors += 1
 			if get_cell((x-1)%N,y) == ON:				neighbors += 1
@@ -124,26 +132,24 @@ func automataTemplate(width,height,position_x,position_y):
 			if get_cell((x+1)%N,(y-1)%N) == ON:				neighbors += 1
 			if get_cell((x+1)%N,(y+1)%N) == ON:				neighbors += 1
 			
+			# Здесь главное условие игры B3/S23
+			# Если 3 живых клетки рядом, то создаём живую вместо мёртвой
+			# Если рядом меньше 2-ух и больше 3-ёх, то убиваем клетку
 			if get_cell(x, y) == ON:
 				if (neighbors < 2) or (neighbors > 3):
 					grid_death.append(Vector2(x,y))
-#					set_cell(x, y, OFF)
 			else:
 				if neighbors == 3:
 					grid_life.append(Vector2(x,y))
-#					set_cell(x, y, ON)
-#	var grid_OFF=grid.duplicate()
+# Проходим по таблице смерти и убиваем клетки
 	for t in grid_death:
 		print ("start_DEL:" + str(t))
-		t = grid_death.pop_back()
 		set_cellv(t,OFF)
 		print ("end_DEL:" + str(t))
 	print (grid_death)
-	
-	var grid_life_life=grid_life.duplicate()
+# Проходим по таблице жизни и оживляем клетки
 	for t in grid_life:
 		print ("start_ON:" + str(t))
-		t = grid_life_life.pop_back()
 		set_cellv(t,ON)
 		print ("end_ON:" + str(t))
 	print (str(grid_life))
