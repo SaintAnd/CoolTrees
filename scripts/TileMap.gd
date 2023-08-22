@@ -120,8 +120,8 @@ func automataTemplate(width,height,position_x,position_y):
 # Задаём размер сетки для деления по модулю
 	var N = width*height
 # Проходим по полю ширины и высоты
-	for x in range (width/3):
-		for y in range (height/3):
+	for x in range (-position_x/3,width/3):
+		for y in range (-position_y/3,height/3):
 			# Сбрасываем счётчик соседей на нуль
 			var neighbors = 0
 			# Проверяме соседей с 8-ми сторон живи ли они
