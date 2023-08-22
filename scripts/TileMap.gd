@@ -26,6 +26,9 @@ func _ready():
 	rng.randomize()
 	generate_world(map_width, map_height)
 	generate_ground(map_width, map_start_mid_height, map_end_mid_height, chance_mid_draw, red_ore_tile_index)
+	
+func _process(delta):
+	automataTemplate()
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):
@@ -97,6 +100,8 @@ func generate_ground(width, start_height, end_height, chance, tile_index):
 				set_cell(x, y, tile_index) # Замещаем ячейку на нужную
 				chance += 0.001
 
+func automataTemplate():
+	pass
 # Модель генерации тайлов 0.0.1
 # +++++++
 # Функция запускает генератор
