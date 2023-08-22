@@ -18,7 +18,7 @@ var ore_density = 0.0
 var blue_ore_cluster_density = 0.002
 var blue_ore_cluster_size_range = Vector2(5, 10)
 var blue_ore_cluster_spacing = 15 # Означает шаг между значениями в цикле 
-
+var frame = 0
 var rng: RandomNumberGenerator
 
 func _ready():
@@ -35,6 +35,10 @@ func _ready():
 func _process(delta):
 	# Задаём клеточному автомату размер и место
 	automataTemplate(map_width, map_height, map_start_mid_height, map_end_mid_height)
+	
+	# Подсчёт кадров для отладки в консоли
+	frame +=1
+	print ("Кадры: " + str(frame))
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):
@@ -153,7 +157,7 @@ func automataTemplate(width,height,position_x,position_y):
 		set_cellv(t,ON)
 		print ("end_ON:" + str(t))
 	print (str(grid_life))
-	
+
 # Модель генерации тайлов 0.0.1
 # +++++++
 # Функция запускает генератор
