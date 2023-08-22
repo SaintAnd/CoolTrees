@@ -26,13 +26,13 @@ func _ready():
 	rng.randomize()
 	generate_world(map_width, map_height)
 	generate_ground(map_width, map_start_mid_height, map_end_mid_height, chance_mid_draw, red_ore_tile_index)
-	
-func _process(delta):
 	set_cell(5,1,1)
 	set_cell(6,2,1)
 	set_cell(4,3,1)
 	set_cell(5,3,1)
 	set_cell(6,3,1)
+	
+func _process(delta):
 	automataTemplate(map_width, map_height, map_start_mid_height, map_end_mid_height)
 
 func generate_world(width, height):
