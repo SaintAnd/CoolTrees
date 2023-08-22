@@ -127,14 +127,22 @@ func automataTemplate(width,height,position_x,position_y):
 			# Проверяме соседей с 8-ми сторон живи ли они
 			# Если да, то добавляем в счётчик
 			# Делаем фигуру "тор" с помощью деления по модулю
-			if get_cell(x,(y-1)%N) == ON:				neighbors += 1
-			if get_cell(x,(y+1)%N) == ON:				neighbors += 1
-			if get_cell((x-1)%N,y) == ON:				neighbors += 1
-			if get_cell((x+1)%N,y) == ON:				neighbors += 1
-			if get_cell((x-1)%N,(y-1)%N) == ON:				neighbors += 1
-			if get_cell((x-1)%N,(y+1)%N) == ON:				neighbors += 1
-			if get_cell((x+1)%N,(y-1)%N) == ON:				neighbors += 1
-			if get_cell((x+1)%N,(y+1)%N) == ON:				neighbors += 1
+			if get_cell(x,(y-1)%height) == ON:			neighbors += 1 # /\
+#			print("/\\" + str(neighbors))
+			if get_cell(x,(y+1)%height) == ON:			neighbors += 1 # \/
+#			print("\\/" + str(neighbors))
+			if get_cell((x-1)%width,y) == ON:			neighbors += 1 # <-
+#			print("<-" + str(neighbors))
+			if get_cell((x+1)%width,y) == ON:			neighbors += 1 # ->
+#			print("->" + str(neighbors))
+			if get_cell((x-1)%width,(y-1)%height) == ON:neighbors += 1 # Г
+#			print("Г" + str(neighbors))
+			if get_cell((x-1)%width,(y+1)%height) == ON:neighbors += 1 # L
+#			print("L" + str(neighbors))
+			if get_cell((x+1)%width,(y-1)%height) == ON:neighbors += 1 # /|
+#			print("/|" + str(neighbors))
+			if get_cell((x+1)%width,(y+1)%height) == ON:neighbors += 1 # _|
+#			print("_|" + str(neighbors))
 			
 			# Здесь главное условие игры B3/S23
 			# Если 3 живых клетки рядом, то создаём живую вместо мёртвой
@@ -147,16 +155,14 @@ func automataTemplate(width,height,position_x,position_y):
 					grid_life.append(Vector2(x,y))
 # Проходим по таблице смерти и убиваем клетки
 	for t in grid_death:
-		print ("start_DEL:" + str(t))
 		set_cellv(t,OFF)
-		print ("end_DEL:" + str(t))
-	print (grid_death)
+#		print ("end_DEL:" + str(t))
+#	print (grid_death)
 # Проходим по таблице жизни и оживляем клетки
 	for t in grid_life:
-		print ("start_ON:" + str(t))
 		set_cellv(t,ON)
-		print ("end_ON:" + str(t))
-	print (str(grid_life))
+#		print ("end_ON:" + str(t))
+#	print (str(grid_life))
 
 # Модель генерации тайлов 0.0.1
 # +++++++
