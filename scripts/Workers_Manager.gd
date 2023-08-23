@@ -1,4 +1,6 @@
 extends Node2D
+# скрипт который отвечает за действия связанные с рабочими
+
 
 var active_worker = "Worker1" # активный работник
 var is_active_w = true # активен ли контроллер
@@ -16,7 +18,7 @@ onready var workers = $Workers
 
 
 
-func room_define(worke):
+func room_define(worke): 	# функция определяющая комнату
 	var dis = abs(rooms[0].position.y - rooms[1].position.y) / 2 # сохраняем примерное расстояние от цента комнаты до ее края
 	for i in rooms: # цикл перебирающий все комнаты
 		if abs(worke.position.y - i.position.y) <= dis: # проверка находится ли игрок в i комнате
@@ -32,13 +34,13 @@ func left_or_right(pos, end): # проверяем какая нужна ани�
 		worker.state_change("move_right")
 
 
-func move_inside(worke):
-	room_define(worke)
+func move_inside(worke): 	# передвижение внутри комнаты
+	room_define(worke) 	# определяем комнатку
 	mouse_click.input_pickable = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 
 	# двигаем по горизонтали до необходимой точки
-	tween.interpolate_property(worke, "position",
+	tween.interpolate_property(worke, "position", 	# настраиваем анимку движения
 		worke.position, Vector2(click_pos.x, worke.position.y), abs(click_pos.x - worke.position.x) / do_duration)
 	tween.start()
 	left_or_right(worke.position.x, click_pos.x)
@@ -49,8 +51,8 @@ func move_inside(worke):
 	
 	
 	
-func move_into_room(worke):
-	room_define(worke)
+func move_into_room(worke): 	# передвижение между комнатами
+	room_define(worke) 	# опять определяем комнату
 	mouse_click.input_pickable = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 	
@@ -83,6 +85,7 @@ func move_into_room(worke):
 	is_active_w = true # собственно говоря включаем контроллер
 
 
+# тут пока нету комментов потому что я еще доделываю эту часть
 func _on_Mouse_Click_input_event(_viewport, event, shape_idx):  # был ли щелчок и был ли он совершен в пределах комнаты
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
 		workers = $Workers
