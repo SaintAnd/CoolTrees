@@ -9,8 +9,8 @@ var map_width = 200
 var map_height = 200
 var map_start_mid_height = map_height/6 # Начало глубины среднего слоя
 var map_end_mid_height = map_height/3.8 # Конец глубины среднего слоя
-var map_gen_ore_position_x = 0 # Начальная позиция для генерации по x
-var map_gen_ore_position_y = 0 # Начальная позиция для генерации по y
+var map_gen_ore_position_x = (-1*map_width/4) # Начальная позиция для генерации по x
+var map_gen_ore_position_y = map_start_mid_height # Начальная позиция для генерации по y
 var chance_mid_draw = 0.02 # Вероятность заливки среднего слоя
 var land_threshold = 1
 var stone_threshold = 1
@@ -36,7 +36,7 @@ func _ready():
 	
 func _process(delta):
 	# Задаём клеточному автомату размер и место
-	automataTemplate(20, 20, map_gen_ore_position_x, map_gen_ore_position_y)
+	automataTemplate(100, 18, map_gen_ore_position_x, map_gen_ore_position_y)
 	
 	# Подсчёт кадров для отладки в консоли
 	frame +=1
