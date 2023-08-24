@@ -1,14 +1,19 @@
 extends StaticBody2D
+# этот скрипт создает при загрузке сцены экземпляры светляков в определенной области
+# пока не до конца правильно работает (светлячки появляются немного не там) поэтому пока этот скрипт не привязан
+# а так он должен висеть на обьекте Flies в сцене Grass, а все дочерние объекты можно будет удалить
 
-onready var fire_fly = preload("res://scenes/Firefly.tscn")
-onready var flies = $Flies
+
+onready var fire_fly = preload("res://scenes/Firefly.tscn")	# сохраняем(?) сцену со светлячком чтобы 
 
 func _ready():
-	randomize()
-	var a = 5 + randi() % 11
+	randomize() 	# опять рандомизируем все
+	var count = 5 + randi() % 11 	# определяем случайное количество светляков
 	
-	for i in range(a):
-		var fly = fire_fly.instance()
-		fly.position = Vector2(-3000 + randi() % 3000, -400 + randi() % -100)
-		flies.add_child(fly)
+	for i in range(count):	# повторяем цикл столько раз, сколько у нас будет светляков
+		var fly = fire_fly.instance() 	# создаем экземпляр светляка
+		fly.position = Vector2(-3000 + randi() % 3000, -400 + randi() % -100) 
+		# тут задаем случайную позицию для данного экземпляра в пределах области
+		
+		self.add_child(fly)	# добавляем этот экземпляр как дочерний объект
 		
