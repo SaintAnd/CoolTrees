@@ -36,7 +36,7 @@ func _ready():
 	
 func _process(delta):
 	# Задаём клеточному автомату размер и место
-	automataTemplate(100, 18, map_gen_ore_position_x, map_gen_ore_position_y)
+	automataTemplate(100, 10, map_gen_ore_position_x, map_gen_ore_position_y)
 	
 	# Подсчёт кадров для отладки в консоли
 	frame +=1
@@ -157,7 +157,7 @@ func automataTemplate(width,height,px,py,ON=2,OFF=0):
 			# Если 3 живых клетки рядом, то создаём живую вместо мёртвой
 			# Если рядом меньше 2-ух и больше 3-ёх, то убиваем клетку
 			if get_cell(x, y) == ON:
-				if (neighbors < 2) or (neighbors > 3):
+				if (neighbors > 4) or (neighbors > 3):
 					grid_death.append(Vector2(x,y))
 			else:
 				if neighbors == 3:
