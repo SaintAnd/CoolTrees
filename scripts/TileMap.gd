@@ -112,11 +112,13 @@ func generate_ground(width, start_height, end_height, chance, tile_index):
 				set_cell(x, y, tile_index) # Замещаем ячейку на нужную
 				chance += 0.001
 
-func automataTemplate(width,height,px,py):
+func automataTemplate(width,height,px,py,ON=2,OFF=0):
 # px - Начальная позиция по x
 # py - Начальная позиция по y
 # width - ширина поля
 # height - высота поля
+# ON = 2 # Выбираем (по индексу тайла) какие клетки будут живыми
+# OFF = 0 # А какие мёртвыми
 
 # Добавим к ширине и высоте начальные позиции
 	width = int(width + px)
@@ -125,8 +127,6 @@ func automataTemplate(width,height,px,py):
 	var grid_life = []
 	var grid_death = []
 # Вводим константы включеных и отключеных клеток
-	var ON = 1
-	var OFF = 0
 
 # Проходим по полю ширины и высоты
 	for x in range (px,width):
