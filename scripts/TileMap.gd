@@ -9,13 +9,13 @@ var map_width = 200
 var map_height = 200
 var map_start_mid_height = map_height/6 # Начало глубины среднего слоя
 var map_end_mid_height = map_height/3.8 # Конец глубины среднего слоя
-var map_gen_ore_position_x = (-1*map_width/4) # Начальная позиция для генерации по x
-var map_gen_ore_position_y = map_start_mid_height # Начальная позиция для генерации по y
+var map_gen_ore_position_x = -98 # Начальная позиция для генерации по x
+var map_gen_ore_position_y = 25 # Начальная позиция для генерации по y
 var chance_mid_draw = 0.02 # Вероятность заливки среднего слоя
 var land_threshold = 1
 var stone_threshold = 1
 var blue_ore_probability = 0.002
-var red_ore_probability = 0.99
+var red_ore_probability = 0.9
 var ore_density = 0.0
 var blue_ore_cluster_density = 0.002
 var blue_ore_cluster_size_range = Vector2(5, 10)
@@ -36,7 +36,7 @@ func _ready():
 	
 func _process(delta):
 	# Задаём клеточному автомату размер и место
-	automataTemplate(100, 10, map_gen_ore_position_x, map_gen_ore_position_y)
+	automataTemplate(200, 50, map_gen_ore_position_x, map_gen_ore_position_y,1)
 	
 	# Подсчёт кадров для отладки в консоли
 	frame +=1
@@ -157,11 +157,13 @@ func automataTemplate(width,height,px,py,ON=2,OFF=0):
 			# Если 3 живых клетки рядом, то создаём живую вместо мёртвой
 			# Если рядом меньше 2-ух и больше 3-ёх, то убиваем клетку
 			if get_cell(x, y) == ON:
-				if (neighbors > 4) or (neighbors > 3):
+				if neighbors < 4 :
 					grid_death.append(Vector2(x,y))
 			else:
-				if neighbors == 3:
+				if neighbors == 3 :
 					grid_life.append(Vector2(x,y))
+#				if (neighbors > 4) or (neighbors < 9) :
+#					grid_life.append(Vector2(x,y))
 # Проходим по таблице смерти и убиваем клетки
 	for t in grid_death:
 		set_cellv(t,OFF)
