@@ -9,6 +9,8 @@ var map_width = 200
 var map_height = 200
 var map_start_mid_height = map_height/6 # Начало глубины среднего слоя
 var map_end_mid_height = map_height/3.8 # Конец глубины среднего слоя
+var map_gen_ore_position_x = 0 # Начальная позиция для генерации по x
+var map_gen_ore_position_y = 0 # Начальная позиция для генерации по y
 var chance_mid_draw = 0.02 # Вероятность заливки среднего слоя
 var land_threshold = 1
 var stone_threshold = 1
@@ -34,7 +36,7 @@ func _ready():
 	
 func _process(delta):
 	# Задаём клеточному автомату размер и место
-	automataTemplate(map_width, map_height, map_start_mid_height, map_end_mid_height)
+	automataTemplate(20, 20, map_gen_ore_position_x, map_gen_ore_position_y)
 	
 	# Подсчёт кадров для отладки в консоли
 	frame +=1
@@ -110,21 +112,28 @@ func generate_ground(width, start_height, end_height, chance, tile_index):
 				set_cell(x, y, tile_index) # Замещаем ячейку на нужную
 				chance += 0.001
 
-func automataTemplate(width,height,position_x,position_y):
+func automataTemplate(width,height,px,py):
+# px - Начальная позиция по x
+# py - Начальная позиция по y
+# width - ширина поля
+# height - высота поля
+
+# Добавим к ширине и высоте начальные позиции
+	width = int(width + px)
+	height = int(height + py) 
 # Обнуляем клеточному автомату сетки жизни и смерти
 	var grid_life = []
 	var grid_death = []
 # Вводим константы включеных и отключеных клеток
 	var ON = 1
 	var OFF = 0
-# Задаём размер сетки для деления по модулю
-	var N = width*height
+
 # Проходим по полю ширины и высоты
-	for x in range (-position_x/3,width/3):
-		for y in range (-position_y/3,height/3):
+	for x in range (px,width):
+		for y in range (py,height):
 			# Сбрасываем счётчик соседей на нуль
 			var neighbors = 0
-			# Проверяме соседей с 8-ми сторон живи ли они
+			# Проверяме соседей с 8-ми сторон живы ли они
 			# Если да, то добавляем в счётчик
 			# Делаем фигуру "тор" с помощью деления по модулю
 			if get_cell(x,(y-1)%height) == ON:			neighbors += 1 # /\
