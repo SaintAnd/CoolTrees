@@ -77,7 +77,6 @@ func state_change(new_state): # проигрываем анимацию
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
 	manager.active_worker = name # меняем активного рабочего
-	get_parent().active_name = name
 	glowing(1)
 
 func select(): 	# функция вызываемая при выборе работника при помощи прямоугольного выделения

@@ -8,7 +8,7 @@ var drag_start = Vector2.ZERO 	# начало выделения
 var draw_start = Vector2.ZERO 	# начало рисования
 var select_rectangle = RectangleShape2D.new() 	# сама область выделения
 
-onready var select_draw = $Select_draw 	# сохраняем сам объект который рисует область
+onready var select_draw = $"../Select_draw" 	# сохраняем сам объект который рисует область
 
 
 
