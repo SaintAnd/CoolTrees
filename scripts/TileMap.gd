@@ -36,7 +36,7 @@ func _ready():
 	# Задаём клеточному автомату размер и место
 	automataTemplate(10,200, 50, map_gen_ore_position_x, map_gen_ore_position_y,1)
 		
-func _process(delta):
+func _process(_delta):
 	# Подсчёт кадров для отладки в консоли
 	frame +=1
 	print ("Кадры: " + str(frame))
