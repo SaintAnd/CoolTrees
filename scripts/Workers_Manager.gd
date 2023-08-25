@@ -43,7 +43,7 @@ func move_inside(worke):
 	worke.elevator = actual_room.get_child(3).global_position.y
 	worke.elevator_anim = actual_room.get_child(3).get_child(0)
 	
-	print("Дошел челик")	
+	
 	click_active = true # включаем обратно чтобы игрок мог дальше гулять
 	is_active_w = true # собственно говоря включаем контроллер
 	
@@ -66,6 +66,7 @@ func move_into_room(worke):
 	worke.z_index = 0
 	worke.elevator_anim.play("elev_close")
 	yield(worke.elevator_anim, "animation_finished")
+	worke.modulate.a = 0
 	
 	worke.elevator = actual_room.get_child(3).global_position.y
 	worke.elevator_anim = actual_room.get_child(3).get_child(0)
@@ -78,9 +79,9 @@ func move_into_room(worke):
 	worke.z_index = 1
 	worke.elevator_anim.play("elev_close")
 	yield(worke.elevator_anim, "animation_finished")
+	worke.modulate.a = 1
 
 
-	print("Доехал челик")
 	click_active = true # включаем обратно чтобы игрок мог дальше гулять
 	is_active_w = true # собственно говоря включаем контроллер
 
