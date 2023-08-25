@@ -8,7 +8,11 @@ var select_rectangle = RectangleShape2D.new()
 
 onready var select_draw = $Select_draw
 
-
+func _ready():
+	for i in get_children():
+		i.visible = true
+	
+	
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.pressed:
