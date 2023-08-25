@@ -134,6 +134,7 @@ anims/worker_idle = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
+one_way_collision = true
 
 [connection signal="pressed" from="ChangePlayer" to="." method="_on_ChangePlayer_pressed"]
 [connection signal="timeout" from="Sprite/Glow/Glow_check" to="." method="glowing"]

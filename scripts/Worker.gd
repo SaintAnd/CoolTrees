@@ -17,6 +17,10 @@ onready var elevator_anim = AnimationPlayer
 
 func _ready():
 	anim.play("worker_idle") # проигрываем анимацию сразу после начала игры
+	var posi = position
+	position = Vector2(500, 500)
+	yield(get_tree().create_timer(0.1), "timeout")
+	position = posi
 
 func select(): 	# функция вызываемая при выборе работника при помощи прямоугольного выделения
 	selected = true 	# меняем значение переменной
@@ -78,4 +82,5 @@ func state_change(new_state): # проигрываем анимацию
 	
 func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
 	manager.active_worker = name # меняем активного рабочего
+	get_parent().active_name = name
 	glowing(1)

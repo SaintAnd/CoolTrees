@@ -6,11 +6,10 @@ var drag_start = Vector2.ZERO
 var draw_start = Vector2.ZERO
 var select_rectangle = RectangleShape2D.new()
 
-onready var select_draw = $Select_draw
+onready var select_draw = $"../Select_draw"
+onready var active_name = get_parent().active_worker
+onready var worker = get_node(get_parent().active_worker)
 
-func _ready():
-	for i in get_children():
-		i.visible = true
 	
 	
 func _unhandled_input(event):

@@ -29,7 +29,7 @@ func left_or_right(pos, end): # проверяем какая нужна ани�
 		worker.state_change("move_right")
 
 
-func move_inside(worke):
+func move_inside(worke, elev):
 	click_active = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 
@@ -40,8 +40,8 @@ func move_inside(worke):
 	left_or_right(worke.position.x, click_pos.x)
 	yield(tween, "tween_completed")
 	
-	worke.elevator = actual_room.get_child(3).global_position.y
-	worke.elevator_anim = actual_room.get_child(3).get_child(0)
+	worke.elevator = elev.global_position.y
+	worke.elevator_anim = elev.get_child(0)
 	
 	
 	click_active = true # включаем обратно чтобы игрок мог дальше гулять
@@ -49,7 +49,7 @@ func move_inside(worke):
 	
 	
 	
-func move_into_room(worke):
+func move_into_room(worke, elev):
 	click_active = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 	
@@ -68,19 +68,21 @@ func move_into_room(worke):
 	yield(worke.elevator_anim, "animation_finished")
 	worke.modulate.a = 0
 	
-	worke.elevator = actual_room.get_child(3).global_position.y
-	worke.elevator_anim = actual_room.get_child(3).get_child(0)
+	worke.elevator = elev.global_position.y
+	worke.elevator_anim = elev.get_child(0)
 	
 	# поднимаем его вверх/вниз
-	worke.position = Vector2(0, worke.elevator)
-	print(worke.elevator)
+	worke.global_position = Vector2(0, worke.elevator)
+	yield(get_tree().create_timer(2.0), "timeout")
+	worke.modulate.a = 1
 	worke.elevator_anim.play("elev_open")
 	yield(worke.elevator_anim, "animation_finished")
 	worke.z_index = 1
 	worke.elevator_anim.play("elev_close")
 	yield(worke.elevator_anim, "animation_finished")
-	worke.modulate.a = 1
-
+	
+#	print(worke.elevator)
+#	print(elev)
 
 	click_active = true # включаем обратно чтобы игрок мог дальше гулять
 	is_active_w = true # собственно говоря включаем контроллер
@@ -91,23 +93,20 @@ func click_event(event, shape_idx):  # был ли щелчок и был ли �
 	click_pos = get_local_mouse_position() # получаем позицию щелчка
 	worker = get_node("Workers/" + active_worker) # обновляем переменную
 	if workk == []: # если массив выбранных челиков пустой (ни один рабочий не выбран)
-		print(rooms[shape_idx])
-		print(actual_room)
-		if rooms[shape_idx] != actual_room: # если кликнул не на ту комнату в которой находится
-			actual_room = rooms[shape_idx]
-			move_into_room(worker) # активируем движение
+		print(worker.elevator)
+		print(elevat)
+		if worker.elevator != elevat.global_position.y: # если кликнул не на ту комнату в которой находится
+			move_into_room(worker, elevat) # активируем движение
 		else:
-			actual_room = rooms[shape_idx]
-			move_inside(worker)
+			move_inside(worker, elevat)
 	else:
 		is_active_w = false
-		actual_room = rooms[shape_idx]
 		for item in workk:
 			if item.elevator != elevat.global_position.y:
-				move_into_room(item)
+				move_into_room(item, elevat)
 				yield(tween, "tween_all_completed")
 			else:
-				move_inside(item)
+				move_inside(item, elevat)
 				yield(tween, "tween_all_completed")
 		active_worker = workk[0].name
 		workk = []
