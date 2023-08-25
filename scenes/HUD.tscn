@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pic/UI/Button.png" type="Texture" id=1]
+[ext_resource path="res://pic/UI/theme.theme" type="Theme" id=2]
+[ext_resource path="res://scripts/MenuButton.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 32, 32 )
+margin_left = 4.0
+margin_right = 5.0
+margin_top = 4.0
+margin_bottom = 8.0
+
+[node name="HUD" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+margin_right = 89.0
+margin_bottom = 43.0
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Menu" type="MenuButton" parent="CanvasLayer/Panel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 85.0
+margin_bottom = 35.0
+theme = ExtResource( 2 )
+text = "Меню"
+script = ExtResource( 3 )

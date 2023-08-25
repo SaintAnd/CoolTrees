@@ -1,4 +1,6 @@
 extends Node2D
+# скрипт который отвечает за действия связанные с рабочими
+
 
 var active_worker = "Worker1" # активный работник
 var is_active_w = true # активен ли контроллер
@@ -29,12 +31,12 @@ func left_or_right(pos, end): # проверяем какая нужна ани�
 		worker.state_change("move_right")
 
 
-func move_inside(worke, elev):
+func move_inside(worke, elev): # передвижение внутри комнаты
 	click_active = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 
 	# двигаем по горизонтали до необходимой точки
-	tween.interpolate_property(worke, "position",
+	tween.interpolate_property(worke, "position", 	# настраиваем анимку движения
 		worke.position, Vector2(click_pos.x, worke.position.y), abs(click_pos.x - worke.position.x) / do_duration)
 	tween.start()
 	left_or_right(worke.position.x, click_pos.x)
@@ -49,7 +51,7 @@ func move_inside(worke, elev):
 	
 	
 	
-func move_into_room(worke, elev):
+func move_into_room(worke, elev): 	# передвижение между комнатами
 	click_active = false # выключаем кнопку на время передвижения
 	is_active_w = false # вырубаем контроллер игрока
 	
