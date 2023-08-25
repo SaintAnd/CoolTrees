@@ -27,14 +27,14 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	generate_world(map_width, map_height)
-	generate_ground(map_width, map_start_mid_height, map_end_mid_height, chance_mid_draw, red_ore_tile_index)
+	#generate_ground(map_width, map_start_mid_height, map_end_mid_height, chance_mid_draw, red_ore_tile_index)
 	set_cell(5,1,1)
 	set_cell(6,2,1)
 	set_cell(4,3,1)
 	set_cell(5,3,1)
 	set_cell(6,3,1)
 	# Задаём клеточному автомату размер и место
-	automataTemplate(10,200, 50, map_gen_ore_position_x, map_gen_ore_position_y,1)
+	#automataTemplate(10,200, 50, map_gen_ore_position_x, map_gen_ore_position_y,1)
 		
 func _process(delta):
 	# Подсчёт кадров для отладки в консоли
@@ -46,28 +46,28 @@ func generate_world(width, height):
 		for y in range(-height / 2, height / 2):
 			var random_value = rng.randf()
 
-			if y >= 0 and y < 51:
-				if random_value < land_threshold:  # --- Дополнительная проверка не имеет смысла как переменная land_threshold
+			if y > 0 and y < 51:  # после > убрал =
+			#	if random_value < land_threshold:  # --- Дополнительная проверка не имеет смысла как переменная land_threshold
 					set_cell(x, y, land_tile_index)
 
 	for x in range(-width / 2, width / 2): # Проходимся по всей ширине
 		for y in range(51, height / 2): # Начиная с глубины 51 выполняем код до конца
 			var random_value = rng.randf()
 
-			if y <= 101: # Выполняем код до 101 блока
-				if random_value < stone_threshold: # --- Дополнительная проверка не имеет смысла как переменная stone_threshold
+			if y < 101: # Выполняем код до 101 блока , после < убрал =
+			#	if random_value < stone_threshold: # --- Дополнительная проверка не имеет смысла как переменная stone_threshold
 					set_cell(x, y, stone_tile_index)
 
 	for x in range(-width / 2, width / 2):
 		for y in range(0, height / 2):
-			if y < 51:
-				var random_value = rng.randf()
+			#if y < 51:
+			var random_value = rng.randf()
 
-				if random_value < blue_ore_probability:
-					set_cell(x, y, blue_ore_tile_index)
+			if random_value < blue_ore_probability:
+				set_cell(x, y, blue_ore_tile_index)
 # +++ Начинаем генерацию ресурсов поверх карты
 	for x in range(-width / 2, width / 2, blue_ore_cluster_spacing): # Проходимся по всей ширине с шагом blue_ore_cluster_spacing
-		for y in range(0, height / 2, blue_ore_cluster_spacing):
+		for y in range(height / 2, blue_ore_cluster_spacing):
 			var random_value = rng.randf()
 
 			if random_value < blue_ore_cluster_density:
@@ -80,7 +80,7 @@ func generate_world(width, height):
 
 				for cluster_x in range(cluster_x_start, cluster_x_end):
 					for cluster_y in range(cluster_y_start, cluster_y_end):
-						if cluster_x >= -width / 2 and cluster_x <= width / 2 and cluster_y >= 0 and cluster_y < 51:
+						if cluster_x > -width / 2 and cluster_x < width / 2 and cluster_y >= 0 and cluster_y < 51:
 							if rng.randf() < blue_ore_probability:
 								set_cell(cluster_x, cluster_y, blue_ore_tile_index)
 # --- Начинаем генерацию ресурсов поверх карты
@@ -99,7 +99,7 @@ func generate_world(width, height):
 		for y in range(51, height / 2):
 			var random_value = rng.randf()
 
-			if y >= 51 and random_value < red_ore_probability:
+			if y > 51 and random_value < red_ore_probability:
 				set_cell(x, y, red_ore_tile_index)
 				
 func generate_ground(width, start_height, end_height, chance, tile_index):
