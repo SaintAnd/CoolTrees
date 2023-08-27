@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://pic/UI/Button.png" type="Texture" id=1]
 [ext_resource path="res://pic/UI/theme.theme" type="Theme" id=2]
 [ext_resource path="res://scripts/MenuButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -13,20 +14,80 @@ margin_top = 4.0
 margin_bottom = 8.0
 
 [node name="HUD" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 3.0
+margin_top = 53.0
+margin_right = 90.0
+margin_bottom = 78.0
+text = "+energy"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+margin_left = 93.0
+margin_top = 53.0
+margin_right = 178.0
+margin_bottom = 78.0
+text = "+minerals"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+margin_left = 181.0
+margin_top = 53.0
+margin_right = 271.0
+margin_bottom = 78.0
+text = "+essence"
+
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-margin_right = 89.0
-margin_bottom = 43.0
+margin_right = 273.0
+margin_bottom = 52.0
 theme = ExtResource( 2 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="Menu" type="MenuButton" parent="CanvasLayer/Panel"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 85.0
-margin_bottom = 35.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 89.0
+margin_bottom = 40.0
 theme = ExtResource( 2 )
 text = "Меню"
+flat = false
 script = ExtResource( 3 )
+
+[node name="LabelEnergy" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 89.0
+margin_top = 8.0
+margin_right = 149.0
+margin_bottom = 40.0
+text = "Es: 00"
+align = 1
+valign = 1
+
+[node name="LabelMinerals" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 149.0
+margin_top = 8.0
+margin_right = 209.0
+margin_bottom = 40.0
+text = "Mi: 00"
+align = 1
+valign = 1
+
+[node name="LabelEssence" type="Label" parent="CanvasLayer/Panel"]
+margin_left = 209.0
+margin_top = 8.0
+margin_right = 269.0
+margin_bottom = 40.0
+text = "Es: 00"
+align = 1
+valign = 1
+
+[connection signal="draw" from="." to="." method="HUD_draw"]
+[connection signal="timeout" from="Timer" to="." method="Timer"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="plusEnergy"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="plusMinerals"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="plusEssence"]
