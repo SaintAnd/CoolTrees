@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 
 var speed = 200 # скорость рабочего
-var gravity = 150 # сила гравитации (но пока что рабочий никуда не падает, так что это пока бесполезно)
+#var gravity = 150 # сила гравитации (но пока что рабочий никуда не падает, так что это пока бесполезно)
 var state = "worker_idle" 	# сохраняем начальную анимацию рабочего
 var selected = false	# переменная будет отвечать за то, выбран ли работник при помощи прямоугольного выделения
 var room = StaticBody2D 	# тут будем хранить комнату в которой находится этот рабочий
@@ -12,21 +12,18 @@ onready var anim = $Sprite/Anim # аниматор рабочего
 onready var glow = $Sprite/Glow 	# свет при помощи которого будет выделяться активный рабочий
 onready var glow_tween = $Sprite/Glow/Tween 	# аниматор для плавного включения и отключения свечения
 onready var manager = get_parent().get_parent()	# объект Worker_Manager имеющий необходимые для работы переменные и функции
-onready var elevator = 0.0
-onready var elevator_anim = AnimationPlayer
+onready var elevator = 166
+onready var elevator_anim = $"../../../Seed/Rooms_Manager/Rooms/Heart_Room/Elevator/Elevat"
 
 
 func _ready():
 	anim.play("worker_idle") # проигрываем анимацию сразу после начала игры
-	var posi = position
-	position = Vector2(500, 500)
-	yield(get_tree().create_timer(0.1), "timeout")
-	position = posi
+#	yield(get_tree().create_timer(0.1), "timeout")
 
 
 func room_define(body):
-	elevator = body.get_child(3).global_position.y
-	elevator_anim = body.get_child(3).get_child(0)
+	elevator = body.get_child(2).global_position.y
+	elevator_anim = body.get_child(2).get_child(0)
 
 
 func glowing(alpha):	# функция свечения вызываемая по окнончанию таймера (по задумке, но пока функция через скрипт работает) 
@@ -59,7 +56,7 @@ func _physics_process(_delta):
 	else: 	# если данный рабочий не активен
 		glowing(0) 	# вырубаем подсветку
 	
-	velocity.y += gravity # создаем гравитацию
+#	velocity.y += gravity # создаем гравитацию
 	
 	move_and_slide(velocity) # двигаем через велосити
 	

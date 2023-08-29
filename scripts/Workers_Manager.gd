@@ -12,17 +12,17 @@ var click_active = true
 onready var worker = get_node("Workers/" + active_worker) # получаем работника
 onready var tween = get_node("Workers/" + active_worker + "/Sprite/Tween") # получаем объект твин для дальнейшей анимации
 onready var do_duration = 150 # динамическая(?) длительность чтобы не было резкой анимации
-onready var rooms_manager = $"../Rentgenn/Rooms_Manager" # массив комнат
+onready var rooms_manager = $"../Seed/Rooms_Manager" # менеджер комнат
 onready var rooms = rooms_manager.get_node("Rooms").get_children() # массив комнат
 onready var actual_room = rooms[worker.get_index()] # актуальная комната
 onready var workers = $Workers
 	
 
 func _ready():
-	worker.elevator = actual_room.global_position.y
-	worker.elevator_anim = actual_room.get_child(0)
+	var ele = rooms[len(rooms)-1].get_child(2)
+	worker.elevator = ele.global_position.y
+	worker.elevator_anim = ele.get_child(0)
 
-	
 
 func left_or_right(pos, end): # проверяем какая нужна анимация
 	if pos > end: # если игрок находится правее конечной точки
@@ -95,8 +95,8 @@ func click_event(event, shape_idx):  # был ли щелчок и был ли �
 	click_pos = get_local_mouse_position() # получаем позицию щелчка
 	worker = get_node("Workers/" + active_worker) # обновляем переменную
 	if workk == []: # если массив выбранных челиков пустой (ни один рабочий не выбран)
-		print(worker.elevator)
-		print(elevat)
+#		print(worker.elevator)
+#		print(elevat)
 		if worker.elevator != elevat.global_position.y: # если кликнул не на ту комнату в которой находится
 			move_into_room(worker, elevat) # активируем движение
 		else:

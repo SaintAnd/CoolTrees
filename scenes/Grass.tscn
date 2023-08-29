@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://pic/sprites/grass/summer_middle.png" type="Texture" id=1]
 [ext_resource path="res://pic/sprites/grass/ground.png" type="Texture" id=2]
@@ -14,14 +14,11 @@
 [ext_resource path="res://pic/sprites/grass/spring_backward.png" type="Texture" id=12]
 [ext_resource path="res://pic/sprites/grass/spring_flowers.png" type="Texture" id=13]
 [ext_resource path="res://pic/sprites/grass/spring_lepestki.png" type="Texture" id=14]
-[ext_resource path="res://scenes/Change_Season.tscn" type="PackedScene" id=15]
 [ext_resource path="res://shaders/grass_shader3.tres" type="Material" id=16]
 [ext_resource path="res://shaders/grass_shader2.tres" type="Material" id=17]
 [ext_resource path="res://shaders/grass_shader1.tres" type="Material" id=18]
 
 [node name="Grass" type="Node2D"]
-
-[node name="Change_Season" parent="." instance=ExtResource( 15 )]
 
 [node name="Seasons" type="Node2D" parent="."]
 

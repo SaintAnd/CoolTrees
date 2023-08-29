@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 
-onready var choice = $Stuka # подключаем кнопку
-onready var themes = get_node("../Seasons").get_children() # массив тем травы
+onready var choice = $Change_Seasons # подключаем кнопку
+onready var themes = $"../Environment/Grass/Seasons".get_children() # массив тем травы
 onready var previous = themes[0] # сохраняем "предыдущее" время года для смены
+onready var heart = $"../Environment/Seed/Seed/Rooms_Manager/Rooms/Heart_Room"
 
 func _ready():
 	choice.connect("item_selected", self, "on_item_selected") # подключаем сигнал при смене выбора
@@ -21,4 +22,9 @@ func on_item_selected(id): #
 	previous.hide() # прячем прошлое 
 	
 	previous = themes[id] # обновляем предыдущее время года
+	
+	
+func new_worker():
+	if heart.is_born == true:
+		heart.add_worker()
 

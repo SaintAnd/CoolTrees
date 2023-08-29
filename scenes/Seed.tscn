@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://pic/sprites/Seed_structures/Verx.png" type="Texture" id=1]
 [ext_resource path="res://pic/sprites/Seed_structures/Rentgenn.png" type="Texture" id=2]
@@ -11,112 +11,247 @@
 [ext_resource path="res://scripts/Rooms.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/Room.gd" type="Script" id=11]
+[ext_resource path="res://pic/sprites/Rooms_parts/heart.png" type="Texture" id=12]
+[ext_resource path="res://pic/sprites/Rooms_parts/worker_born.png" type="Texture" id=13]
+[ext_resource path="res://scripts/Heart.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 55.75 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 64, 2.5 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 12 )
+region = Rect2( 144, 0, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 0, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 12 )
+region = Rect2( 432, 0, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 12 )
+region = Rect2( 576, 0, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 128, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 12 )
+region = Rect2( 144, 128, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 128, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 12 )
+region = Rect2( 432, 128, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 576, 128, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 256, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 12 )
+region = Rect2( 144, 256, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 256, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 12 )
+region = Rect2( 432, 256, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 12 )
+region = Rect2( 576, 256, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 384, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 12 )
+region = Rect2( 144, 384, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 384, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 12 )
+region = Rect2( 432, 384, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 12 )
+region = Rect2( 576, 384, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 512, 144, 128 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 12 )
+region = Rect2( 144, 512, 144, 128 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "worker_happy_birthday"
+length = 5.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 ]
+}
 
 [node name="Seed" type="Node2D"]
 
-[node name="Rentgenn" type="Sprite" parent="."]
+[node name="Seed" type="Node2D" parent="."]
+
+[node name="Rentgenn" type="Sprite" parent="Seed"]
+scale = Vector2( 4.2, 4.2 )
 texture = ExtResource( 2 )
 
-[node name="Mesh" type="Sprite" parent="Rentgenn"]
+[node name="Mesh" type="Sprite" parent="Seed"]
+visible = false
 texture = ExtResource( 3 )
 
-[node name="Rooms_Manager" type="Node2D" parent="Rentgenn"]
+[node name="Rooms_Manager" type="Node2D" parent="Seed"]
+position = Vector2( 0, -11 )
 script = ExtResource( 9 )
 
-[node name="Cick_input" type="Area2D" parent="Rentgenn/Rooms_Manager"]
+[node name="Cick_input" type="Area2D" parent="Seed/Rooms_Manager"]
+position = Vector2( 0, 33 )
 
-[node name="RoomShape1" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Cick_input"]
+[node name="RoomShape1" type="CollisionShape2D" parent="Seed/Rooms_Manager/Cick_input"]
 position = Vector2( 0, -161.25 )
 shape = SubResource( 1 )
 
-[node name="RoomShape2" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Cick_input"]
+[node name="RoomShape2" type="CollisionShape2D" parent="Seed/Rooms_Manager/Cick_input"]
 position = Vector2( 0, -33 )
 shape = SubResource( 1 )
 
-[node name="RoomShape3" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Cick_input"]
+[node name="RoomShape3" type="CollisionShape2D" parent="Seed/Rooms_Manager/Cick_input"]
 position = Vector2( 0, 95 )
 shape = SubResource( 1 )
 
-[node name="Rooms" type="Node2D" parent="Rentgenn/Rooms_Manager"]
+[node name="Rooms" type="Node2D" parent="Seed/Rooms_Manager"]
+position = Vector2( 0, 33 )
 
-[node name="Room1" type="StaticBody2D" parent="Rentgenn/Rooms_Manager/Rooms" groups=["Room"]]
+[node name="Room1" type="StaticBody2D" parent="Seed/Rooms_Manager/Rooms" groups=["Room"]]
 position = Vector2( 0, -161 )
 script = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room1"]
-position = Vector2( 0, 56.5 )
-shape = SubResource( 2 )
+[node name="Room_def" type="Area2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rentgenn/Rooms_Manager/Rooms/Room1"]
-build_mode = 1
-polygon = PoolVector2Array( 63, -55, -63, -55, -63, 56, 63, 56 )
-
-[node name="Room" type="Sprite" parent="Rentgenn/Rooms_Manager/Rooms/Room1"]
-texture = ExtResource( 4 )
-
-[node name="Elevator" parent="Rentgenn/Rooms_Manager/Rooms/Room1" instance=ExtResource( 10 )]
-position = Vector2( 0, 38 )
-
-[node name="Room_def" type="Area2D" parent="Rentgenn/Rooms_Manager/Rooms/Room1"]
-
-[node name="RoomShape" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room1/Room_def"]
+[node name="RoomShape" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1/Room_def"]
 shape = SubResource( 1 )
 
-[node name="Room2" type="StaticBody2D" parent="Rentgenn/Rooms_Manager/Rooms" groups=["Room"]]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
+build_mode = 1
+polygon = PoolVector2Array( 63, 54, -63, 54, -63, -55, 63, -55 )
+
+[node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Room1" instance=ExtResource( 10 )]
+position = Vector2( 0, 39 )
+
+[node name="Room" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Room1"]
+texture = ExtResource( 4 )
+
+[node name="Room2" type="StaticBody2D" parent="Seed/Rooms_Manager/Rooms" groups=["Room"]]
 position = Vector2( 0, -33 )
 script = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room2"]
-position = Vector2( 0, 56.5 )
-shape = SubResource( 2 )
+[node name="Room_def" type="Area2D" parent="Seed/Rooms_Manager/Rooms/Room2"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rentgenn/Rooms_Manager/Rooms/Room2"]
-build_mode = 1
-polygon = PoolVector2Array( 63, -55, -63, -55, -63, 56, 63, 56 )
-
-[node name="Room" type="Sprite" parent="Rentgenn/Rooms_Manager/Rooms/Room2"]
-texture = ExtResource( 4 )
-
-[node name="Elevator" parent="Rentgenn/Rooms_Manager/Rooms/Room2" instance=ExtResource( 10 )]
-position = Vector2( 0, 38 )
-
-[node name="Room_def" type="Area2D" parent="Rentgenn/Rooms_Manager/Rooms/Room2"]
-
-[node name="RoomShape2" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room2/Room_def"]
+[node name="RoomShape2" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room2/Room_def"]
 shape = SubResource( 1 )
 
-[node name="Room3" type="StaticBody2D" parent="Rentgenn/Rooms_Manager/Rooms" groups=["Room"]]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Seed/Rooms_Manager/Rooms/Room2"]
+build_mode = 1
+polygon = PoolVector2Array( 63, 54, -63, 54, -63, -55, 63, -55 )
+
+[node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Room2" instance=ExtResource( 10 )]
+position = Vector2( 0, 39 )
+
+[node name="Room" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Room2"]
+texture = ExtResource( 4 )
+
+[node name="Heart_Room" type="StaticBody2D" parent="Seed/Rooms_Manager/Rooms" groups=["Room"]]
 position = Vector2( 0, 95 )
-script = ExtResource( 11 )
+script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room3"]
-position = Vector2( 0, 56.5 )
-shape = SubResource( 2 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rentgenn/Rooms_Manager/Rooms/Room3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
 build_mode = 1
-polygon = PoolVector2Array( 63, -55, -63, -55, -63, 56, 63, 56 )
+polygon = PoolVector2Array( 69, 61, -53, 61, -53, -61, 69, -61 )
 
-[node name="Room" type="Sprite" parent="Rentgenn/Rooms_Manager/Rooms/Room3"]
-texture = ExtResource( 4 )
+[node name="Heart" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
+texture = ExtResource( 12 )
+hframes = 5
+vframes = 5
 
-[node name="Elevator" parent="Rentgenn/Rooms_Manager/Rooms/Room3" instance=ExtResource( 10 )]
-position = Vector2( 0, 38 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Heart"]
+frames = SubResource( 24 )
+frame = 1
+playing = true
 
-[node name="Room_def" type="Area2D" parent="Rentgenn/Rooms_Manager/Rooms/Room3"]
+[node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Heart_Room" instance=ExtResource( 10 )]
+position = Vector2( 0, 41 )
 
-[node name="RoomShape" type="CollisionShape2D" parent="Rentgenn/Rooms_Manager/Rooms/Room3/Room_def"]
-shape = SubResource( 1 )
+[node name="Worker_Born" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
+z_index = 1
+texture = ExtResource( 13 )
+hframes = 9
+vframes = 9
+
+[node name="Anima" type="AnimationPlayer" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Worker_Born"]
+anims/RESET = SubResource( 25 )
+anims/worker_happy_birthday = SubResource( 26 )
 
 [node name="Verx" type="Sprite" parent="."]
 visible = false
 light_mask = 2
+scale = Vector2( 4.2, 4.2 )
 z_index = 5
 texture = ExtResource( 1 )
 
@@ -127,18 +262,12 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 
 [node name="Worker1" parent="Workers_Manager/Workers" instance=ExtResource( 5 )]
-position = Vector2( -29, -138 )
-
-[node name="Worker2" parent="Workers_Manager/Workers" instance=ExtResource( 5 )]
-position = Vector2( 49, -16 )
-
-[node name="Worker3" parent="Workers_Manager/Workers" instance=ExtResource( 5 )]
-position = Vector2( 25, 117 )
+visible = false
+position = Vector2( 0, 157 )
 
 [node name="Select_draw" type="Node2D" parent="Workers_Manager"]
 script = ExtResource( 8 )
 
-[connection signal="input_event" from="Rentgenn/Rooms_Manager/Cick_input" to="Rentgenn/Rooms_Manager" method="click_input"]
-[connection signal="body_entered" from="Rentgenn/Rooms_Manager/Rooms/Room1/Room_def" to="Rentgenn/Rooms_Manager/Rooms/Room1" method="room_def"]
-[connection signal="body_entered" from="Rentgenn/Rooms_Manager/Rooms/Room2/Room_def" to="Rentgenn/Rooms_Manager/Rooms/Room2" method="room_def"]
-[connection signal="body_entered" from="Rentgenn/Rooms_Manager/Rooms/Room3/Room_def" to="Rentgenn/Rooms_Manager/Rooms/Room3" method="room_def"]
+[connection signal="input_event" from="Seed/Rooms_Manager/Cick_input" to="Seed/Rooms_Manager" method="click_input"]
+[connection signal="body_entered" from="Seed/Rooms_Manager/Rooms/Room1/Room_def" to="Seed/Rooms_Manager/Rooms/Room1" method="room_def"]
+[connection signal="body_entered" from="Seed/Rooms_Manager/Rooms/Room2/Room_def" to="Seed/Rooms_Manager/Rooms/Room2" method="room_def"]
