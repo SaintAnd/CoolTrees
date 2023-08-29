@@ -16,12 +16,12 @@ onready var rooms_manager = $"../Seed/Rooms_Manager" # менеджер комн
 onready var rooms = rooms_manager.get_node("Rooms").get_children() # массив комнат
 onready var actual_room = rooms[worker.get_index()] # актуальная комната
 onready var workers = $Workers
+onready var heart_room = rooms[len(rooms)-1]
 	
 
 func _ready():
-	var ele = rooms[len(rooms)-1].get_child(2)
-	worker.elevator = ele.global_position.y
-	worker.elevator_anim = ele.get_child(0)
+	worker.elevator = heart_room.get_child(2).global_position.y
+	worker.elevator_anim = heart_room.get_child(2).get_child(0)
 
 
 func left_or_right(pos, end): # проверяем какая нужна анимация
@@ -65,23 +65,26 @@ func move_into_room(worke, elev): 	# передвижение между ком�
 	worke.state_change("worker_idle") 
 	worke.elevator_anim.play("elev_open")
 	yield(worke.elevator_anim, "animation_finished")
+	worke.anim.play("in_elevator")
+	yield(worke.anim, "animation_finished")
 	worke.z_index = 0
 	worke.elevator_anim.play("elev_close")
 	yield(worke.elevator_anim, "animation_finished")
-	worke.modulate.a = 0
 	
 	worke.elevator = elev.global_position.y
 	worke.elevator_anim = elev.get_child(0)
 	
 	# поднимаем его вверх/вниз
-	worke.global_position = Vector2(0, worke.elevator)
+	worke.global_position = Vector2(0, worke.elevator-1)
 	yield(get_tree().create_timer(2.0), "timeout")
-	worke.modulate.a = 1
 	worke.elevator_anim.play("elev_open")
 	yield(worke.elevator_anim, "animation_finished")
 	worke.z_index = 1
 	worke.elevator_anim.play("elev_close")
-	yield(worke.elevator_anim, "animation_finished")
+	worke.anim.play("out_elevator")
+	yield(worke.anim, "animation_finished")
+	worke.anim.play("worker_idle")
+	
 	
 #	print(worke.elevator)
 #	print(elev)
@@ -100,7 +103,8 @@ func click_event(event, shape_idx):  # был ли щелчок и был ли �
 		if worker.elevator != elevat.global_position.y: # если кликнул не на ту комнату в которой находится
 			move_into_room(worker, elevat) # активируем движение
 		else:
-			move_inside(worker, elevat)
+			if heart_room.is_born == true:
+				move_inside(worker, elevat)
 	else:
 		is_active_w = false
 		for item in workk:

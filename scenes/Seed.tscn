@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://pic/sprites/Seed_structures/Verx.png" type="Texture" id=1]
 [ext_resource path="res://pic/sprites/Seed_structures/Rentgenn.png" type="Texture" id=2]
@@ -12,11 +12,14 @@
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/Room.gd" type="Script" id=11]
 [ext_resource path="res://pic/sprites/Rooms_parts/heart.png" type="Texture" id=12]
-[ext_resource path="res://pic/sprites/Rooms_parts/worker_born.png" type="Texture" id=13]
+[ext_resource path="res://pic/sprites/Cheliki/worker_born.png" type="Texture" id=13]
 [ext_resource path="res://scripts/Heart.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 55.75 )
+extents = Vector2( 65.5, 61 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 15, 26 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 12 )
@@ -114,6 +117,9 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 16, 26 )
+
 [sub_resource type="Animation" id=25]
 length = 0.001
 tracks/0/type = "value"
@@ -145,6 +151,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 ]
 }
 
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 8.5, 26 )
+
 [node name="Seed" type="Node2D"]
 
 [node name="Seed" type="Node2D" parent="."]
@@ -173,7 +182,7 @@ position = Vector2( 0, -33 )
 shape = SubResource( 1 )
 
 [node name="RoomShape3" type="CollisionShape2D" parent="Seed/Rooms_Manager/Cick_input"]
-position = Vector2( 0, 95 )
+position = Vector2( 3.5, 95 )
 shape = SubResource( 1 )
 
 [node name="Rooms" type="Node2D" parent="Seed/Rooms_Manager"]
@@ -188,15 +197,19 @@ script = ExtResource( 11 )
 [node name="RoomShape" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1/Room_def"]
 shape = SubResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
-build_mode = 1
-polygon = PoolVector2Array( 63, 54, -63, 54, -63, -55, 63, -55 )
-
 [node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Room1" instance=ExtResource( 10 )]
 position = Vector2( 0, 39 )
 
 [node name="Room" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Room1"]
 texture = ExtResource( 4 )
+
+[node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
+position = Vector2( -79, 30 )
+shape = SubResource( 27 )
+
+[node name="Right_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
+position = Vector2( 79, 30 )
+shape = SubResource( 27 )
 
 [node name="Room2" type="StaticBody2D" parent="Seed/Rooms_Manager/Rooms" groups=["Room"]]
 position = Vector2( 0, -33 )
@@ -217,13 +230,17 @@ position = Vector2( 0, 39 )
 [node name="Room" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Room2"]
 texture = ExtResource( 4 )
 
+[node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room2"]
+position = Vector2( -79, 30 )
+shape = SubResource( 27 )
+
+[node name="Right_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room2"]
+position = Vector2( 79, 30 )
+shape = SubResource( 27 )
+
 [node name="Heart_Room" type="StaticBody2D" parent="Seed/Rooms_Manager/Rooms" groups=["Room"]]
 position = Vector2( 0, 95 )
 script = ExtResource( 14 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
-build_mode = 1
-polygon = PoolVector2Array( 69, 61, -53, 61, -53, -61, 69, -61 )
 
 [node name="Heart" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
 texture = ExtResource( 12 )
@@ -232,8 +249,12 @@ vframes = 5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Heart"]
 frames = SubResource( 24 )
-frame = 1
+frame = 13
 playing = true
+
+[node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
+position = Vector2( -68, 39 )
+shape = SubResource( 29 )
 
 [node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Heart_Room" instance=ExtResource( 10 )]
 position = Vector2( 0, 41 )
@@ -247,6 +268,10 @@ vframes = 9
 [node name="Anima" type="AnimationPlayer" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Worker_Born"]
 anims/RESET = SubResource( 25 )
 anims/worker_happy_birthday = SubResource( 26 )
+
+[node name="Right_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
+position = Vector2( 77.5, 39 )
+shape = SubResource( 28 )
 
 [node name="Verx" type="Sprite" parent="."]
 visible = false

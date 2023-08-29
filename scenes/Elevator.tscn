@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4, 0 ) ]
+"values": [ Vector2( -3.5, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite2:position")
@@ -26,7 +26,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 4, 0 ) ]
+"values": [ Vector2( 3.5, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -11.5, 0 ), Vector2( -6, 0 ), Vector2( -3.5, 0 ) ]
+"values": [ Vector2( -10.5, 0 ), Vector2( -5, 0 ), Vector2( -3.5, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite2:position")
@@ -54,7 +54,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 11.5, 0 ), Vector2( 6, 0 ), Vector2( 3.5, 0 ) ]
+"values": [ Vector2( 10.5, 0 ), Vector2( 5, 0 ), Vector2( 3.5, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -3.5, 0 ), Vector2( -11, 0 ), Vector2( -11.5, 0 ) ]
+"values": [ Vector2( -3.5, 0 ), Vector2( -9, 0 ), Vector2( -10.5, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite2:position")
@@ -82,7 +82,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3.5, 0 ), Vector2( 11, 0 ), Vector2( 11.5, 0 ) ]
+"values": [ Vector2( 3.5, 0 ), Vector2( 9, 0 ), Vector2( 10.5, 0 ) ]
 }
 
 [node name="Elevator" type="Node2D"]
