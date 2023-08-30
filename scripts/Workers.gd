@@ -8,19 +8,22 @@ var drag_start = Vector2.ZERO 	# начало выделения
 var draw_start = Vector2.ZERO 	# начало рисования
 var select_rectangle = RectangleShape2D.new() 	# сама область выделения
 
-onready var select_draw = $Select_draw 	# сохраняем сам объект который рисует область
+onready var select_draw = $"../Select_draw" 	# сохраняем сам объект который рисует область
 
-# а дальше хз
+
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		if event.pressed: 
+		if event.pressed:
 			for unit in selected:
-				unit.collider.deselect()
+				if unit.collider.is_in_group("Selectable"):
+					unit.collider.deselect()
 			selected = []
 			dragging = true
 			drag_start = get_global_mouse_position()
 			draw_start = get_local_mouse_position()
-		elif dragging: 
+		elif dragging:
+			dragging = false
 			select_draw.update_status(draw_start, get_local_mouse_position(), dragging)
 			var drag_end = get_global_mouse_position()
 			select_rectangle.extents = (drag_end - drag_start) / 2

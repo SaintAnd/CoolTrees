@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Test_functions.gd" type="Script" id=1]
+
+[node name="Test_Functions" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Change_Seasons" type="OptionButton" parent="."]
+margin_left = 400.0
+margin_top = 10.0
+margin_right = 600.0
+margin_bottom = 40.0
+
+[node name="Worker_born" type="Button" parent="."]
+margin_left = 646.0
+margin_top = 9.0
+margin_right = 792.0
+margin_bottom = 43.0
+text = "Новый рабочий"
+
+[connection signal="button_down" from="Worker_born" to="." method="new_worker"]
