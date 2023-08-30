@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Verx_.png-28edb6eb11ccc0f9b102b108ce2d30ce.stex"
+path="res://.import/zelud_inside.png-5d4466a0649bcd18969fc14a68dbad5d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/sprites/Seed_structures/Verx_.png"
-dest_files=[ "res://.import/Verx_.png-28edb6eb11ccc0f9b102b108ce2d30ce.stex" ]
+source_file="res://pic/sprites/Seed_structures/zelud_inside.png"
+dest_files=[ "res://.import/zelud_inside.png-5d4466a0649bcd18969fc14a68dbad5d.stex" ]
 
 [params]
 
