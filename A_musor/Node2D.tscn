@@ -5,6 +5,7 @@
 [ext_resource path="res://pic/sprites/Seed_structures/Rooms/room3.png" type="Texture" id=3]
 [ext_resource path="res://A_musor/Node2D.gd" type="Script" id=4]
 
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
 

@@ -106,6 +106,7 @@ script = ExtResource( 1 )
 tile_set = SubResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
+tile_data = PoolIntArray( -393207, 1, 0, -393201, 1, 0, -393200, 1, 0, -327670, 1, 0, -327666, 1, 0, -327664, 1, 0, -262136, 1, 0, -262135, 1, 0, -262134, 1, 0, -262128, 1, 0, -196607, 1, 0, -131070, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0 )
 script = ExtResource( 2 )
 
 [node name="path" type="Path2D" parent="."]

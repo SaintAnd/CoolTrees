@@ -1,12 +1,15 @@
 extends Node2D
+# скрипт рисующий прямоугольник выделения (я этот кусок кода из инета сперла так что комменировала как могла)
 
-var dragging = false
-var selected = []
-var drag_start = Vector2.ZERO
-var draw_start = Vector2.ZERO
-var select_rectangle = RectangleShape2D.new()
 
-onready var select_draw = $Select_draw
+var dragging = false 	# зажата ли левая кнопка то есть должна ли рисоваться область
+var selected = [] 	# список выбранных объектов
+var drag_start = Vector2.ZERO 	# начало выделения
+var draw_start = Vector2.ZERO 	# начало рисования
+var select_rectangle = RectangleShape2D.new() 	# сама область выделения
+
+onready var select_draw = $"../Select_draw" 	# сохраняем сам объект который рисует область
+
 
 
 func _unhandled_input(event):
