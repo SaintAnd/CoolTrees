@@ -76,6 +76,7 @@ func move_into_room(worke, elev): 	# передвижение между ком�
 	
 	# поднимаем его вверх/вниз
 	worke.global_position = Vector2(0, worke.elevator-1)
+	print(worke.elevator-1)
 	yield(get_tree().create_timer(2.0), "timeout")
 	worke.elevator_anim.play("elev_open")
 	yield(worke.elevator_anim, "animation_finished")

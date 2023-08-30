@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://pic/sprites/Seed_structures/zelud.png" type="Texture" id=1]
 [ext_resource path="res://pic/sprites/Seed_structures/zelud_inside.png" type="Texture" id=2]
@@ -16,7 +16,10 @@
 [ext_resource path="res://scripts/Heart.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 65.5, 61 )
+extents = Vector2( 65.5, 55 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 69, 61 )
 
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 15, 26 )
@@ -182,8 +185,8 @@ position = Vector2( 0, -33 )
 shape = SubResource( 1 )
 
 [node name="RoomShape3" type="CollisionShape2D" parent="Seed/Rooms_Manager/Cick_input"]
-position = Vector2( 3.5, 95 )
-shape = SubResource( 1 )
+position = Vector2( 0, 95 )
+shape = SubResource( 30 )
 
 [node name="Rooms" type="Node2D" parent="Seed/Rooms_Manager"]
 position = Vector2( 0, 33 )
@@ -197,11 +200,11 @@ script = ExtResource( 11 )
 [node name="RoomShape" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1/Room_def"]
 shape = SubResource( 1 )
 
-[node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Room1" instance=ExtResource( 10 )]
-position = Vector2( 0, 39 )
-
 [node name="Room" type="Sprite" parent="Seed/Rooms_Manager/Rooms/Room1"]
 texture = ExtResource( 4 )
+
+[node name="Elevator" parent="Seed/Rooms_Manager/Rooms/Room1" instance=ExtResource( 10 )]
+position = Vector2( 0, 39 )
 
 [node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Room1"]
 position = Vector2( -79, 30 )
@@ -249,7 +252,7 @@ vframes = 5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Heart"]
 frames = SubResource( 24 )
-frame = 2
+frame = 18
 playing = true
 
 [node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]

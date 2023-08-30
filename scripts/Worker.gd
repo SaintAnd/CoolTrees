@@ -38,11 +38,11 @@ func glowing(alpha):	# функция свечения вызываемая по
 func _physics_process(_delta):
 	var velocity = Vector2() # определяем велосити
 	if manager.active_worker == name and manager.is_active_w: # проверка на активность данного рабочего
-		if Input.is_action_pressed("Left"): 	# если нажато действие влево
-			velocity.x -= speed 	# вычитаем переменную скорости из велосити по х, ну то есть из силы толчка (хихи хаха толчок) в моем понимании) 
-		if Input.is_action_pressed("Right"):
-			velocity.x += speed 	# ну а тут аналогично прибавляем чтобы рабочий вправо бежал
-		
+#		if Input.is_action_pressed("Left"): 	# если нажато действие влево
+#			velocity.x -= speed 	# вычитаем переменную скорости из велосити по х, ну то есть из силы толчка в моем понимании) 
+#		if Input.is_action_pressed("Right"):
+#			velocity.x += speed 	# ну а тут аналогично прибавляем чтобы рабочий вправо бежал
+
 		# меняем состояния	
 		if velocity.x < 0: 	# если значение велосити отрицательное (то есть работник влево двигается
 			state_change("move_left")  	# включаем анимку движения влево
@@ -53,13 +53,14 @@ func _physics_process(_delta):
 		else: 	# если рабочий не двигается
 			state_change("worker_idle") 	# включаем анимацию бездействия
 			glowing(1) 	# включаем подсветку
+
 	else: 	# если данный рабочий не активен
 		glowing(0) 	# вырубаем подсветку
-	
+
 #	velocity.y += gravity # создаем гравитацию
-	
-	move_and_slide(velocity) # двигаем через велосити
-	
+#
+#	move_and_slide(velocity) # двигаем через велосити
+
 	if manager.is_active_w: # если передвижение окончено
 		if manager.active_worker != name: # и данный рабочий не активен
 			state_change("worker_idle") # проигрываем анимацию
