@@ -86,9 +86,6 @@ func check(vec: Vector2, count: int ):
 		return true
 
 func _process(delta):
-	print($path/pathf/Mouse_Click.rotation_degrees)
-	print($path/pathf.rotation_degrees)
-	
 	if Input.is_action_just_pressed("button_left") and curve.get_point_count() < 2 and flag2:#проверяем условия для начала движения корня
 		if flag1:#этот кусочек выполняется один раз
 			#a = point.position

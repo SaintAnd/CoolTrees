@@ -29,5 +29,4 @@ func add_worker():
 	w.position = Vector2(0, 157)
 	workers.add_child(w)
 	anim.play("RESET")
-	print("hepi_bezdey")
 	is_born = true

@@ -249,7 +249,7 @@ vframes = 5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Seed/Rooms_Manager/Rooms/Heart_Room/Heart"]
 frames = SubResource( 24 )
-frame = 2
+frame = 14
 playing = true
 
 [node name="Left_Border" type="CollisionShape2D" parent="Seed/Rooms_Manager/Rooms/Heart_Room"]
