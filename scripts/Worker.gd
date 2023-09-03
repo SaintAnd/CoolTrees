@@ -7,13 +7,15 @@ var speed = 200 # скорость рабочего
 var state = "worker_idle" 	# сохраняем начальную анимацию рабочего
 var selected = false	# переменная будет отвечать за то, выбран ли работник при помощи прямоугольного выделения
 var room = StaticBody2D 	# тут будем хранить комнату в которой находится этот рабочий
+var is_moving = false
 
 onready var anim = $Sprite/Anim # аниматор рабочего
 onready var glow = $Sprite/Glow 	# свет при помощи которого будет выделяться активный рабочий
 onready var glow_tween = $Sprite/Glow/Tween 	# аниматор для плавного включения и отключения свечения
 onready var manager = get_parent().get_parent()	# объект Worker_Manager имеющий необходимые для работы переменные и функции
-onready var elevator = 166
+onready var elevator = 566
 onready var elevator_anim = $"../../../Seed/Rooms_Manager/Rooms/Heart_Room/Elevator/Elevat"
+
 
 
 func _ready():
@@ -28,7 +30,7 @@ func room_define(body):
 
 func glowing(alpha):	# функция свечения вызываемая по окнончанию таймера (по задумке, но пока функция через скрипт работает) 
 	if alpha == 1: 	# если передано значение альфы 1
-		glow_tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 1), 0.4)	# настраиваем
+		glow_tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 0.5), 0.4)	# настраиваем
 		glow_tween.start() 	# запускаем анимку
 	else: 	# если передано значение 0
 		glow_tween.interpolate_property(glow, "color", glow.color, Color(0.95, 0.65, 0.28, 0), 0.08)	# тоже настраиваем
@@ -37,6 +39,13 @@ func glowing(alpha):	# функция свечения вызываемая по
 		
 func _physics_process(_delta):
 	var velocity = Vector2() # определяем велосити
+	if is_moving: # если челик должен бежать к точке
+		velocity.x += manager.kuda*speed
+		move_and_slide(velocity) # двигаем челика к точке каждый кадр
+		if abs(position.x - manager.click_pos.x) <= 2.0: # доп условие если достиг точки (если расстояние между точкой и позицией рабочего меньше трех)
+			velocity.x = 0
+			is_moving = false
+			
 	if manager.active_worker == name and manager.is_active_w: # проверка на активность данного рабочего
 #		if Input.is_action_pressed("Left"): 	# если нажато действие влево
 #			velocity.x -= speed 	# вычитаем переменную скорости из велосити по х, ну то есть из силы толчка в моем понимании) 
@@ -58,24 +67,21 @@ func _physics_process(_delta):
 		glowing(0) 	# вырубаем подсветку
 
 #	velocity.y += gravity # создаем гравитацию
-#
 #	move_and_slide(velocity) # двигаем через велосити
 
 	if manager.is_active_w: # если передвижение окончено
 		if manager.active_worker != name: # и данный рабочий не активен
 			state_change("worker_idle") # проигрываем анимацию
-		
-		
+	
 	
 func state_change(new_state): # проигрываем анимацию
 	if state != new_state: # если анимация новая
 		state = new_state # обновляем текущую анимацию
 		anim.play(state) # включаем анимацию
 	
-	
-func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
-	manager.active_worker = name # меняем активного рабочего
-	glowing(1)
+#func _on_ChangePlayer_pressed(): # переключение на персонажа по нажатию
+#	manager.active_worker = name # меняем активного рабочего
+#	glowing(1)
 
 func select(): 	# функция вызываемая при выборе работника при помощи прямоугольного выделения
 	selected = true 	# меняем значение переменной
@@ -84,3 +90,5 @@ func select(): 	# функция вызываемая при выборе раб
 func deselect(): 	# отмена выбора рабочего
 	selected = false
 	modulate = Color.white 	# возращаем цвет на нормальный
+	
+

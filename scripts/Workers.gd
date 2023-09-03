@@ -8,6 +8,7 @@ var drag_start = Vector2.ZERO 	# начало выделения
 var draw_start = Vector2.ZERO 	# начало рисования
 var select_rectangle = RectangleShape2D.new() 	# сама область выделения
 
+onready var manager = get_parent()
 onready var select_draw = $"../Select_draw" 	# сохраняем сам объект который рисует область
 
 
@@ -19,6 +20,7 @@ func _unhandled_input(event):
 				if unit.collider.is_in_group("Selectable"):
 					unit.collider.deselect()
 			selected = []
+			manager.workk = []
 			dragging = true
 			drag_start = get_global_mouse_position()
 			draw_start = get_local_mouse_position()
@@ -35,7 +37,8 @@ func _unhandled_input(event):
 			for unit in selected:
 				if unit.collider.is_in_group("Selectable"):
 					unit.collider.select()
-					get_parent().workk.append(unit.collider)
+					manager.workk.append(unit.collider)
+			
 	if dragging:
 		if event is InputEventMouseMotion:
 			select_draw.update_status(draw_start, get_local_mouse_position(), dragging)

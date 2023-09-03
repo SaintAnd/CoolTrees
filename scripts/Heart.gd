@@ -12,7 +12,6 @@ func _ready():
 	yield(anim, "animation_finished")
 	owner.get_node("Workers_Manager/Workers/Worker1").visible = true
 	anim.play("RESET")
-	print("hepi_bezdey")
 	is_born = true
 
 
@@ -29,5 +28,4 @@ func add_worker():
 	w.position = Vector2(0, 157)
 	workers.add_child(w)
 	anim.play("RESET")
-	print("hepi_bezdey")
 	is_born = true
