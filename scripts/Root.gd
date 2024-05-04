@@ -7,5 +7,9 @@ func update_label(value):
 func _ready():
 	pass
 
+func _process(delta):
+#	print()
+	pass
+
 func _on_Puls_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	pass # Replace with function body.

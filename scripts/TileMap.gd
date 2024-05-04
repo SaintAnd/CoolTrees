@@ -36,10 +36,10 @@ func _ready():
 	# Задаём клеточному автомату размер и место
 	automataTemplate(10,200, 50, map_gen_ore_position_x, map_gen_ore_position_y,1)
 		
-func _process(_delta):
-	# Подсчёт кадров для отладки в консоли
-	frame +=1
-	print ("Кадры: " + str(frame))
+#func _process(delta):
+#	# Подсчёт кадров для отладки в консоли
+#	frame +=1
+#	print ("Кадры: " + str(frame))
 
 func generate_world(width, height):
 	for x in range(-width / 2, width / 2):

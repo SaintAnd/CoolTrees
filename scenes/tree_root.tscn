@@ -101,8 +101,6 @@ max_value = 5.0
 
 [node name="tree_root" type="Node2D"]
 script = ExtResource( 1 )
-speed_of_pulsar = 0.001
-speed_of_roots = 0.001
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 7 )

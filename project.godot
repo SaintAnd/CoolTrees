@@ -36,6 +36,10 @@ config/windows_native_icon="res://pic/sprites/little_tree/icon.ico"
 
 enable_audio_input=true
 
+[autoload]
+
+Resources="*res://scripts/Resources.gd"
+
 [display]
 
 mouse_cursor/custom_image="res://pic/UI/Cursor.png"

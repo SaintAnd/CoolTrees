@@ -1,5 +1,6 @@
 extends MenuButton
 
+var ref = load('res://scripts/tree_root.gd')
 
 #Добавляем варианты
 func _ready():
@@ -20,6 +21,9 @@ func _on_item_pressed(id):
 		
 	elif item_name == 'Перезапуск':
 		get_tree().change_scene('res://scenes/Root.tscn')
+		get_node('/root/Root/tree_root').set_script(ref)
+		#get_tree().reload_current_scene()
+
 		
 	elif item_name == 'Настройки':
 		get_node('/root/Root/Settings').visible = true
