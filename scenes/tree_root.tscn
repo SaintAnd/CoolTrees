@@ -159,6 +159,7 @@ script = ExtResource( 2 )
 
 [node name="TileMap_Root" type="TileMap" parent="TileMap"]
 tile_set = SubResource( 9 )
+cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="TileMap-Fog_of_war" type="TileMap" parent="."]

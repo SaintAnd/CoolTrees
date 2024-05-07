@@ -86,6 +86,7 @@ func check(vec: Vector2, count: int ):
 
 func _process(_delta):
 	if Input.is_action_just_pressed("button_left") and curve.get_point_count() < 2 and flag2:#проверяем условия для начала движения корня
+		
 		# Задаём переменной ссылку на тайл корня, чтобы нажав на точку на карте корень знал куда рости
 		var mouse_position = get_global_mouse_position()
 		var tile_root = get_node("TileMap/TileMap_Root")
@@ -100,6 +101,30 @@ func _process(_delta):
 		# Добавляем ещё ссылку на тайл земли
 		var tiles_ground = get_node("TileMap")
 		var tiles_ground_position = tiles_ground.world_to_map(mouse_position)
+		
+		# Задаём координаты начала роста корня
+		var x=0
+		var y=43
+		
+		# Начинаем цикл который рисует линию из тайлов до точки нажатия на карте
+		while x != tiles_ground_position.x:
+			tile_root.set_cell(x,y,1)
+			if tiles_ground_position.x<=0:
+				x-=1
+			else:
+				x+=1
+			
+			for i in range(0,7):
+				tile_fog.set_cell(x,y+i-3,-1)
+			
+			while y != tiles_ground_position.y:
+				tile_root.set_cell(x,y,0)
+				if tiles_ground_position.y<=43:
+					y-=1
+				else:
+					y+=1
+				for j in range(0,7):
+					tile_fog.set_cell(x+j-3,y,-1)
 
 		if flag1:#этот кусочек выполняется один раз
 			#a = point.position
