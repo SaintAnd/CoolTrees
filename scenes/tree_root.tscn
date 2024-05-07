@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/tree_root.gd" type="Script" id=1]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=2]
 [ext_resource path="res://pic/tiles/ground.png" type="Texture" id=3]
 [ext_resource path="res://pic/tiles/fog_of_war.png" type="Texture" id=4]
+[ext_resource path="res://pic/tiles/root.png" type="Texture" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -83,6 +84,36 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 3/z_index = 0
 
+[sub_resource type="TileSet" id=9]
+0/name = "root.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( -1, -1, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "root.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 15, -1, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
 [sub_resource type="TileSet" id=8]
 0/name = "fog_of_war.png 0"
 0/texture = ExtResource( 4 )
@@ -125,6 +156,10 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -393207, 1, 0, -393201, 1, 0, -393200, 1, 0, -327670, 1, 0, -327666, 1, 0, -327664, 1, 0, -262136, 1, 0, -262135, 1, 0, -262134, 1, 0, -262128, 1, 0, -196607, 1, 0, -131070, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0 )
 script = ExtResource( 2 )
+
+[node name="TileMap_Root" type="TileMap" parent="TileMap"]
+tile_set = SubResource( 9 )
+format = 1
 
 [node name="TileMap-Fog_of_war" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
