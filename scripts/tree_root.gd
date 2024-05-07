@@ -62,6 +62,17 @@ func _ready():
 	point.rotation = 0
 	curve.clear_points()
 	$roots.curve.clear_points()
+	
+	# Задаём переменной ссылку на тайл корня, чтобы нажав на точку на карте корень знал куда рости
+	var mouse_position = get_global_mouse_position()
+	var tile_root = get_node("TileMap/TileMap_Root")
+	var tile_position = tile_root.world_to_map(mouse_position)
+	
+	# Задаём переменной ссылку на тайл "тумана", чтобы не громодить такую большую строку
+	var tile_fog = get_node("TileMap-Fog_of_war")
+	var tile_position_fog = tile_fog.world_to_map(mouse_position)
+	# Диапазон удаления тумана при приближении корня
+	var range_of_fog = 5
 
 
 func pulsar():#функция реализующая движение пульсара
