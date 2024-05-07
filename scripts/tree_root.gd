@@ -73,6 +73,10 @@ func _ready():
 	var tile_position_fog = tile_fog.world_to_map(mouse_position)
 	# Диапазон удаления тумана при приближении корня
 	var range_of_fog = 5
+	
+	# Добавляем ещё ссылку на тайл земли
+	var tiles_ground = get_node("TileMap")
+	var tiles_ground_position = tiles_ground.world_to_map(mouse_position)
 
 
 func pulsar():#функция реализующая движение пульсара
