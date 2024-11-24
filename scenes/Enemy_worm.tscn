@@ -1,9 +1,240 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
-[sub_resource type="TileSet" id=1]
+[ext_resource path="res://pic/sprites/Enemy/Worm.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Worker.gd" type="Script" id=2]
+[ext_resource path="res://pic/sprites/other/light.png" type="Texture" id=3]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 9.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, 6.5 ) ]
+}
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
-format = 1
+[sub_resource type="Animation" id=8]
+resource_name = "in_elevator"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 20, 21, 22, 23, 24, 25 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "move_left"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 9.5 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "move_right"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 9.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, 6.5 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "out_elevator"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 24, 23, 22, 21, 20, 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "worker_idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 9.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, 6.5 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 9, 6.5 )
+
+[node name="Worker" type="KinematicBody2D" groups=["Selectable", "Worker"]]
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="ChangePlayer" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -9.0
+margin_top = -12.0
+margin_right = 8.0
+margin_bottom = 16.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+
+[node name="Glow" type="Light2D" parent="Sprite"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 3 )
+texture_scale = 0.1
+color = Color( 0.952941, 0.654902, 0.286275, 0 )
+energy = 0.9
+shadow_enabled = true
+
+[node name="Tween" type="Tween" parent="Sprite/Glow"]
+
+[node name="Glow_check" type="Timer" parent="Sprite/Glow"]
+wait_time = 0.1
+
+[node name="Anim" type="AnimationPlayer" parent="Sprite"]
+playback_process_mode = 0
+playback_speed = 0.8
+anims/RESET = SubResource( 1 )
+anims/in_elevator = SubResource( 8 )
+anims/move_left = SubResource( 2 )
+anims/move_right = SubResource( 3 )
+anims/out_elevator = SubResource( 9 )
+anims/worker_idle = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9.5 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[connection signal="pressed" from="ChangePlayer" to="." method="_on_ChangePlayer_pressed"]
+[connection signal="timeout" from="Sprite/Glow/Glow_check" to="." method="glowing"]
